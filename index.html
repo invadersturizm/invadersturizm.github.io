@@ -132,24 +132,63 @@ p{color:var(--ink-soft);line-height:1.7}
   transition:all .4s var(--ease-quiet);
 }
 .header.scrolled{background:rgba(250,247,242,.98);box-shadow:0 1px 0 rgba(26,22,18,.04)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1.125rem 0;transition:padding .4s var(--ease-quiet)}
-.header.scrolled .header-inner{padding:.875rem 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1rem 0;transition:padding .4s var(--ease-quiet)}
+.header.scrolled .header-inner{padding:.75rem 0}
 
-/* logo */
-.logo{display:inline-flex;align-items:center;gap:.75rem;flex-shrink:0}
-.logo-mark{width:36px;height:36px;flex-shrink:0}
-.logo-text{display:flex;flex-direction:column;line-height:1}
+/* ============ LOGO ============ */
+.logo{
+  display:inline-flex;align-items:center;
+  text-decoration:none;flex-shrink:0;
+  user-select:none;
+}
+.logo-text{
+  display:flex;flex-direction:column;line-height:1;
+}
 .logo-name{
-  font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;
-  letter-spacing:.04em;color:var(--ink);
+  font-family:'Manrope',sans-serif;
+  font-weight:800;
+  font-size:1.4375rem;
+  letter-spacing:-.035em;
+  color:var(--accent);
+  line-height:1;
+  display:inline-block;
+}
+.logo-domain{
+  font-family:'Manrope',sans-serif;
+  font-weight:500;
+  font-size:.8125rem;
+  letter-spacing:-.01em;
+  color:var(--ink-mute);
+  margin-left:1px;
 }
 .logo-sub{
-  font-family:'Manrope',sans-serif;font-weight:500;font-size:.625rem;
-  letter-spacing:.32em;text-transform:uppercase;color:var(--accent);
-  margin-top:.2rem;
+  font-family:'Manrope',sans-serif;
+  font-weight:500;
+  font-size:.5625rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin-top:.3rem;
+  display:block;
+  white-space:nowrap;
+}
+.logo-sub-accent{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:600;
+  font-size:.6875rem;
+  color:var(--accent);
+  letter-spacing:0;
+  text-transform:none;
 }
 
-/* nav */
+/* Footer logo overrides */
+.footer-brand .logo-name{color:var(--accent)}
+.footer-brand .logo-domain{color:rgba(255,255,255,.45)}
+.footer-brand .logo-sub{color:rgba(255,255,255,.55)}
+.footer-brand .logo-sub-accent{color:var(--accent)}
+
+/* ============ NAV ============ */
 .nav{display:flex;align-items:center;gap:2rem}
 .nav-link{
   position:relative;font-size:.875rem;font-weight:500;color:var(--ink-soft);
@@ -166,13 +205,13 @@ p{color:var(--ink-soft);line-height:1.7}
 .nav-cta{padding:.7rem 1.4rem;font-size:.8125rem}
 
 /* mobile menu toggle */
-.menu-toggle{display:none;flex-direction:column;gap:5px;width:32px;height:32px;justify-content:center;align-items:center;flex-shrink:0}
-.menu-toggle span{width:22px;height:1.5px;background:var(--ink);transition:all .35s var(--ease-quiet)}
+.menu-toggle{display:none;flex-direction:column;gap:5px;width:32px;height:32px;justify-content:center;align-items:center;flex-shrink:0;cursor:pointer}
+.menu-toggle span{width:22px;height:1.5px;background:var(--ink);transition:all .35s var(--ease-quiet);display:block}
 .menu-toggle.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .menu-toggle.active span:nth-child(2){opacity:0}
 .menu-toggle.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 
-/* mobile lang switcher (inside nav) */
+/* mobile lang switcher */
 .nav-lang-switcher{
   display:none;
   align-items:center;gap:.5rem;
@@ -510,7 +549,6 @@ p{color:var(--ink-soft);line-height:1.7}
   padding-bottom:4rem;border-bottom:1px solid rgba(255,255,255,.08);
 }
 .footer-brand .logo{margin-bottom:1.5rem}
-.footer-brand .logo-name{color:#fff}
 .footer-slogan{
   font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.125rem;
   color:var(--accent);margin-bottom:1rem;font-weight:500;
@@ -622,6 +660,11 @@ p{color:var(--ink-soft);line-height:1.7}
   
   .stats-grid::before,.stats-grid::after{display:none}
   .stats-grid{gap:1.5rem}
+  
+  .logo-name{font-size:1.25rem}
+  .logo-domain{font-size:.75rem}
+  .logo-sub{font-size:.5rem;letter-spacing:.24em}
+  .logo-sub-accent{font-size:.625rem}
 }
 
 @media (max-width:480px){
@@ -630,6 +673,8 @@ p{color:var(--ink-soft);line-height:1.7}
   .utility-bar{font-size:.75rem}
   .utility-left{gap:.75rem}
   .hero-title{font-size:clamp(2rem,9vw,3rem)}
+  .logo-name{font-size:1.125rem}
+  .logo-domain{font-size:.6875rem}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -670,15 +715,9 @@ p{color:var(--ink-soft);line-height:1.7}
 <header class="header" id="header">
   <div class="container header-inner">
     <a href="#" class="logo" aria-label="Invaders Turizm">
-      <svg class="logo-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="18.25" stroke="#E85D2F" stroke-width="1.5"/>
-        <path d="M20 7L22.5 20L20 33L17.5 20L20 7Z" fill="#E85D2F"/>
-        <path d="M7 20L20 22.5L33 20L20 17.5L7 20Z" fill="#E85D2F" opacity="0.45"/>
-        <circle cx="20" cy="20" r="2" fill="#1A1612"/>
-      </svg>
       <span class="logo-text">
-        <span class="logo-name">INVADERS</span>
-        <span class="logo-sub">TURİZM</span>
+        <span class="logo-name">invaders<span class="logo-domain">.com.tr</span></span>
+        <span class="logo-sub">we work hard to stay <span class="logo-sub-accent">first</span></span>
       </span>
     </a>
     <nav class="nav" id="nav">
@@ -1062,15 +1101,9 @@ p{color:var(--ink-soft);line-height:1.7}
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#" class="logo">
-          <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
-            <circle cx="20" cy="20" r="18.25" stroke="#E85D2F" stroke-width="1.5"/>
-            <path d="M20 7L22.5 20L20 33L17.5 20L20 7Z" fill="#E85D2F"/>
-            <path d="M7 20L20 22.5L33 20L20 17.5L7 20Z" fill="#E85D2F" opacity="0.45"/>
-            <circle cx="20" cy="20" r="2" fill="#FAF7F2"/>
-          </svg>
           <span class="logo-text">
-            <span class="logo-name">INVADERS</span>
-            <span class="logo-sub">TURİZM</span>
+            <span class="logo-name">invaders<span class="logo-domain">.com.tr</span></span>
+            <span class="logo-sub">we work hard to stay <span class="logo-sub-accent">first</span></span>
           </span>
         </a>
         <p class="footer-slogan">We work hard to stay first</p>
@@ -1276,7 +1309,6 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
   });
 });
 
-// Load saved language
 try{
   const saved = localStorage.getItem('invaders-lang');
   if(saved && translations[saved]) setLanguage(saved);
@@ -1285,8 +1317,7 @@ try{
 /* ============ HEADER SCROLL ============ */
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
-  const y = window.scrollY;
-  header.classList.toggle('scrolled', y > 20);
+  header.classList.toggle('scrolled', window.scrollY > 20);
 }, { passive: true });
 
 /* ============ MOBILE MENU ============ */
@@ -1299,7 +1330,6 @@ menuToggle.addEventListener('click', () => {
   document.body.style.overflow = open ? 'hidden' : '';
 });
 
-// Close mobile menu when clicking a link (but not lang buttons)
 document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
   link.addEventListener('click', () => {
     nav.classList.remove('open');
@@ -1313,12 +1343,10 @@ document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
 const hero = document.getElementById('hero');
 const heroImg = document.querySelector('.hero-bg img');
 
-// Set line indices for stagger
 document.querySelectorAll('.hero-title .inner').forEach((el, i) => {
   el.style.setProperty('--i', i);
 });
 
-// Hero entrance on load
 window.addEventListener('load', () => {
   setTimeout(() => {
     heroImg.style.transition = 'transform 2.4s var(--ease-emphasis), opacity 2s var(--ease-quiet), filter 2s var(--ease-quiet)';
@@ -1412,11 +1440,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if(target){
       e.preventDefault();
       const headerHeight = header.offsetHeight;
-      const isForm = href === '#contactForm';
-      // For form, scroll so the form top is just below header
-      // For other sections, scroll so section top is just below header
-      const offset = isForm ? headerHeight + 20 : headerHeight + 20;
-      const targetY = target.getBoundingClientRect().top + window.scrollY - offset;
+      const targetY = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
       window.scrollTo({ top: targetY, behavior: 'smooth' });
     }
   });
