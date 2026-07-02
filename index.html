@@ -586,6 +586,55 @@ p{color:var(--ink-soft);line-height:1.7}
 [dir="rtl"] .region-link{flex-direction:row-reverse}
 [dir="rtl"] .btn{flex-direction:row-reverse}
 
+/* ============ MUSIC PLAYER ============ */
+.music-btn{
+  position:fixed;
+  bottom:1.5rem;
+  right:1.5rem;
+  width:48px;height:48px;
+  border-radius:50%;
+  background:rgba(26,22,18,.85);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  z-index:1000;
+  border:1px solid rgba(255,255,255,.12);
+  cursor:pointer;
+  transition:all .35s var(--ease-quiet);
+}
+.music-btn:hover{
+  transform:scale(1.05);
+  background:var(--accent);
+  border-color:var(--accent);
+}
+[dir="rtl"] .music-btn{right:auto;left:1.5rem}
+
+.equalizer{
+  display:flex;gap:3px;align-items:center;justify-content:center;
+  height:18px;width:18px;
+}
+.equalizer .bar{
+  width:2.5px;background:#fff;border-radius:2px;
+  height:4px;transition:height .2s ease;
+}
+.music-btn.playing .equalizer .bar{
+  animation:eq 1s ease-in-out infinite;
+}
+.music-btn.playing .equalizer .bar:nth-child(1){animation-delay:-.2s}
+.music-btn.playing .equalizer .bar:nth-child(2){animation-delay:-.5s}
+.music-btn.playing .equalizer .bar:nth-child(3){animation-delay:-.8s}
+.music-btn.playing .equalizer .bar:nth-child(4){animation-delay:-.3s}
+@keyframes eq{
+  0%,100%{height:4px}
+  50%{height:16px}
+}
+.music-btn.muted .equalizer .bar{animation:none;height:4px}
+.music-btn.muted .equalizer .bar:nth-child(2),
+.music-btn.muted .equalizer .bar:nth-child(3){
+  height:16px;
+}
+
 /* ============ RESPONSIVE ============ */
 @media (max-width:1024px){
   .section{padding:5rem 0}
@@ -665,6 +714,9 @@ p{color:var(--ink-soft);line-height:1.7}
   .logo-domain{font-size:.75rem}
   .logo-sub{font-size:.5rem;letter-spacing:.24em}
   .logo-sub-accent{font-size:.625rem}
+  
+  .music-btn{bottom:1rem;right:1rem;width:42px;height:42px}
+  [dir="rtl"] .music-btn{left:1rem;right:auto}
 }
 
 @media (max-width:480px){
@@ -681,6 +733,7 @@ p{color:var(--ink-soft);line-height:1.7}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .hero-bg img{transform:none!important;opacity:1!important;filter:none!important;animation:none!important}
   .hero-title .line .inner{transform:none!important}
+  .music-btn .equalizer .bar{animation:none!important}
 }
 </style>
 </head>
@@ -799,7 +852,7 @@ p{color:var(--ink-soft);line-height:1.7}
     <div class="about-content" data-stagger>
       <span class="eyebrow" data-i18n="about.eyebrow">HAKKIMIZDA</span>
       <h2 class="section-title" data-i18n="about.title">Premium turizm deneyimi, yerel uzmanlıkla</h2>
-      <p data-i18n="about.p1">Invaders Turizm olarak 2008 yılından bu yana Türkiye'nin dört bir yanında unutulmaz seyahat deneyimleri tasarlıyoruz. Marmaris'in turkuaz sularından Karadeniz'in yemyeşil yaylalarına kadar her destinasyonda yerel uzmanlığımıza güvenebilirsiniz.</p>
+      <p data-i18n="about.p1">İnvaders turizm çatısı altında 18 yıldır, turizm çatısı altında ise 40 yılı aşan bir süredir Türkiye'nin dört bir yanında unutulmaz seyahat deneyimleri planlıyoruz.</p>
       <p data-i18n="about.p2">Ulaşım, konaklama, bilgilendirme ve özel turlar dahil tüm seyahat ihtiyaçlarınız için tek adres. Amacımız; her yolculuğun sıcak, kişisel ve kusursuz olmasıdır.</p>
       <a href="#services" class="text-link">
         <span data-i18n="about.cta">Hizmetlerimize göz atın</span>
@@ -1034,7 +1087,7 @@ p{color:var(--ink-soft);line-height:1.7}
       <div class="contact-info" data-reveal>
         <div class="info-block">
           <h4 data-i18n="contact.address.label">Adres</h4>
-          <p>Cumhuriyet Mah. Halaskargazi Cad. 93<br>Selamet Apt. K:4 D:7 Şişli, İstanbul</p>
+          <p>İnönü Mah. Cumhuriyet Cad. Şakir Paşa Apt. No:59/11 Şişli İstanbul</p>
         </div>
         <div class="info-block">
           <h4 data-i18n="contact.phone.label">Telefon</h4>
@@ -1126,7 +1179,7 @@ p{color:var(--ink-soft);line-height:1.7}
       </div>
       <div class="footer-col">
         <h4 data-i18n="footer.contact">İletişim</h4>
-        <p>Cumhuriyet Mah. Halaskargazi Cad. 93<br>Selamet Apt. K:4 D:7 Şişli, İstanbul</p>
+        <p>İnönü Mah. Cumhuriyet Cad. Şakir Paşa Apt. No:59/11 Şişli İstanbul</p>
         <a href="tel:+902524120000">+90 252 412 00 00</a>
         <a href="mailto:info@invadersturizm.com">info@invadersturizm.com</a>
       </div>
@@ -1145,6 +1198,17 @@ p{color:var(--ink-soft);line-height:1.7}
   </div>
 </footer>
 
+<!-- ============ BACKGROUND MUSIC ============ -->
+<audio id="bgMusic" src="invadersbgmusic.mp3" loop preload="auto"></audio>
+<button id="musicToggle" class="music-btn muted" aria-label="Müzik Aç/Kapa">
+  <span class="equalizer">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </span>
+</button>
+
 <script>
 /* ============ TRANSLATIONS ============ */
 const translations = {
@@ -1154,7 +1218,7 @@ const translations = {
     'hero.eyebrow':'INVADERS TURİZM','hero.subtitle':'Marmaris\'ten Karadeniz\'e uzanan rotalarda, 18 yılı aşkın deneyimimizle ulaşım, konaklama ve rehberlik hizmetlerinde premium standart.','hero.cta1':'Hizmetleri Keşfet','hero.cta2':'İletişime Geç','hero.scroll':'Aşağı kaydır',
     'stats.years':'Yıllık Deneyim','stats.customers':'Mutlu Müşteri','stats.regions':'Bölge',
     'about.eyebrow':'HAKKIMIZDA','about.title':'Premium turizm deneyimi, yerel uzmanlıkla',
-    'about.p1':'Invaders Turizm olarak 2008 yılından bu yana Türkiye\'nin dört bir yanında unutulmaz seyahat deneyimleri tasarlıyoruz. Marmaris\'in turkuaz sularından Karadeniz\'in yemyeşil yaylalarına kadar her destinasyonda yerel uzmanlığımıza güvenebilirsiniz.',
+    'about.p1':'İnvaders turizm çatısı altında 18 yıldır, turizm çatısı altında ise 40 yılı aşan bir süredir Türkiye\'nin dört bir yanında unutulmaz seyahat deneyimleri planlıyoruz.',
     'about.p2':'Ulaşım, konaklama, bilgilendirme ve özel turlar dahil tüm seyahat ihtiyaçlarınız için tek adres. Amacımız; her yolculuğun sıcak, kişisel ve kusursuz olmasıdır.',
     'about.cta':'Hizmetlerimize göz atın',
     'services.eyebrow':'HİZMETLERİMİZ','services.title':'Seyahatinizi başından sonuna tasarlıyoruz',
@@ -1198,7 +1262,7 @@ const translations = {
     'hero.eyebrow':'INVADERS TURİZM','hero.subtitle':'From Marmaris to the Black Sea, premium standards in transportation, accommodation, and guided services — backed by over 18 years of experience.','hero.cta1':'Explore Services','hero.cta2':'Get in Touch','hero.scroll':'Scroll down',
     'stats.years':'Years of Experience','stats.customers':'Happy Customers','stats.regions':'Regions',
     'about.eyebrow':'ABOUT US','about.title':'Premium tourism experience, with local expertise',
-    'about.p1':'At Invaders Turizm, we have been crafting unforgettable travel experiences across Türkiye since 2008. From the turquoise waters of Marmaris to the lush highlands of the Black Sea, our local expertise is yours to rely on in every destination.',
+    'about.p1':'Under the Invaders Tourism umbrella for 18 years, and within the tourism industry for over 40 years, we have been planning unforgettable travel experiences across Türkiye.',
     'about.p2':'A single address for all your travel needs — transportation, accommodation, guidance, and bespoke tours. Our aim is that every journey feels warm, personal, and flawless.',
     'about.cta':'View our services',
     'services.eyebrow':'OUR SERVICES','services.title':'We design your journey from start to finish',
@@ -1242,7 +1306,7 @@ const translations = {
     'hero.eyebrow':'إنفيدرز للسياحة','hero.subtitle':'من مرمرس إلى البحر الأسود، معايير متميزة في النقل والإقامة والإرشاد — مدعومة بأكثر من 18 عامًا من الخبرة.','hero.cta1':'اكتشف خدماتنا','hero.cta2':'تواصل معنا','hero.scroll':'مرر للأسفل',
     'stats.years':'سنوات من الخبرة','stats.customers':'العملاء السعداء','stats.regions':'مناطق',
     'about.eyebrow':'من نحن','about.title':'تجربة سياحة فاخرة مع خبرة محلية',
-    'about.p1':'في إنفيدرز للسياحة، نصمم تجارب سفر لا تُنسى في جميع أنحاء تركيا منذ عام 2008. من مياه مرمرس الفيروزية إلى الهضاب الخصبة للبحر الأسود، يمكنك الاعتماد على خبرتنا المحلية في كل وجهة.',
+    'about.p1':'تحت مظلة إنفيدرز للسياحة لمدة 18 عامًا، وفي قطاع السياحة لأكثر من 40 عامًا، نخطط لتجارب سفر لا تُنسى في جميع أنحاء تركيا.',
     'about.p2':'عنوان واحد لجميع احتياجات سفرك — النقل والإقامة والإرشاد والجولات المخصصة. هدفنا هو أن تكون كل رحلة دافئة وشخصية وخالية من العيوب.',
     'about.cta':'استعرض خدماتنا',
     'services.eyebrow':'خدماتنا','services.title':'نصمم رحلتك من البداية إلى النهاية',
@@ -1445,6 +1509,51 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+/* ============ BACKGROUND MUSIC ============ */
+const bgMusic = document.getElementById('bgMusic');
+const musicToggle = document.getElementById('musicToggle');
+bgMusic.volume = 0.35;
+
+function playMusic() {
+  bgMusic.play().then(() => {
+    musicToggle.classList.add('playing');
+    musicToggle.classList.remove('muted');
+  }).catch(() => {
+    musicToggle.classList.remove('playing');
+    musicToggle.classList.add('muted');
+  });
+}
+
+function pauseMusic() {
+  bgMusic.pause();
+  musicToggle.classList.remove('playing');
+  musicToggle.classList.add('muted');
+}
+
+musicToggle.addEventListener('click', (e) => {
+  e.stopPropagation();
+  if(bgMusic.paused) {
+    playMusic();
+  } else {
+    pauseMusic();
+  }
+});
+
+// Try to autoplay on load (will work if browser allows, otherwise wait for first click)
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    playMusic();
+  }, 500);
+});
+
+// Fallback: start music on first user interaction if autoplay was blocked
+document.addEventListener('click', function startMusicOnFirstClick() {
+  if(bgMusic.paused) {
+    playMusic();
+  }
+  document.removeEventListener('click', startMusicOnFirstClick);
+}, { once: true });
 </script>
 </body>
 </html>
