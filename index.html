@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Invaders Turizm — We Work Hard to Stay First</title>
+<title>Invaders Turizm — Her yolculuk yeni bir fetih.</title>
 <meta name="description" content="Marmaris, Ege, Akdeniz ve Karadeniz'de premium ulaşım, konaklama, rehberlik ve tur hizmetleri. 2008'den bu yana Türkiye'nin güvenilir turizm markası.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,10 +110,11 @@ p{color:var(--ink-soft);line-height:1.7}
   position:relative;z-index:101;
 }
 .utility-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-.utility-left{display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.utility-left{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
 .utility-item{display:inline-flex;align-items:center;gap:.5rem;opacity:.85;transition:opacity .3s}
 .utility-item:hover{opacity:1}
 .utility-item svg{width:14px;height:14px;stroke:var(--accent);flex-shrink:0}
+.utility-phones{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
 .utility-right{display:flex;align-items:center;gap:1.5rem}
 .lang-switcher{display:inline-flex;gap:.25rem;align-items:center}
 .lang-btn{
@@ -342,12 +343,12 @@ p{color:var(--ink-soft);line-height:1.7}
 
 /* ============ SERVICES ============ */
 .services-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;
+  display:grid;grid-template-columns:repeat(5,1fr);gap:1.25rem;
   margin-top:1rem;
 }
 .service-card{
   background:var(--bg);border:1px solid var(--line);
-  padding:2.5rem 2rem;border-radius:4px;
+  padding:2.25rem 1.5rem;border-radius:4px;
   transition:all .4s var(--ease-quiet);
   display:flex;flex-direction:column;
   opacity:0;transform:translateY(28px);
@@ -358,9 +359,10 @@ p{color:var(--ink-soft);line-height:1.7}
   transition:opacity .9s var(--ease-quiet),transform .9s var(--ease-quiet);
 }
 .service-card.in:nth-child(1){transition-delay:0ms}
-.service-card.in:nth-child(2){transition-delay:120ms}
-.service-card.in:nth-child(3){transition-delay:240ms}
-.service-card.in:nth-child(4){transition-delay:360ms}
+.service-card.in:nth-child(2){transition-delay:100ms}
+.service-card.in:nth-child(3){transition-delay:200ms}
+.service-card.in:nth-child(4){transition-delay:300ms}
+.service-card.in:nth-child(5){transition-delay:400ms}
 .service-card:hover{
   background:var(--bg-deep);color:#fff;border-color:var(--bg-deep);
   transform:translateY(-4px);
@@ -371,24 +373,24 @@ p{color:var(--ink-soft);line-height:1.7}
 .service-card:hover .service-list li::before{background:var(--accent)}
 .service-card:hover .service-icon{color:var(--accent)}
 .service-icon{
-  width:48px;height:48px;color:var(--accent);
-  margin-bottom:1.75rem;transition:color .4s var(--ease-quiet);flex-shrink:0;
+  width:44px;height:44px;color:var(--accent);
+  margin-bottom:1.5rem;transition:color .4s var(--ease-quiet);flex-shrink:0;
 }
 .service-icon svg{width:100%;height:100%;stroke-width:1.25}
-.service-title{font-size:1.375rem;margin-bottom:.875rem;color:var(--ink);transition:color .4s}
+.service-title{font-size:1.25rem;margin-bottom:.75rem;color:var(--ink);transition:color .4s}
 .service-card:hover .service-title{color:#fff}
-.service-desc{font-size:.9375rem;margin-bottom:1.5rem;transition:color .4s}
-.service-list{margin-top:auto;padding-top:1rem;border-top:1px solid var(--line)}
+.service-desc{font-size:.875rem;margin-bottom:1.25rem;transition:color .4s;line-height:1.65}
+.service-list{margin-top:auto;padding-top:.875rem;border-top:1px solid var(--line)}
 .service-card:hover .service-list{border-top-color:rgba(255,255,255,.1)}
 .service-list li{
-  position:relative;padding:.4rem 0 .4rem 1.25rem;
-  font-size:.875rem;color:var(--ink-soft);transition:color .4s;
+  position:relative;padding:.35rem 0 .35rem 1.125rem;
+  font-size:.8125rem;color:var(--ink-soft);transition:color .4s;
 }
 .service-list li::before{
   content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);
-  width:6px;height:1px;background:var(--ink-mute);transition:background .4s;
+  width:6px;height:1px;background:var(--ink-mute);transition:background .4px;
 }
-[dir="rtl"] .service-list li{padding-left:0;padding-right:1.25rem}
+[dir="rtl"] .service-list li{padding-left:0;padding-right:1.125rem}
 [dir="rtl"] .service-list li::before{left:auto;right:0}
 
 /* ============ REGIONS ============ */
@@ -501,6 +503,7 @@ p{color:var(--ink-soft);line-height:1.7}
 .info-block p,.info-block a{display:block;color:var(--ink-soft);font-size:.9375rem;line-height:1.7}
 .info-block a{transition:color .3s var(--ease-quiet)}
 .info-block a:hover{color:var(--accent)}
+.info-phones{display:flex;flex-direction:column;gap:.35rem}
 
 .contact-form{
   background:var(--bg-alt);padding:2.5rem;border:1px solid var(--line);
@@ -563,7 +566,7 @@ p{color:var(--ink-soft);line-height:1.7}
   transition:color .3s var(--ease-quiet);
 }
 .footer-col a:hover{color:var(--accent)}
-.footer-col p{font-size:.875rem;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:.5rem}
+.footer-col p{font-size:.875rem;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:.35rem}
 
 .footer-bottom{padding:1.75rem 0}
 .footer-bottom-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;font-size:.8125rem;color:rgba(255,255,255,.5)}
@@ -636,12 +639,15 @@ p{color:var(--ink-soft);line-height:1.7}
 }
 
 /* ============ RESPONSIVE ============ */
+@media (max-width:1200px){
+  .services-grid{grid-template-columns:repeat(3,1fr);gap:1.25rem}
+}
 @media (max-width:1024px){
   .section{padding:5rem 0}
   .about-grid{grid-template-columns:1fr;gap:3rem}
   .about-media-tag{left:1rem;bottom:1rem}
   [dir="rtl"] .about-media-tag{right:1rem;left:auto}
-  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .services-grid{grid-template-columns:repeat(2,1fr);gap:1.25rem}
   .regions-grid{grid-template-columns:1fr}
   .tours-grid{grid-template-columns:repeat(2,1fr)}
   .values-grid{grid-template-columns:repeat(2,1fr);gap:2.5rem 2rem}
@@ -652,13 +658,13 @@ p{color:var(--ink-soft);line-height:1.7}
   .stats-grid::before{left:33.33%}
   .stats-grid::after{left:66.66%}
 }
-
 @media (max-width:768px){
   .container{padding:0 1.25rem}
   .section{padding:4rem 0}
-  .utility-left{gap:1rem}
+  .utility-left{gap:.75rem}
   .utility-right{gap:.75rem}
   .utility-bar .lang-switcher{display:none}
+  .utility-phones{gap:.75rem}
   
   .nav{
     position:fixed;top:0;right:0;width:85%;max-width:340px;height:100vh;
@@ -680,6 +686,9 @@ p{color:var(--ink-soft);line-height:1.7}
   .hero-cta .btn{width:100%}
   
   .services-grid{grid-template-columns:1fr;gap:1rem}
+  .service-card{padding:2rem 1.5rem}
+  .service-title{font-size:1.375rem}
+  .service-desc{font-size:.9375rem}
   .tours-grid{grid-template-columns:1fr}
   .values-grid{grid-template-columns:1fr;gap:2rem}
   .value-item{padding:0}
@@ -718,17 +727,16 @@ p{color:var(--ink-soft);line-height:1.7}
   .music-btn{bottom:1rem;right:1rem;width:42px;height:42px}
   [dir="rtl"] .music-btn{left:1rem;right:auto}
 }
-
 @media (max-width:480px){
   .stat-num{font-size:2rem}
   .logo-sub{display:none}
-  .utility-bar{font-size:.75rem}
-  .utility-left{gap:.75rem}
+  .utility-bar{font-size:.7rem}
+  .utility-left{gap:.5rem}
+  .utility-phones{flex-direction:column;gap:.35rem;align-items:flex-start}
   .hero-title{font-size:clamp(2rem,9vw,3rem)}
   .logo-name{font-size:1.125rem}
   .logo-domain{font-size:.6875rem}
 }
-
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .hero-bg img{transform:none!important;opacity:1!important;filter:none!important;animation:none!important}
@@ -739,14 +747,25 @@ p{color:var(--ink-soft);line-height:1.7}
 </head>
 <body>
 
+<!-- ============ AUDIO (Volume 45%) ============ -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="https://cdn.pixabay.com/audio/2022/10/25/audio_3901b4371a.mp3" type="audio/mpeg">
+</audio>
+
 <!-- ============ UTILITY BAR ============ -->
 <div class="utility-bar">
   <div class="container utility-inner">
     <div class="utility-left">
-      <a href="tel:+902524120000" class="utility-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span>+90 252 412 00 00</span>
-      </a>
+      <div class="utility-phones">
+        <a href="tel:+905316402130" class="utility-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+90 531 640 21 30</span>
+        </a>
+        <a href="tel:+905325934699" class="utility-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+90 532 593 46 99</span>
+        </a>
+      </div>
       <a href="mailto:info@invadersturizm.com" class="utility-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         <span>info@invadersturizm.com</span>
@@ -805,8 +824,8 @@ p{color:var(--ink-soft);line-height:1.7}
     <div class="hero-content">
       <span class="eyebrow eyebrow-light" data-i18n="hero.eyebrow">INVADERS TURİZM</span>
       <h1 class="hero-title">
-        <span class="line"><span class="inner">We work hard</span></span>
-        <span class="line"><span class="inner">to stay <strong class="accent">first.</strong></span></span>
+        <span class="line"><span class="inner" data-i18n="hero.line1">Her yolculuk</span></span>
+        <span class="line"><span class="inner" data-i18n="hero.line2">yeni bir <strong class="accent">fetih.</strong></span></span>
       </h1>
       <p class="hero-subtitle" data-i18n="hero.subtitle">Marmaris'ten Karadeniz'e uzanan rotalarda, 18 yılı aşkın deneyimimizle ulaşım, konaklama ve rehberlik hizmetlerinde premium standart.</p>
       <div class="hero-cta">
@@ -898,27 +917,40 @@ p{color:var(--ink-soft);line-height:1.7}
 
       <article class="service-card">
         <div class="service-icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="18"/><path d="M24 6v36M6 24h36"/><path d="M24 6c-5 5-8 11-8 18s3 13 8 18M24 6c5 5 8 11 8 18s-3 13-8 18"/></svg>
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4l-6 12H6l10 8-4 12 12-8 12 8-4-12 10-8H30z"/></svg>
         </div>
-        <h3 class="service-title" data-i18n="services.s3.title">Bilgilendirme</h3>
-        <p class="service-desc" data-i18n="services.s3.desc">Profesyonel çok dilli rehberlerle kültürel ve tarihi zenginlikleri keşfedin. Yerel uzmanlığımızla gizli kalmış güzellikleri size gösteririz.</p>
+        <h3 class="service-title" data-i18n="services.s3.title">Münferit Rezervasyon</h3>
+        <p class="service-desc" data-i18n="services.s3.desc">Tek bir kişi dahi olsa, size özel rezervasyon imkânı sunuyoruz. Bireysel tercihleriniz doğrultusunda özelleştirilmiş hizmetle yalnızca size ait bir deneyim yaşayın.</p>
         <ul class="service-list">
-          <li data-i18n="services.s3.li1">Çok dilli rehber</li>
-          <li data-i18n="services.s3.li2">Kültürel tur</li>
-          <li data-i18n="services.s3.li3">Tarihi geziler</li>
+          <li data-i18n="services.s3.li1">Tek kişilik rezervasyon</li>
+          <li data-i18n="services.s3.li2">Kişiselleştirilmiş program</li>
+          <li data-i18n="services.s3.li3">Esnek tarih & saat</li>
         </ul>
       </article>
 
       <article class="service-card">
         <div class="service-icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M30 4l-4 8-8 1 6 6-1.5 8L30 23l7.5 4L36 19l6-6-8-1z"/><path d="M8 44l12-12M14 38l-6 6"/></svg>
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="16" r="5"/><circle cx="34" cy="16" r="5"/><path d="M8 38v-4a8 8 0 0 1 8-8h4a8 8 0 0 1 8 8v4"/><path d="M24 26h4a8 8 0 0 1 8 8v4"/><circle cx="12" cy="16" r="3" opacity=".4"/><circle cx="40" cy="16" r="3" opacity=".4"/></svg>
         </div>
-        <h3 class="service-title" data-i18n="services.s4.title">Turlar</h3>
-        <p class="service-desc" data-i18n="services.s4.desc">Günlük turlar, kültür gezileri, doğa yürüyüşleri ve özel etkinlikler. Her ilgi alanına göre özelleştirilmiş programlar.</p>
+        <h3 class="service-title" data-i18n="services.s4.title">Grup Rezervasyon</h3>
+        <p class="service-desc" data-i18n="services.s4.desc">Grupça yapılabilecek aktiviteler, kültürel geziler, doğa yürüyüşleri ve özel etkinliklerle birlikte, toplu rezervasyonlarda avantajlı fiyatlar ve koordineli organizasyon sunuyoruz.</p>
         <ul class="service-list">
-          <li data-i18n="services.s4.li1">Günlük tur</li>
-          <li data-i18n="services.s4.li2">Kültür gezisi</li>
-          <li data-i18n="services.s4.li3">Doğa & macera</li>
+          <li data-i18n="services.s4.li1">Grup aktiviteleri</li>
+          <li data-i18n="services.s4.li2">Kültürel & doğa gezileri</li>
+          <li data-i18n="services.s4.li3">Avantajlı toplu fiyat</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="10" width="36" height="24" rx="2"/><path d="M6 18h36"/><path d="M18 34v4M30 34v4"/><path d="M14 38h20"/><circle cx="14" cy="26" r="2"/><circle cx="24" cy="26" r="2"/><circle cx="34" cy="26" r="2"/></svg>
+        </div>
+        <h3 class="service-title" data-i18n="services.s5.title">İş Toplantıları</h3>
+        <p class="service-desc" data-i18n="services.s5.desc">İş toplantılarında ofislerinizde misafirlerinizi profesyonel şekilde ağırlamanız için VIP transfer, araç kiralama ve grup ulaşım çözümleri sunuyoruz.</p>
+        <ul class="service-list">
+          <li data-i18n="services.s5.li1">VIP transfer</li>
+          <li data-i18n="services.s5.li2">Araç kiralama</li>
+          <li data-i18n="services.s5.li3">Grup ulaşımı</li>
         </ul>
       </article>
     </div>
@@ -1076,484 +1108,698 @@ p{color:var(--ink-soft);line-height:1.7}
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section class="contact section" id="contact">
-  <div class="container">
-    <div class="section-head" data-reveal>
-      <span class="eyebrow" data-i18n="contact.eyebrow">İLETİŞİM</span>
-      <h2 class="section-title" data-i18n="contact.title">Bizimle konuşun, gerisini biz hallederiz</h2>
-      <p style="margin-top:1.25rem;max-width:580px" data-i18n="contact.subtitle">Seyahat planınızı konuşmak, fiyat teklifi almak veya rezervasyon yapmak için aşağıdaki formu doldurun.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info" data-reveal>
-        <div class="info-block">
-          <h4 data-i18n="contact.address.label">Adres</h4>
-          <p>İnönü Mah. Cumhuriyet Cad. Şakir Paşa Apt. No:59/11 Şişli İstanbul</p>
+<section class="contact" id="contactForm">
+  <div class="container contact-grid">
+    <div class="contact-info" data-reveal>
+      <div class="info-block">
+        <h4 data-i18n="contact.phones-title">İletişim Bilgileri</h4>
+        <div class="info-phones">
+          <a href="tel:+905316402130">+90 531 640 21 30</a>
+          <a href="tel:+905325934699">+90 532 593 46 99</a>
         </div>
-        <div class="info-block">
-          <h4 data-i18n="contact.phone.label">Telefon</h4>
-          <a href="tel:+902524120000">+90 252 412 00 00</a>
-          <a href="tel:+905551234567">+90 555 123 45 67</a>
-        </div>
-        <div class="info-block">
-          <h4 data-i18n="contact.email.label">E-posta</h4>
-          <a href="mailto:info@invadersturizm.com">info@invadersturizm.com</a>
-        </div>
-        <div class="info-block">
-          <h4 data-i18n="contact.hours.label">Çalışma Saatleri</h4>
-          <p data-i18n="contact.hours.value">7 gün 24 saat</p>
-        </div>
+        <a href="mailto:info@invadersturizm.com" style="margin-top:.5rem">info@invadersturizm.com</a>
       </div>
-
-      <form class="contact-form" id="contactForm" novalidate>
+      <div class="info-block">
+        <h4 data-i18n="contact.address-title">Adres</h4>
+        <p data-i18n="contact.address">Marmaris, Muğla, Türkiye</p>
+      </div>
+      <div class="info-block">
+        <h4 data-i18n="contact.hours-title">Çalışma Saatleri</h4>
+        <p data-i18n="contact.hours1">Pazartesi – Pazar: 07:00 – 23:00</p>
+        <p data-i18n="contact.hours2">7/24 acil destek hattı aktif</p>
+      </div>
+    </div>
+    <div class="contact-form" data-reveal>
+      <form id="contactFormEl">
         <div class="form-row">
           <div class="form-field">
-            <label for="name" data-i18n="form.name">Ad Soyad</label>
-            <input type="text" id="name" name="name" required data-i18n-placeholder="form.name.ph" placeholder="Adınız ve soyadınız">
+            <label for="fname" data-i18n="form.name">Adınız</label>
+            <input type="text" id="fname" name="name" placeholder="Adınızı yazın" required>
           </div>
           <div class="form-field">
-            <label for="email" data-i18n="form.email">E-posta</label>
-            <input type="email" id="email" name="email" required data-i18n-placeholder="form.email.ph" placeholder="ornek@email.com">
+            <label for="fsurname" data-i18n="form.surname">Soyadınız</label>
+            <input type="text" id="fsurname" name="surname" placeholder="Soyadınızı yazın" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-field">
-            <label for="phone" data-i18n="form.phone">Telefon</label>
-            <input type="tel" id="phone" name="phone" data-i18n-placeholder="form.phone.ph" placeholder="+90 5xx xxx xx xx">
+            <label for="femail" data-i18n="form.email">E-posta</label>
+            <input type="email" id="femail" name="email" placeholder="E-posta adresiniz" required>
           </div>
           <div class="form-field">
-            <label for="subject" data-i18n="form.subject">Konu</label>
-            <select id="subject" name="subject">
-              <option data-i18n="form.subject.s1">Ulaşım Hizmeti</option>
-              <option data-i18n="form.subject.s2">Konaklama Rezervasyonu</option>
-              <option data-i18n="form.subject.s3">Tur Rezervasyonu</option>
-              <option data-i18n="form.subject.s4">Bilgi Almak İstiyorum</option>
-            </select>
+            <label for="fphone" data-i18n="form.phone">Telefon</label>
+            <input type="tel" id="fphone" name="phone" placeholder="+90 ">
           </div>
         </div>
         <div class="form-field">
-          <label for="message" data-i18n="form.message">Mesajınız</label>
-          <textarea id="message" name="message" rows="5" required data-i18n-placeholder="form.message.ph" placeholder="Bize nasıl yardımcı olabiliriz?"></textarea>
+          <label for="fservice" data-i18n="form.service">Hizmet Seçiniz</label>
+          <select id="fservice" name="service" required>
+            <option value="" disabled selected data-i18n="form.service_placeholder">Hizmet türü seçin</option>
+            <option value="ulasim" data-i18n="form.opt_ulasim">Ulaşım</option>
+            <option value="konaklama" data-i18n="form.opt_konaklama">Konaklama</option>
+            <option value="munferit" data-i18n="form.opt_munferit">Münferit Rezervasyon</option>
+            <option value="grup" data-i18n="form.opt_grup">Grup Rezervasyon</option>
+            <option value="is-toplantilari" data-i18n="form.opt_is">İş Toplantıları</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="fmessage" data-i18n="form.message">Mesajınız</label>
+          <textarea id="fmessage" name="message" placeholder="İhtiyaçlarınızı kısaca açıklayın…" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary form-submit" data-i18n="form.submit">Mesaj Gönder</button>
-
-        <div class="form-success" id="formSuccess">
-          <div class="success-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <h3 class="success-title" data-i18n="form.success.title">Teşekkürler</h3>
-          <p class="success-msg" data-i18n="form.success.msg">Mesajınız alındı. En kısa sürede size geri döneceğiz.</p>
-        </div>
       </form>
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 class="success-title" data-i18n="form.success_title">Mesajınız Alındı</h3>
+        <p class="success-msg" data-i18n="form.success_msg">En kısa sürede sizinle iletişime geçeceğiz. Teşekkür ederiz.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="#" class="logo">
-          <span class="logo-text">
-            <span class="logo-name">invaders<span class="logo-domain">.com.tr</span></span>
-            <span class="logo-sub">we work hard to stay <span class="logo-sub-accent">first</span></span>
-          </span>
-        </a>
-        <p class="footer-slogan">We work hard to stay first</p>
-        <p class="footer-desc" data-i18n="footer.desc">2008'den bu yana Türkiye'nin premium turizm markası. Ulaşım, konaklama ve rehberlik hizmetlerinde güvenilir adres.</p>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="footer.links">Hızlı Erişim</h4>
-        <a href="#about" data-i18n="nav.about">Hakkımızda</a>
-        <a href="#services" data-i18n="nav.services">Hizmetler</a>
-        <a href="#regions" data-i18n="nav.regions">Bölgeler</a>
-        <a href="#tours" data-i18n="nav.tours">Turlar</a>
-        <a href="#contactForm" data-i18n="nav.contact">İletişim</a>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="footer.services">Hizmetler</h4>
-        <a href="#services" data-i18n="services.s1.title">Ulaşım</a>
-        <a href="#services" data-i18n="services.s2.title">Konaklama</a>
-        <a href="#services" data-i18n="services.s3.title">Bilgilendirme</a>
-        <a href="#services" data-i18n="services.s4.title">Turlar</a>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="footer.contact">İletişim</h4>
-        <p>İnönü Mah. Cumhuriyet Cad. Şakir Paşa Apt. No:59/11 Şişli İstanbul</p>
-        <a href="tel:+902524120000">+90 252 412 00 00</a>
-        <a href="mailto:info@invadersturizm.com">info@invadersturizm.com</a>
-      </div>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo" aria-label="Invaders Turizm">
+        <span class="logo-text">
+          <span class="logo-name">invaders<span class="logo-domain">.com.tr</span></span>
+          <span class="logo-sub">we work hard to stay <span class="logo-sub-accent">first</span></span>
+        </span>
+      </a>
+      <p class="footer-slogan" data-i18n="footer.slogan">"Her yolculuk yeni bir fetih."</p>
+      <p class="footer-desc" data-i18n="footer.desc">2008'den bu yana Marmaris, Ege, Akdeniz ve Karadeniz'de premium turizm hizmetleri sunuyoruz.</p>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-bottom-inner">
-        <span>© 2008 Invaders Turizm. <span data-i18n="footer.rights">Tüm hakları saklıdır.</span></span>
-        <div class="footer-socials">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="Facebook">FB</a>
-          <a href="#" aria-label="Twitter">TW</a>
-          <a href="#" aria-label="YouTube">YT</a>
-        </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.services_title">Hizmetler</h4>
+      <a href="#services" data-i18n="services.s1.title">Ulaşım</a>
+      <a href="#services" data-i18n="services.s2.title">Konaklama</a>
+      <a href="#services" data-i18n="services.s3.title">Münferit Rezervasyon</a>
+      <a href="#services" data-i18n="services.s4.title">Grup Rezervasyon</a>
+      <a href="#services" data-i18n="services.s5.title">İş Toplantıları</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.regions_title">Bölgeler</h4>
+      <a href="#regions" data-i18n="regions.r1.name">Marmaris</a>
+      <a href="#regions" data-i18n="regions.r2.name">Ege</a>
+      <a href="#regions" data-i18n="regions.r3.name">Akdeniz</a>
+      <a href="#regions" data-i18n="regions.r4.name">Karadeniz</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.contact_title">İletişim</h4>
+      <p>+90 531 640 21 30</p>
+      <p>+90 532 593 46 99</p>
+      <p>info@invadersturizm.com</p>
+      <p data-i18n="contact.address">Marmaris, Muğla, Türkiye</p>
+      <p style="margin-top:.75rem;font-size:.8125rem;color:rgba(255,255,255,.45)" data-i18n="contact.hours1">Pzt – Pazar: 07:00 – 23:00</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <span>© 2025 Invaders Turizm. <span data-i18n="footer.copyright">Tüm hakları saklıdır.</span></span>
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="WhatsApp">WA</a>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- ============ BACKGROUND MUSIC ============ -->
-<audio id="bgMusic" src="invadersbgmusic.mp3" loop preload="auto"></audio>
-<button id="musicToggle" class="music-btn muted" aria-label="Müzik Aç/Kapa">
-  <span class="equalizer">
+<!-- ============ MUSIC BUTTON ============ -->
+<button class="music-btn" id="musicBtn" aria-label="Müzik aç/kapat">
+  <div class="equalizer">
     <span class="bar"></span>
     <span class="bar"></span>
     <span class="bar"></span>
     <span class="bar"></span>
-  </span>
+  </div>
 </button>
 
 <script>
-/* ============ TRANSLATIONS ============ */
-const translations = {
-  tr: {
-    'nav.home':'Anasayfa','nav.about':'Hakkımızda','nav.services':'Hizmetler','nav.regions':'Bölgeler','nav.tours':'Turlar','nav.contact':'İletişim',
-    'cta.contact':'İletişime Geç',
-    'hero.eyebrow':'INVADERS TURİZM','hero.subtitle':'Marmaris\'ten Karadeniz\'e uzanan rotalarda, 18 yılı aşkın deneyimimizle ulaşım, konaklama ve rehberlik hizmetlerinde premium standart.','hero.cta1':'Hizmetleri Keşfet','hero.cta2':'İletişime Geç','hero.scroll':'Aşağı kaydır',
-    'stats.years':'Yıllık Deneyim','stats.customers':'Mutlu Müşteri','stats.regions':'Bölge',
-    'about.eyebrow':'HAKKIMIZDA','about.title':'Premium turizm deneyimi, yerel uzmanlıkla',
-    'about.p1':'İnvaders turizm çatısı altında 18 yıldır, turizm çatısı altında ise 40 yılı aşan bir süredir Türkiye\'nin dört bir yanında unutulmaz seyahat deneyimleri planlıyoruz.',
-    'about.p2':'Ulaşım, konaklama, bilgilendirme ve özel turlar dahil tüm seyahat ihtiyaçlarınız için tek adres. Amacımız; her yolculuğun sıcak, kişisel ve kusursuz olmasıdır.',
-    'about.cta':'Hizmetlerimize göz atın',
-    'services.eyebrow':'HİZMETLERİMİZ','services.title':'Seyahatinizi başından sonuna tasarlıyoruz',
-    'services.s1.title':'Ulaşım','services.s1.desc':'VIP araç kiralama, özel transferler ve grup ulaşımı. Son model, klimalı filomuzla her destinasyonda konforlu yolculuk.',
-    'services.s1.li1':'VIP transfer','services.s1.li2':'Araç kiralama','services.s1.li3':'Grup ulaşımı',
-    'services.s2.title':'Konaklama','services.s2.desc':'Butik otellerden lüks tatil köylerine, dağ evlerinden pansiyonlara kadar her bütçeye özel konaklama seçenekleri.',
-    'services.s2.li1':'Butik otel','services.s2.li2':'Lüks tatil köyü','services.s2.li3':'Dağ evi & villa',
-    'services.s3.title':'Bilgilendirme','services.s3.desc':'Profesyonel çok dilli rehberlerle kültürel ve tarihi zenginlikleri keşfedin. Yerel uzmanlığımızla gizli kalmış güzellikleri size gösteririz.',
-    'services.s3.li1':'Çok dilli rehber','services.s3.li2':'Kültürel tur','services.s3.li3':'Tarihi geziler',
-    'services.s4.title':'Turlar','services.s4.desc':'Günlük turlar, kültür gezileri, doğa yürüyüşleri ve özel etkinlikler. Her ilgi alanına göre özelleştirilmiş programlar.',
-    'services.s4.li1':'Günlük tur','services.s4.li2':'Kültür gezisi','services.s4.li3':'Doğa & macera',
-    'regions.eyebrow':'HİZMET BÖLGELERİMİZ','regions.title':'Dört cennet, tek adres',
-    'regions.r1.name':'Marmaris','regions.r1.desc':'Turkuaz suların, çam ormanlarının ve canlı marinanın buluştuğu Ege\'nin incisi.',
-    'regions.r2.name':'Ege','regions.r2.desc':'Antik medeniyetlerin izlerini taşıyan, zeytin kokulu, berrak suların diyarı.',
-    'regions.r3.name':'Akdeniz','regions.r3.desc':'Sıcak kumlar, tarihi limanlar ve Toros dağlarının muhteşem manzaraları.',
-    'regions.r4.name':'Karadeniz','regions.r4.desc':'Yemyeşil yaylalar, sisli dağlar ve yöresel lezzetlerin büyüleyici diyarı.',
-    'regions.explore':'Keşfet',
-    'tours.eyebrow':'ÖNE ÇIKAN TURLAR','tours.title':'Özelleştirilmiş paketlerle tanışın','tours.info':'Bilgi Al',
-    'tours.t1.title':'Marmaris Tekne Turu','tours.t1.duration':'Tam gün','tours.t1.desc':'Marmaris koylarını ve gizli plajları keşfedin. Öğle yemeği ve içecekler dahil.',
-    'tours.t2.title':'Ege Kültür Turu','tours.t2.duration':'3 gün','tours.t2.desc':'Efes, Pamukkale ve Sardes antik kentlerini ziyaret edin. Konaklama dahil.',
-    'tours.t3.title':'Karadeniz Yayla Turu','tours.t3.duration':'4 gün','tours.t3.desc':'Ayder, Uzungöl ve Haldizen yaylalarını keşfedin. Doğa yürüyüşleri dahil.',
-    'values.v1.title':'7/24 Destek','values.v1.desc':'Seyahatinizin her anında yanınızdayız.',
-    'values.v2.title':'Lisanslı Rehberler','values.v2.desc':'T.C. Kültür Bakanlığı onaylı profesyonel ekip.',
-    'values.v3.title':'Premium Filo','values.v3.desc':'Son model, klimalı, konforlu araç filosu.',
-    'values.v4.title':'Güvenli Ödeme','values.v4.desc':'SSL korumalı, şeffaf fiyatlandırma garantisi.',
-    'contact.eyebrow':'İLETİŞİM','contact.title':'Bizimle konuşun, gerisini biz hallederiz',
-    'contact.subtitle':'Seyahat planınızı konuşmak, fiyat teklifi almak veya rezervasyon yapmak için aşağıdaki formu doldurun.',
-    'contact.address.label':'Adres','contact.phone.label':'Telefon','contact.email.label':'E-posta','contact.hours.label':'Çalışma Saatleri','contact.hours.value':'7 gün 24 saat',
-    'form.name':'Ad Soyad','form.name.ph':'Adınız ve soyadınız',
-    'form.email':'E-posta','form.email.ph':'ornek@email.com',
-    'form.phone':'Telefon','form.phone.ph':'+90 5xx xxx xx xx',
-    'form.subject':'Konu','form.subject.s1':'Ulaşım Hizmeti','form.subject.s2':'Konaklama Rezervasyonu','form.subject.s3':'Tur Rezervasyonu','form.subject.s4':'Bilgi Almak İstiyorum',
-    'form.message':'Mesajınız','form.message.ph':'Bize nasıl yardımcı olabiliriz?',
-    'form.submit':'Mesaj Gönder','form.success.title':'Teşekkürler','form.success.msg':'Mesajınız alındı. En kısa sürede size geri döneceğiz.',
-    'footer.desc':'2008\'den bu yana Türkiye\'nin premium turizm markası. Ulaşım, konaklama ve rehberlik hizmetlerinde güvenilir adres.',
-    'footer.links':'Hızlı Erişim','footer.services':'Hizmetler','footer.contact':'İletişim','footer.rights':'Tüm hakları saklıdır.'
-  },
-  en: {
-    'nav.home':'Home','nav.about':'About','nav.services':'Services','nav.regions':'Regions','nav.tours':'Tours','nav.contact':'Contact',
-    'cta.contact':'Get in Touch',
-    'hero.eyebrow':'INVADERS TURİZM','hero.subtitle':'From Marmaris to the Black Sea, premium standards in transportation, accommodation, and guided services — backed by over 18 years of experience.','hero.cta1':'Explore Services','hero.cta2':'Get in Touch','hero.scroll':'Scroll down',
-    'stats.years':'Years of Experience','stats.customers':'Happy Customers','stats.regions':'Regions',
-    'about.eyebrow':'ABOUT US','about.title':'Premium tourism experience, with local expertise',
-    'about.p1':'Under the Invaders Tourism umbrella for 18 years, and within the tourism industry for over 40 years, we have been planning unforgettable travel experiences across Türkiye.',
-    'about.p2':'A single address for all your travel needs — transportation, accommodation, guidance, and bespoke tours. Our aim is that every journey feels warm, personal, and flawless.',
-    'about.cta':'View our services',
-    'services.eyebrow':'OUR SERVICES','services.title':'We design your journey from start to finish',
-    'services.s1.title':'Transportation','services.s1.desc':'VIP car rental, private transfers, and group transportation. Comfortable journeys in every destination with our modern, air-conditioned fleet.',
-    'services.s1.li1':'VIP transfer','services.s1.li2':'Car rental','services.s1.li3':'Group transport',
-    'services.s2.title':'Accommodation','services.s2.desc':'From boutique hotels to luxury resorts, mountain chalets to pensions — accommodation options tailored to every budget and taste.',
-    'services.s2.li1':'Boutique hotel','services.s2.li2':'Luxury resort','services.s2.li3':'Chalet & villa',
-    'services.s3.title':'Guidance','services.s3.desc':'Discover cultural and historical riches with professional multilingual guides. With our local expertise, we show you the hidden beauties.',
-    'services.s3.li1':'Multilingual guide','services.s3.li2':'Cultural tour','services.s3.li3':'Historical visits',
-    'services.s4.title':'Tours','services.s4.desc':'Daily tours, cultural excursions, nature hikes, and special events. Customized programs for every interest.',
-    'services.s4.li1':'Daily tour','services.s4.li2':'Cultural trip','services.s4.li3':'Nature & adventure',
-    'regions.eyebrow':'OUR REGIONS','regions.title':'Four paradises, one address',
-    'regions.r1.name':'Marmaris','regions.r1.desc':'The pearl of the Aegean, where turquoise waters meet pine forests and a vibrant marina.',
-    'regions.r2.name':'Aegean','regions.r2.desc':'Land of olive groves, crystalline waters, and the traces of ancient civilizations.',
-    'regions.r3.name':'Mediterranean','regions.r3.desc':'Warm sands, historic harbors, and the magnificent backdrop of the Taurus Mountains.',
-    'regions.r4.name':'Black Sea','regions.r4.desc':'Lush highlands, misty mountains, and the enchanting world of regional flavors.',
-    'regions.explore':'Explore',
-    'tours.eyebrow':'FEATURED TOURS','tours.title':'Discover our curated packages','tours.info':'Get Info',
-    'tours.t1.title':'Marmaris Boat Tour','tours.t1.duration':'Full day','tours.t1.desc':'Discover Marmaris coves and hidden beaches. Lunch and drinks included.',
-    'tours.t2.title':'Aegean Culture Tour','tours.t2.duration':'3 days','tours.t2.desc':'Visit Ephesus, Pamukkale, and the ancient city of Sardes. Accommodation included.',
-    'tours.t3.title':'Black Sea Highland Tour','tours.t3.duration':'4 days','tours.t3.desc':'Explore Ayder, Uzungöl, and Haldizen highlands. Nature hikes included.',
-    'values.v1.title':'24/7 Support','values.v1.desc':'We are with you at every moment of your journey.',
-    'values.v2.title':'Licensed Guides','values.v2.desc':'Professional team certified by the Ministry of Culture.',
-    'values.v3.title':'Premium Fleet','values.v3.desc':'Modern, air-conditioned, comfortable vehicle fleet.',
-    'values.v4.title':'Secure Payment','values.v4.desc':'SSL protected, transparent pricing guarantee.',
-    'contact.eyebrow':'CONTACT','contact.title':'Talk to us — we\'ll handle the rest',
-    'contact.subtitle':'Fill out the form below to discuss your travel plans, request a quote, or make a reservation.',
-    'contact.address.label':'Address','contact.phone.label':'Phone','contact.email.label':'Email','contact.hours.label':'Working Hours','contact.hours.value':'24/7, 7 days a week',
-    'form.name':'Full Name','form.name.ph':'Your full name',
-    'form.email':'Email','form.email.ph':'example@email.com',
-    'form.phone':'Phone','form.phone.ph':'+90 5xx xxx xx xx',
-    'form.subject':'Subject','form.subject.s1':'Transportation Service','form.subject.s2':'Accommodation Booking','form.subject.s3':'Tour Reservation','form.subject.s4':'General Inquiry',
-    'form.message':'Your Message','form.message.ph':'How can we help you?',
-    'form.submit':'Send Message','form.success.title':'Thank you','form.success.msg':'Your message has been received. We\'ll get back to you shortly.',
-    'footer.desc':'Türkiye\'s premium tourism brand since 2008. Your trusted address for transportation, accommodation, and guided services.',
-    'footer.links':'Quick Links','footer.services':'Services','footer.contact':'Contact','footer.rights':'All rights reserved.'
-  },
-  ar: {
-    'nav.home':'الرئيسية','nav.about':'من نحن','nav.services':'خدماتنا','nav.regions':'المناطق','nav.tours':'الجولات','nav.contact':'اتصل بنا',
-    'cta.contact':'تواصل معنا',
-    'hero.eyebrow':'إنفيدرز للسياحة','hero.subtitle':'من مرمرس إلى البحر الأسود، معايير متميزة في النقل والإقامة والإرشاد — مدعومة بأكثر من 18 عامًا من الخبرة.','hero.cta1':'اكتشف خدماتنا','hero.cta2':'تواصل معنا','hero.scroll':'مرر للأسفل',
-    'stats.years':'سنوات من الخبرة','stats.customers':'العملاء السعداء','stats.regions':'مناطق',
-    'about.eyebrow':'من نحن','about.title':'تجربة سياحة فاخرة مع خبرة محلية',
-    'about.p1':'تحت مظلة إنفيدرز للسياحة لمدة 18 عامًا، وفي قطاع السياحة لأكثر من 40 عامًا، نخطط لتجارب سفر لا تُنسى في جميع أنحاء تركيا.',
-    'about.p2':'عنوان واحد لجميع احتياجات سفرك — النقل والإقامة والإرشاد والجولات المخصصة. هدفنا هو أن تكون كل رحلة دافئة وشخصية وخالية من العيوب.',
-    'about.cta':'استعرض خدماتنا',
-    'services.eyebrow':'خدماتنا','services.title':'نصمم رحلتك من البداية إلى النهاية',
-    'services.s1.title':'النقل','services.s1.desc':'تأجير سيارات VIP، النقل الخاص، ونقل المجموعات. رحلات مريحة في كل وجهة بأسطولنا الحديث المكيّف.',
-    'services.s1.li1':'نقل VIP','services.s1.li2':'تأجير سيارات','services.s1.li3':'نقل المجموعات',
-    'services.s2.title':'الإقامة','services.s2.desc':'من الفنادق البوتيك إلى المنتجعات الفاخرة، ومن الشاليهات الجبلية إلى البيوت الريفية — خيارات إقامة تناسب كل ميزانية وذوق.',
-    'services.s2.li1':'فندق بوتيك','services.s2.li2':'منتجع فاخر','services.s2.li3':'شاليه وفيلا',
-    'services.s3.title':'الإرشاد','services.s3.desc':'اكتشف الكنوز الثقافية والتاريخية مع مرشدين محترفين متعددي اللغات. بخبرتنا المحلية، نريك الجمال الخفي.',
-    'services.s3.li1':'مرشد متعدد اللغات','services.s3.li2':'جولة ثقافية','services.s3.li3':'زيارات تاريخية',
-    'services.s4.title':'الجولات','services.s4.desc':'جولات يومية، رحلات ثقافية، مسارات طبيعية، ومناسبات خاصة. برامج مخصصة لكل اهتمام.',
-    'services.s4.li1':'جولة يومية','services.s4.li2':'رحلة ثقافية','services.s4.li3':'طبيعة ومغامرة',
-    'regions.eyebrow':'مناطق خدمتنا','regions.title':'أربع جنان، عنوان واحد',
-    'regions.r1.name':'مرمرس','regions.r1.desc':'لؤلؤة بحر إيجه، حيث تلتقي المياه الفيروزية بغابات الصنوبر والميناء النابض بالحياة.',
-    'regions.r2.name':'بحر إيجة','regions.r2.desc':'أرض بساتين الزيتون والمياه الصافية وآثار الحضارات القديمة.',
-    'regions.r3.name':'البحر الأبيض المتوسط','regions.r3.desc':'رمال دافئة وموانئ تاريخية وخلفية رائعة لجبال طوروس.',
-    'regions.r4.name':'البحر الأسود','regions.r4.desc':'هضاب خضراء وجبال ضبابية وعالم ساحر من النكهات الإقليمية.',
-    'regions.explore':'استكشف',
-    'tours.eyebrow':'جولات مميزة','tours.title':'اكتشف باقاتنا المخصصة','tours.info':'احصل على معلومات',
-    'tours.t1.title':'جولة قارب مرمرس','tours.t1.duration':'يوم كامل','tours.t1.desc':'اكتشف خلجان مرمرس والشواطئ المخفية. الغداء والمشروبات مشمولة.',
-    'tours.t2.title':'جولة ثقافة إيجة','tours.t2.duration':'3 أيام','tours.t2.desc':'قم بزيارة أفسس وباموكالي ومدينة ساردس القديمة. الإقامة مشمولة.',
-    'tours.t3.title':'جولة هضاب البحر الأسود','tours.t3.duration':'4 أيام','tours.t3.desc':'استكشف هضاب آيدر وأوزونغول وهالديزين. مسارات المشي الطبيعية مشمولة.',
-    'values.v1.title':'دعم على مدار الساعة','values.v1.desc':'نحن معك في كل لحظة من رحلتك.',
-    'values.v2.title':'مرشدون مرخصون','values.v2.desc':'فريق محترف معتمد من وزارة الثقافة التركية.',
-    'values.v3.title':'أسطول متميز','values.v3.desc':'أسطول سيارات حديث ومكيّف ومريح.',
-    'values.v4.title':'دفع آمن','values.v4.desc':'حماية SSL وضمان تسعير شفاف.',
-    'contact.eyebrow':'اتصل بنا','contact.title':'تحدث إلينا — نحن نتولى الباقي',
-    'contact.subtitle':'املأ النموذج أدناه لمناقشة خطط سفرك أو طلب عرض سعر أو إجراء حجز.',
-    'contact.address.label':'العنوان','contact.phone.label':'الهاتف','contact.email.label':'البريد الإلكتروني','contact.hours.label':'ساعات العمل','contact.hours.value':'على مدار الساعة، 7 أيام في الأسبوع',
-    'form.name':'الاسم الكامل','form.name.ph':'اسمك الكامل',
-    'form.email':'البريد الإلكتروني','form.email.ph':'example@email.com',
-    'form.phone':'الهاتف','form.phone.ph':'+90 5xx xxx xx xx',
-    'form.subject':'الموضوع','form.subject.s1':'خدمة النقل','form.subject.s2':'حجز الإقامة','form.subject.s3':'حجز الجولة','form.subject.s4':'استفسار عام',
-    'form.message':'رسالتك','form.message.ph':'كيف يمكننا مساعدتك؟',
-    'form.submit':'إرسال الرسالة','form.success.title':'شكراً لك','form.success.msg':'تم استلام رسالتك. سنعود إليك في أقرب وقت ممكن.',
-    'footer.desc':'العلامة التجارية التركية للسياحة الفاخرة منذ عام 2008. عنوانك الموثوق للنقل والإقامة والإرشاد.',
-    'footer.links':'روابط سريعة','footer.services':'الخدمات','footer.contact':'اتصل بنا','footer.rights':'جميع الحقوق محفوظة.'
-  }
-};
+(function(){
+  'use strict';
 
-/* ============ LANGUAGE SWITCHER ============ */
-function setLanguage(lang){
-  const dict = translations[lang];
-  if(!dict) return;
-  document.documentElement.lang = lang;
-  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.dataset.i18n;
-    if(dict[key]) el.textContent = dict[key];
-  });
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-    const key = el.dataset.i18nPlaceholder;
-    if(dict[key]) el.placeholder = dict[key];
-  });
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.lang === lang);
-  });
-  try{ localStorage.setItem('invaders-lang', lang); }catch(e){}
-}
-
-document.querySelectorAll('.lang-btn').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    setLanguage(btn.dataset.lang);
-  });
-});
-
-try{
-  const saved = localStorage.getItem('invaders-lang');
-  if(saved && translations[saved]) setLanguage(saved);
-}catch(e){}
-
-/* ============ HEADER SCROLL ============ */
-const header = document.getElementById('header');
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 20);
-}, { passive: true });
-
-/* ============ MOBILE MENU ============ */
-const menuToggle = document.getElementById('menuToggle');
-const nav = document.getElementById('nav');
-menuToggle.addEventListener('click', () => {
-  const open = nav.classList.toggle('open');
-  menuToggle.classList.toggle('active', open);
-  menuToggle.setAttribute('aria-expanded', open);
-  document.body.style.overflow = open ? 'hidden' : '';
-});
-
-document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('open');
-    menuToggle.classList.remove('active');
-    menuToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  });
-});
-
-/* ============ HERO ANIMATION ============ */
-const hero = document.getElementById('hero');
-const heroImg = document.querySelector('.hero-bg img');
-
-document.querySelectorAll('.hero-title .inner').forEach((el, i) => {
-  el.style.setProperty('--i', i);
-});
-
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    heroImg.style.transition = 'transform 2.4s var(--ease-emphasis), opacity 2s var(--ease-quiet), filter 2s var(--ease-quiet)';
-    heroImg.style.transform = 'scale(1.05)';
-    heroImg.style.opacity = '1';
-    heroImg.style.filter = 'blur(0px)';
-    hero.classList.add('in');
-    setTimeout(() => {
-      heroImg.classList.add('kenburns-active');
-      heroImg.style.transition = '';
-    }, 2400);
-  }, 100);
-});
-
-/* ============ INTERSECTION OBSERVER REVEAL ============ */
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('in');
-      revealObserver.unobserve(entry.target);
+  /* ============ i18n TRANSLATIONS ============ */
+  var translations = {
+    tr: {
+      'hero.line1': 'Her yolculuk',
+      'hero.line2': 'yeni bir <strong class="accent">fetih.</strong>',
+      'hero.eyebrow': 'INVADERS TURİZM',
+      'hero.subtitle': 'Marmaris\'ten Karadeniz\'e uzanan rotalarda, 18 yılı aşkın deneyimimizle ulaşım, konaklama ve rehberlik hizmetlerinde premium standart.',
+      'hero.cta1': 'Hizmetleri Keşfet',
+      'hero.cta2': 'İletişime Geç',
+      'hero.scroll': 'Aşağı kaydır',
+      'nav.home': 'Anasayfa',
+      'nav.about': 'Hakkımızda',
+      'nav.services': 'Hizmetler',
+      'nav.regions': 'Bölgeler',
+      'nav.tours': 'Turlar',
+      'nav.contact': 'İletişim',
+      'cta.contact': 'İletişime Geç',
+      'stats.years': 'Yıllık Deneyim',
+      'stats.customers': 'Mutlu Müşteri',
+      'stats.regions': 'Bölge',
+      'about.eyebrow': 'HAKKIMIZDA',
+      'about.title': 'Premium turizm deneyimi, yerel uzmanlıkla',
+      'about.p1': 'İnvaders turizm çatısı altında 18 yıldır, turizm çatısı altında ise 40 yılı aşan bir süredir Türkiye\'nin dört bir yanında unutulmaz seyahat deneyimleri planlıyoruz.',
+      'about.p2': 'Ulaşım, konaklama, bilgilendirme ve özel turlar dahil tüm seyahat ihtiyaçlarınız için tek adres. Amacımız; her yolculuğun sıcak, kişisel ve kusursuz olmasıdır.',
+      'about.cta': 'Hizmetlerimize göz atın',
+      'services.eyebrow': 'HİZMETLERİMİZ',
+      'services.title': 'Seyahatinizi başından sonuna tasarlıyoruz',
+      'services.s1.title': 'Ulaşım',
+      'services.s1.desc': 'VIP araç kiralama, özel transferler ve grup ulaşımı. Son model, klimalı filomuzla her destinasyonda konforlu yolculuk.',
+      'services.s1.li1': 'VIP transfer',
+      'services.s1.li2': 'Araç kiralama',
+      'services.s1.li3': 'Grup ulaşımı',
+      'services.s2.title': 'Konaklama',
+      'services.s2.desc': 'Butik otellerden lüks tatil köylerine, dağ evlerinden pansiyonlara kadar her bütçeye özel konaklama seçenekleri.',
+      'services.s2.li1': 'Butik otel',
+      'services.s2.li2': 'Lüks tatil köyü',
+      'services.s2.li3': 'Dağ evi & villa',
+      'services.s3.title': 'Münferit Rezervasyon',
+      'services.s3.desc': 'Tek bir kişi dahi olsa, size özel rezervasyon imkânı sunuyoruz. Bireysel tercihleriniz doğrultusunda özelleştirilmiş hizmetle yalnızca size ait bir deneyim yaşayın.',
+      'services.s3.li1': 'Tek kişilik rezervasyon',
+      'services.s3.li2': 'Kişiselleştirilmiş program',
+      'services.s3.li3': 'Esnek tarih & saat',
+      'services.s4.title': 'Grup Rezervasyon',
+      'services.s4.desc': 'Grupça yapılabilecek aktiviteler, kültürel geziler, doğa yürüyüşleri ve özel etkinliklerle birlikte, toplu rezervasyonlarda avantajlı fiyatlar ve koordineli organizasyon sunuyoruz.',
+      'services.s4.li1': 'Grup aktiviteleri',
+      'services.s4.li2': 'Kültürel & doğa gezileri',
+      'services.s4.li3': 'Avantajlı toplu fiyat',
+      'services.s5.title': 'İş Toplantıları',
+      'services.s5.desc': 'İş toplantılarında ofislerinizde misafirlerinizi profesyonel şekilde ağırlamanız için VIP transfer, araç kiralama ve grup ulaşım çözümleri sunuyoruz.',
+      'services.s5.li1': 'VIP transfer',
+      'services.s5.li2': 'Araç kiralama',
+      'services.s5.li3': 'Grup ulaşımı',
+      'regions.eyebrow': 'HİZMET BÖLGELERİMİZ',
+      'regions.title': 'Dört cennet, tek adres',
+      'regions.r1.name': 'Marmaris',
+      'regions.r1.desc': 'Turkuaz suların, çam ormanlarının ve canlı marinanın buluştuğu Ege\'nin incisi.',
+      'regions.r2.name': 'Ege',
+      'regions.r2.desc': 'Antik medeniyetlerin izlerini taşıyan, zeytin kokulu, berrak suların diyarı.',
+      'regions.r3.name': 'Akdeniz',
+      'regions.r3.desc': 'Sıcak kumlar, tarihi limanlar ve Toros dağlarının muhteşem manzaraları.',
+      'regions.r4.name': 'Karadeniz',
+      'regions.r4.desc': 'Yemyeşil yaylalar, sisli dağlar ve yöresel lezzetlerin büyüleyici diyarı.',
+      'regions.explore': 'Keşfet',
+      'tours.eyebrow': 'ÖNE ÇIKAN TURLAR',
+      'tours.title': 'Özelleştirilmiş paketlerle tanışın',
+      'tours.t1.title': 'Marmaris Tekne Turu',
+      'tours.t1.desc': 'Marmaris koylarını ve gizli plajları keşfedin. Öğle yemeği ve içecekler dahil.',
+      'tours.t1.duration': 'Tam gün',
+      'tours.t2.title': 'Ege Kültür Turu',
+      'tours.t2.desc': 'Efes, Pamukkale ve Sardes antik kentlerini ziyaret edin. Konaklama dahil.',
+      'tours.t2.duration': '3 gün',
+      'tours.t3.title': 'Karadeniz Yayla Turu',
+      'tours.t3.desc': 'Ayder, Uzungöl ve Haldizen yaylalarını keşfedin. Doğa yürüyüşleri dahil.',
+      'tours.t3.duration': '4 gün',
+      'tours.info': 'Bilgi Al',
+      'values.v1.title': '7/24 Destek',
+      'values.v1.desc': 'Seyahatinizin her anında yanınızdayız.',
+      'values.v2.title': 'Lisanslı Rehberler',
+      'values.v2.desc': 'T.C. Kültür Bakanlığı onaylı profesyonel ekip.',
+      'values.v3.title': 'Premium Filo',
+      'values.v3.desc': 'Son model, klimalı, konforlu araç filosu.',
+      'values.v4.title': 'Güvenli Ödeme',
+      'values.v4.desc': 'SSL korumalı, şeffaf fiyatlandırma garantisi.',
+      'contact.phones-title': 'İletişim Bilgileri',
+      'contact.address-title': 'Adres',
+      'contact.address': 'Marmaris, Muğla, Türkiye',
+      'contact.hours-title': 'Çalışma Saatleri',
+      'contact.hours1': 'Pazartesi – Pazar: 07:00 – 23:00',
+      'contact.hours2': '7/24 acil destek hattı aktif',
+      'form.name': 'Adınız',
+      'form.surname': 'Soyadınız',
+      'form.email': 'E-posta',
+      'form.phone': 'Telefon',
+      'form.service': 'Hizmet Seçiniz',
+      'form.service_placeholder': 'Hizmet türü seçin',
+      'form.opt_ulasim': 'Ulaşım',
+      'form.opt_konaklama': 'Konaklama',
+      'form.opt_munferit': 'Münferit Rezervasyon',
+      'form.opt_grup': 'Grup Rezervasyon',
+      'form.opt_is': 'İş Toplantıları',
+      'form.message': 'Mesajınız',
+      'form.submit': 'Mesaj Gönder',
+      'form.success_title': 'Mesajınız Alındı',
+      'form.success_msg': 'En kısa sürede sizinle iletişime geçeceğiz. Teşekkür ederiz.',
+      'footer.slogan': '"Her yolculuk yeni bir fetih."',
+      'footer.desc': '2008\'den bu yana Marmaris, Ege, Akdeniz ve Karadeniz\'de premium turizm hizmetleri sunuyoruz.',
+      'footer.services_title': 'Hizmetler',
+      'footer.regions_title': 'Bölgeler',
+      'footer.contact_title': 'İletişim',
+      'footer.copyright': 'Tüm hakları saklıdır.'
+    },
+    en: {
+      'hero.line1': 'Every journey',
+      'hero.line2': 'is a new <strong class="accent">conquest.</strong>',
+      'hero.eyebrow': 'INVADERS TOURISM',
+      'hero.subtitle': 'From Marmaris to the Black Sea, premium standards in transportation, accommodation and guiding with over 18 years of experience.',
+      'hero.cta1': 'Explore Services',
+      'hero.cta2': 'Contact Us',
+      'hero.scroll': 'Scroll down',
+      'nav.home': 'Home',
+      'nav.about': 'About',
+      'nav.services': 'Services',
+      'nav.regions': 'Regions',
+      'nav.tours': 'Tours',
+      'nav.contact': 'Contact',
+      'cta.contact': 'Contact Us',
+      'stats.years': 'Years of Experience',
+      'stats.customers': 'Happy Customers',
+      'stats.regions': 'Regions',
+      'about.eyebrow': 'ABOUT US',
+      'about.title': 'Premium tourism experience with local expertise',
+      'about.p1': 'Under the Invaders Tourism umbrella for 18 years, and in tourism for over 40 years, we plan unforgettable travel experiences across Turkey.',
+      'about.p2': 'From transportation and accommodation to guidance and private tours — your single destination for all travel needs. Our goal: every journey warm, personal and flawless.',
+      'about.cta': 'Explore our services',
+      'services.eyebrow': 'OUR SERVICES',
+      'services.title': 'We design your journey from start to finish',
+      'services.s1.title': 'Transportation',
+      'services.s1.desc': 'VIP car rental, private transfers and group transport. Comfortable journeys in every destination with our modern, air-conditioned fleet.',
+      'services.s1.li1': 'VIP transfer',
+      'services.s1.li2': 'Car rental',
+      'services.s1.li3': 'Group transport',
+      'services.s2.title': 'Accommodation',
+      'services.s2.desc': 'From boutique hotels to luxury resorts, mountain lodges to guesthouses — accommodation options for every budget.',
+      'services.s2.li1': 'Boutique hotel',
+      'services.s2.li2': 'Luxury resort',
+      'services.s2.li3': 'Mountain lodge & villa',
+      'services.s3.title': 'Individual Reservation',
+      'services.s3.desc': 'Even for a single person, we offer exclusive reservation opportunities. Experience a service tailored entirely to your personal preferences.',
+      'services.s3.li1': 'Single-person reservation',
+      'services.s3.li2': 'Personalized program',
+      'services.s3.li3': 'Flexible date & time',
+      'services.s4.title': 'Group Reservation',
+      'services.s4.desc': 'Group activities, cultural tours, nature hikes and special events with advantageous pricing and coordinated organization for group bookings.',
+      'services.s4.li1': 'Group activities',
+      'services.s4.li2': 'Cultural & nature tours',
+      'services.s4.li3': 'Advantageous group pricing',
+      'services.s5.title': 'Business Meetings',
+      'services.s5.desc': 'VIP transfer, car rental and group transport solutions for professionally hosting your guests at your offices during business meetings.',
+      'services.s5.li1': 'VIP transfer',
+      'services.s5.li2': 'Car rental',
+      'services.s5.li3': 'Group transport',
+      'regions.eyebrow': 'OUR SERVICE REGIONS',
+      'regions.title': 'Four paradises, one destination',
+      'regions.r1.name': 'Marmaris',
+      'regions.r1.desc': 'The pearl of the Aegean where turquoise waters, pine forests and a vibrant marina meet.',
+      'regions.r2.name': 'Aegean',
+      'regions.r2.desc': 'Land of olive-scented breezes and crystal waters, bearing traces of ancient civilizations.',
+      'regions.r3.name': 'Mediterranean',
+      'regions.r3.desc': 'Warm sands, historic harbors and the magnificent vistas of the Taurus Mountains.',
+      'regions.r4.name': 'Black Sea',
+      'regions.r4.desc': 'An enchanting land of lush highlands, misty mountains and regional delicacies.',
+      'regions.explore': 'Explore',
+      'tours.eyebrow': 'FEATURED TOURS',
+      'tours.title': 'Meet our customized packages',
+      'tours.t1.title': 'Marmaris Boat Tour',
+      'tours.t1.desc': 'Discover the coves and hidden beaches of Marmaris. Lunch and drinks included.',
+      'tours.t1.duration': 'Full day',
+      'tours.t2.title': 'Aegean Culture Tour',
+      'tours.t2.desc': 'Visit the ancient cities of Ephesus, Pamukkale and Sardes. Accommodation included.',
+      'tours.t2.duration': '3 days',
+      'tours.t3.title': 'Black Sea Highland Tour',
+      'tours.t3.desc': 'Discover Ayder, Uzungöl and Haldizen highlands. Nature hikes included.',
+      'tours.t3.duration': '4 days',
+      'tours.info': 'Get Info',
+      'values.v1.title': '24/7 Support',
+      'values.v1.desc': 'By your side at every moment of your journey.',
+      'values.v2.title': 'Licensed Guides',
+      'values.v2.desc': 'Professional team approved by the Ministry of Culture.',
+      'values.v3.title': 'Premium Fleet',
+      'values.v3.desc': 'Modern, air-conditioned, comfortable vehicle fleet.',
+      'values.v4.title': 'Secure Payment',
+      'values.v4.desc': 'SSL-protected, transparent pricing guarantee.',
+      'contact.phones-title': 'Contact Information',
+      'contact.address-title': 'Address',
+      'contact.address': 'Marmaris, Muğla, Turkey',
+      'contact.hours-title': 'Working Hours',
+      'contact.hours1': 'Monday – Sunday: 07:00 – 23:00',
+      'contact.hours2': '24/7 emergency support line active',
+      'form.name': 'First Name',
+      'form.surname': 'Last Name',
+      'form.email': 'Email',
+      'form.phone': 'Phone',
+      'form.service': 'Select Service',
+      'form.service_placeholder': 'Choose a service type',
+      'form.opt_ulasim': 'Transportation',
+      'form.opt_konaklama': 'Accommodation',
+      'form.opt_munferit': 'Individual Reservation',
+      'form.opt_grup': 'Group Reservation',
+      'form.opt_is': 'Business Meetings',
+      'form.message': 'Your Message',
+      'form.submit': 'Send Message',
+      'form.success_title': 'Message Received',
+      'form.success_msg': 'We will contact you as soon as possible. Thank you.',
+      'footer.slogan': '"Every journey is a new conquest."',
+      'footer.desc': 'Providing premium tourism services in Marmaris, Aegean, Mediterranean and Black Sea since 2008.',
+      'footer.services_title': 'Services',
+      'footer.regions_title': 'Regions',
+      'footer.contact_title': 'Contact',
+      'footer.copyright': 'All rights reserved.'
+    },
+    ar: {
+      'hero.line1': 'كل رحلة',
+      'hero.line2': 'هي فتح <strong class="accent">جديد.</strong>',
+      'hero.eyebrow': 'إنفاديرز للسياحة',
+      'hero.subtitle': 'معايير راقية في النقل والإقامة والإرشاد من مرمريس إلى البحر الأسود، بخبرة تتجاوز 18 عامًا.',
+      'hero.cta1': 'استكشف الخدمات',
+      'hero.cta2': 'اتصل بنا',
+      'hero.scroll': 'مرر للأسفل',
+      'nav.home': 'الرئيسية',
+      'nav.about': 'من نحن',
+      'nav.services': 'الخدمات',
+      'nav.regions': 'المناطق',
+      'nav.tours': 'الجولات',
+      'nav.contact': 'اتصل بنا',
+      'cta.contact': 'اتصل بنا',
+      'stats.years': 'سنوات خبرة',
+      'stats.customers': 'عميل سعيد',
+      'stats.regions': 'منطقة',
+      'about.eyebrow': 'من نحن',
+      'about.title': 'تجربة سياحية راقية بخبرة محلية',
+      'about.p1': 'تحت مظلة إنفاديرز للسياحة منذ 18 عامًا، وفي قطاع السياحة لأكثر من 40 عامًا، نخطط تجارب سفر لا تُنسى في جميع أنحاء تركيا.',
+      'about.p2': 'من النقل والإقامة إلى الإرشاد والجولات الخاصة — وجهتك الوحيدة لجميع احتياجات السفر. هدفنا: أن تكون كل رحلة دافئة وشخصية ومثالية.',
+      'about.cta': 'استكشف خدماتنا',
+      'services.eyebrow': 'خدماتنا',
+      'services.title': 'نصمم رحلتك من البداية إلى النهاية',
+      'services.s1.title': 'النقل',
+      'services.s1.desc': 'تأجير سيارات VIP، نقل خاص ونقل جماعي. رحلات مريحة في كل وجهة بأسطولنا الحديث والمكيف.',
+      'services.s1.li1': 'نقل VIP',
+      'services.s1.li2': 'تأجير سيارات',
+      'services.s1.li3': 'نقل جماعي',
+      'services.s2.title': 'الإقامة',
+      'services.s2.desc': 'من الفنادق البوتيكية إلى المنتجعات الفاخرة، ومن أكواخ الجبال إلى بيوت الضيافة — خيارات إقامة لكل ميزانية.',
+      'services.s2.li1': 'فندق بوتيكي',
+      'services.s2.li2': 'منتجع فاخر',
+      'services.s2.li3': 'كوخ جبلي وفيلا',
+      'services.s3.title': 'حجز فردي',
+      'services.s3.desc': 'حتى لشخص واحد، نقدم فرصة حجز حصرية لك. عش تجربة مخصصة بالكامل تتناسب مع تفضيلاتك الشخصية.',
+      'services.s3.li1': 'حجز لشخص واحد',
+      'services.s3.li2': 'برنامج مخصص',
+      'services.s3.li3': 'تاريخ ووقت مرن',
+      'services.s4.title': 'حجز جماعي',
+      'services.s4.desc': 'أنشطة جماعية، جولات ثقافية، مشي في الطبيعة وفعاليات خاصة بأسعار تنافسية وتنظيم منسق للحجوزات الجماعية.',
+      'services.s4.li1': 'أنشطة جماعية',
+      'services.s4.li2': 'جولات ثقافية وطبيعة',
+      'services.s4.li3': 'أسعار جماعية مفضلة',
+      'services.s5.title': 'اجتماعات العمل',
+      'services.s5.desc': 'حلول نقل VIP وتأجير سيارات ونقل جماعي لاستضافة ضيوفك بشكل احترافي في مكاتبكم خلال اجتماعات العمل.',
+      'services.s5.li1': 'نقل VIP',
+      'services.s5.li2': 'تأجير سيارات',
+      'services.s5.li3': 'نقل جماعي',
+      'regions.eyebrow': 'مناطق خدمتنا',
+      'regions.title': 'أربعة جنات، وجهة واحدة',
+      'regions.r1.name': 'مرمريس',
+      'regions.r1.desc': 'لؤلؤة إيجة حيث تلتقي المياه الفيروزية وغابات الصنوبر والمارينا الحيوية.',
+      'regions.r2.name': 'إيجة',
+      'regions.r2.desc': 'أرض النسيم العطري بالزيتون والمياه الصافية، تحمل آثار الحضارات القديمة.',
+      'regions.r3.name': 'البحر الأبيض المتوسط',
+      'regions.r3.desc': 'رمال دافئة وموانئ تاريخية ومناظر جبال طوروس الخلابة.',
+      'regions.r4.name': 'البحر الأسود',
+      'regions.r4.desc': 'أرض ساحرة من الهضاب الخضراء والجبال الضبابية والمأكولات المحلية.',
+      'regions.explore': 'استكشف',
+      'tours.eyebrow': 'جولات مميزة',
+      'tours.title': 'تعرف على باقاتنا المخصصة',
+      'tours.t1.title': 'جولة قارب مرمريس',
+      'tours.t1.desc': 'اكتشف خلجان وشواطئ مرمريس المخفية. الغداء والمشروبات مشمولة.',
+      'tours.t1.duration': 'يوم كامل',
+      'tours.t2.title': 'جولة ثقافية إيجة',
+      'tours.t2.desc': 'زيارة المدن القديمة أفسس وباموكالي وساردس. الإقامة مشمولة.',
+      'tours.t2.duration': '3 أيام',
+      'tours.t3.title': 'جولة هضاب البحر الأسود',
+      'tours.t3.desc': 'اكتشف هضاب أيدر وأوزونغول وهالديزن. مشي في الطبيعة مشمول.',
+      'tours.t3.duration': '4 أيام',
+      'tours.info': 'احصل على معلومات',
+      'values.v1.title': 'دعم على مدار الساعة',
+      'values.v1.desc': 'بجانبك في كل لحظة من رحلتك.',
+      'values.v2.title': 'مرشدون مرخصون',
+      'values.v2.desc': 'فريق محترف معتمد من وزارة الثقافة.',
+      'values.v3.title': 'أسطول راقٍ',
+      'values.v3.desc': 'أسطول مركبات حديث ومكيف ومريح.',
+      'values.v4.title': 'دفع آمن',
+      'values.v4.desc': 'ضمان تسعير شفاف محمي بـ SSL.',
+      'contact.phones-title': 'معلومات الاتصال',
+      'contact.address-title': 'العنوان',
+      'contact.address': 'مرمريس، موغلا، تركيا',
+      'contact.hours-title': 'ساعات العمل',
+      'contact.hours1': 'الإثنين – الأحد: 07:00 – 23:00',
+      'contact.hours2': 'خط دعم طوارئ يعمل 24/7',
+      'form.name': 'الاسم الأول',
+      'form.surname': 'اسم العائلة',
+      'form.email': 'البريد الإلكتروني',
+      'form.phone': 'الهاتف',
+      'form.service': 'اختر الخدمة',
+      'form.service_placeholder': 'اختر نوع الخدمة',
+      'form.opt_ulasim': 'النقل',
+      'form.opt_konaklama': 'الإقامة',
+      'form.opt_munferit': 'حجز فردي',
+      'form.opt_grup': 'حجز جماعي',
+      'form.opt_is': 'اجتماعات العمل',
+      'form.message': 'رسالتك',
+      'form.submit': 'إرسال الرسالة',
+      'form.success_title': 'تم استلام رسالتك',
+      'form.success_msg': 'سنتواصل معك في أقرب وقت ممكن. شكرًا لك.',
+      'footer.slogan': '"كل رحلة هي فتح جديد."',
+      'footer.desc': 'نقدم خدمات سياحية راقية في مرمريس وإيجة والبحر الأبيض المتوسط والبحر الأسود منذ 2008.',
+      'footer.services_title': 'الخدمات',
+      'footer.regions_title': 'المناطق',
+      'footer.contact_title': 'اتصل بنا',
+      'footer.copyright': 'جميع الحقوق محفوظة.'
     }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  };
 
-document.querySelectorAll('[data-reveal], [data-stagger], .service-card, .region-card, .tour-card, .about-content').forEach(el => {
-  revealObserver.observe(el);
-});
+  var currentLang = 'tr';
 
-/* ============ STATS COUNTER ============ */
-const statObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      const el = entry.target;
-      if(!el.dataset.count) return;
-      const target = parseInt(el.dataset.count, 10);
-      const duration = 1800;
-      const startTime = performance.now();
-      const update = (now) => {
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.floor(eased * target);
-        if(progress < 1) requestAnimationFrame(update);
-        else el.textContent = target;
-      };
-      requestAnimationFrame(update);
-      statObserver.unobserve(el);
-    }
-  });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('[data-count]').forEach(el => statObserver.observe(el));
-
-/* ============ CONTACT FORM ============ */
-const form = document.getElementById('contactForm');
-const formSuccess = document.getElementById('formSuccess');
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = form.querySelector('#name').value.trim();
-  const email = form.querySelector('#email').value.trim();
-  const message = form.querySelector('#message').value.trim();
-  
-  if(!name || !email || !message){
-    form.querySelectorAll('[required]').forEach(field => {
-      if(!field.value.trim()){
-        field.style.borderColor = 'var(--accent)';
-        setTimeout(() => { field.style.borderColor = ''; }, 2000);
+  function applyTranslations(lang){
+    var dict = translations[lang];
+    if(!dict) return;
+    var els = document.querySelectorAll('[data-i18n]');
+    els.forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if(dict[key] !== undefined){
+        el.innerHTML = dict[key];
       }
     });
-    return;
-  }
-  
-  form.querySelectorAll('input, select, textarea, button').forEach(el => {
-    el.style.transition = 'opacity .3s';
-    el.style.opacity = '0.3';
-    el.style.pointerEvents = 'none';
-  });
-  
-  setTimeout(() => {
-    formSuccess.classList.add('show');
-  }, 400);
-});
-
-/* ============ SMOOTH SCROLL FOR ANCHORS ============ */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e){
-    const href = this.getAttribute('href');
-    if(href === '#' || href.length < 2) return;
-    const target = document.querySelector(href);
-    if(target){
-      e.preventDefault();
-      const headerHeight = header.offsetHeight;
-      const targetY = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
-      window.scrollTo({ top: targetY, behavior: 'smooth' });
+    // Update document direction for Arabic
+    if(lang === 'ar'){
+      document.documentElement.setAttribute('dir','rtl');
+      document.documentElement.setAttribute('lang','ar');
+    } else {
+      document.documentElement.setAttribute('dir','ltr');
+      document.documentElement.setAttribute('lang', lang);
     }
+    // Update page title
+    if(lang === 'tr') document.title = 'Invaders Turizm — Her yolculuk yeni bir fetih.';
+    else if(lang === 'en') document.title = 'Invaders Tourism — Every journey is a new conquest.';
+    else if(lang === 'ar') document.title = 'إنفاديرز للسياحة — كل رحلة هي فتح جديد.';
+  }
+
+  // Language switcher
+  document.querySelectorAll('.lang-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var lang = this.getAttribute('data-lang');
+      if(lang === currentLang) return;
+      currentLang = lang;
+      // Update all lang buttons
+      document.querySelectorAll('.lang-btn').forEach(function(b){
+        b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+      });
+      applyTranslations(lang);
+    });
   });
-});
 
-/* ============ BACKGROUND MUSIC ============ */
-const bgMusic = document.getElementById('bgMusic');
-const musicToggle = document.getElementById('musicToggle');
-bgMusic.volume = 0.35;
+  /* ============ MUSIC PLAYER (Volume 45%) ============ */
+  var audio = document.getElementById('bgMusic');
+  var musicBtn = document.getElementById('musicBtn');
+  var musicPlaying = false;
+  audio.volume = 0.45;
 
-function playMusic() {
-  bgMusic.play().then(() => {
-    musicToggle.classList.add('playing');
-    musicToggle.classList.remove('muted');
-  }).catch(() => {
-    musicToggle.classList.remove('playing');
-    musicToggle.classList.add('muted');
+  function toggleMusic(){
+    if(musicPlaying){
+      audio.pause();
+      musicBtn.classList.remove('playing');
+      musicBtn.classList.add('muted');
+      musicPlaying = false;
+    } else {
+      audio.play().then(function(){
+        musicBtn.classList.remove('muted');
+        musicBtn.classList.add('playing');
+        musicPlaying = true;
+      }).catch(function(){
+        audio.muted = true;
+        audio.play().then(function(){
+          musicBtn.classList.remove('muted');
+          musicBtn.classList.add('playing');
+          musicPlaying = true;
+          setTimeout(function(){
+            audio.muted = false;
+            audio.volume = 0.45;
+          }, 500);
+        }).catch(function(){});
+      });
+    }
+  }
+
+  musicBtn.addEventListener('click', toggleMusic);
+
+  function firstInteraction(){
+    if(!musicPlaying) toggleMusic();
+    document.removeEventListener('click', firstInteraction);
+    document.removeEventListener('scroll', firstInteraction);
+    document.removeEventListener('touchstart', firstInteraction);
+  }
+  document.addEventListener('click', firstInteraction);
+  document.addEventListener('scroll', firstInteraction, {passive:true});
+  document.addEventListener('touchstart', firstInteraction, {passive:true});
+
+  /* ============ HEADER SCROLL ============ */
+  var header = document.getElementById('header');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 60) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  }, {passive:true});
+
+  /* ============ MOBILE MENU ============ */
+  var menuToggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('nav');
+  menuToggle.addEventListener('click', function(){
+    var isOpen = nav.classList.toggle('open');
+    menuToggle.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
-}
+  nav.querySelectorAll('.nav-link').forEach(function(link){
+    link.addEventListener('click', function(){
+      nav.classList.remove('open');
+      menuToggle.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    });
+  });
 
-function pauseMusic() {
-  bgMusic.pause();
-  musicToggle.classList.remove('playing');
-  musicToggle.classList.add('muted');
-}
+  /* ============ HERO ANIMATIONS ============ */
+  var hero = document.getElementById('hero');
+  var heroImg = hero.querySelector('.hero-bg img');
 
-musicToggle.addEventListener('click', (e) => {
-  e.stopPropagation();
-  if(bgMusic.paused) {
-    playMusic();
+  if(heroImg.complete){
+    heroImg.style.opacity = '1';
+    heroImg.style.filter = 'blur(0px)';
+    heroImg.classList.add('kenburns-active');
   } else {
-    pauseMusic();
+    heroImg.addEventListener('load', function(){
+      heroImg.style.opacity = '1';
+      heroImg.style.filter = 'blur(0px)';
+      heroImg.classList.add('kenburns-active');
+    });
   }
-});
+  requestAnimationFrame(function(){
+    hero.classList.add('in');
+  });
 
-// Try to autoplay on load (will work if browser allows, otherwise wait for first click)
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    playMusic();
-  }, 500);
-});
+  /* ============ SCROLL REVEAL ============ */
+  var revealObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('[data-reveal]').forEach(function(el){ revealObserver.observe(el); });
 
-// Fallback: start music on first user interaction if autoplay was blocked
-document.addEventListener('click', function startMusicOnFirstClick() {
-  if(bgMusic.paused) {
-    playMusic();
+  /* ============ STAGGER REVEAL ============ */
+  var staggerObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        staggerObserver.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('[data-stagger]').forEach(function(el){ staggerObserver.observe(el); });
+
+  /* ============ SERVICE CARDS REVEAL ============ */
+  var serviceObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        serviceObserver.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.1, rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.service-card').forEach(function(c){ serviceObserver.observe(c); });
+
+  /* ============ REGION & TOUR CARDS REVEAL ============ */
+  var cardObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        cardObserver.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.1, rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.region-card, .tour-card').forEach(function(c){ cardObserver.observe(c); });
+
+  /* ============ COUNTER ANIMATION ============ */
+  function animateCount(el, target){
+    var duration = 2000;
+    var start = performance.now();
+    function tick(now){
+      var elapsed = now - start;
+      var progress = Math.min(elapsed / duration, 1);
+      var ease = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(ease * target);
+      if(progress < 1) requestAnimationFrame(tick);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(tick);
   }
-  document.removeEventListener('click', startMusicOnFirstClick);
-}, { once: true });
+  var counterObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var el = entry.target;
+        var target = parseInt(el.getAttribute('data-count'), 10);
+        animateCount(el, target);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, {threshold:0.5});
+  document.querySelectorAll('[data-count]').forEach(function(n){ counterObserver.observe(n); });
+
+  /* ============ CONTACT FORM ============ */
+  var form = document.getElementById('contactFormEl');
+  var formSuccess = document.getElementById('formSuccess');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('.form-submit');
+    var currentText = btn.textContent;
+    btn.textContent = '...';
+    btn.disabled = true;
+    setTimeout(function(){
+      form.style.display = 'none';
+      formSuccess.classList.add('show');
+    }, 1200);
+  });
+
+  /* ============ SMOOTH SCROLL ============ */
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
+    anchor.addEventListener('click', function(e){
+      var target = document.querySelector(this.getAttribute('href'));
+      if(target){
+        e.preventDefault();
+        var offset = header.offsetHeight + 20;
+        var top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({top: top, behavior:'smooth'});
+      }
+    });
+  });
+
+})();
 </script>
 </body>
 </html>
