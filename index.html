@@ -598,7 +598,7 @@ ar:{
 const DEFAULT_SITE_SETTINGS={
   brand:{main:'invaders',domain:'.com.tr'},
   seo:{title:'Invaders Turizm — Her yolculuk yeni bir fetih.',description:"Marmaris'ten Karadeniz'e premium ulaşım, konaklama, rehberlik ve özel tur hizmetleri."},
-  images:{hero:'https://images.unsplash.com/photo-1763965368246-5e89755e4455?auto=format&fit=crop&w=2600&q=88',about:'https://images.unsplash.com/photo-1695415683093-ae5f213ea898?auto=format&fit=crop&w=1200&q=84',promise:'https://images.unsplash.com/photo-1695415683093-ae5f213ea898?auto=format&fit=crop&w=2000&q=82',regions:[],tours:[]},
+  images:{hero:'splash.jpg',about:'https://images.unsplash.com/photo-1695415683093-ae5f213ea898?auto=format&fit=crop&w=1200&q=84',promise:'https://images.unsplash.com/photo-1695415683093-ae5f213ea898?auto=format&fit=crop&w=2000&q=82',regions:[],tours:[]},
   aboutSinceYear:'2008',
   contact:{phones:['+90 531 640 21 30','+90 532 593 46 99','+90 535 763 13 44'],email:'info@invaders.com.tr',whatsapp:'+90 535 763 13 44',address:{tr:'İnönü Mah. Cumhuriyet Cad. Şakir Paşa Apt. No:59/11 Şişli/İstanbul'},hours:{tr:'Her gün 08:00 – 22:00'}},
   form:{action:'https://formsubmit.co/ajax/info@invaders.com.tr',subject:'Invaders Turizm — Yeni web sitesi mesajı'},
@@ -631,7 +631,7 @@ function applySiteSettings(){
   const meta=document.querySelector('meta[name="description"]');if(meta&&seo.description)meta.content=seo.description;
   document.querySelectorAll('.logo-main').forEach(el=>{if(brand.main)el.textContent=brand.main});
   document.querySelectorAll('.logo-domain').forEach(el=>{if(brand.domain!==undefined)el.textContent=brand.domain});
-  const hero=document.querySelector('.hero-bg');if(hero&&safeUrl(images.hero))hero.style.backgroundImage=`url("${images.hero.replace(/"/g,'%22')}")`;
+  const hero=document.querySelector('.hero-bg');if(hero)hero.style.backgroundImage='url("splash.jpg")';
   setImage('.about-media img',images.about);
   (images.regions||[]).forEach((url,i)=>setImage(`.region-card:nth-child(${i+1}) img`,url));
   (images.tours||[]).forEach((url,i)=>setImage(`.tour-card:nth-child(${i+1}) img`,url));
