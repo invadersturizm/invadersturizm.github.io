@@ -317,6 +317,29 @@ body.menu-open{overflow:hidden}
   .phone-group{font-size:8.75px;gap:4px}.phone-group svg{width:12px;height:12px}.phone-group .sep{opacity:.75}
   .hero-title{font-size:43px}.hero-copy{font-size:12px}.hero-value strong{font-size:7.7px}
 }
+
+
+/* ===== RTL / MOBILE HORIZONTAL OVERFLOW FIX ===== */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+body{position:relative}
+main,.site-shell,section,footer,.container{max-width:100%}
+img,svg,video{max-width:100%}
+.hero-content,.footer-grid>*,.contact-grid>*,.services-grid>*,.tours-grid>*,.region-grid>*{min-width:0}
+.footer a,.footer .meta,.section-copy,.region-content p,.tour-body p,.service-card p{overflow-wrap:anywhere;word-break:normal}
+.mobile-nav{max-width:100vw;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+
+@media(max-width:560px){
+  [dir="rtl"] .destination-icons{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:24px}
+  [dir="rtl"] .destination-icon,
+  [dir="rtl"] .destination-icon:nth-child(3),
+  [dir="rtl"] .destination-icon:nth-child(even){min-width:0;padding-inline:6px;border-inline-end:1px solid rgba(20,32,42,.12)}
+  [dir="rtl"] .destination-icon:nth-child(3n){border-inline-end:0}
+  [dir="rtl"] .destination-icon span{height:auto;min-height:26px;font-size:10px;line-height:1.3;white-space:normal;overflow-wrap:anywhere;word-break:normal}
+  [dir="rtl"] .footer-grid,[dir="rtl"] .footer-bottom,[dir="rtl"] .contact-grid{width:100%;max-width:100%}
+  [dir="rtl"] .footer a,[dir="rtl"] .footer .meta{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+  [dir="rtl"] .socials{max-width:100%;flex-wrap:wrap;justify-content:center}
+}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.hero-bg{animation:none}}
 </style>
 </head>
