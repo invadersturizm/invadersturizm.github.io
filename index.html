@@ -516,10 +516,12 @@ body.menu-open{overflow:hidden}
       </div>
     </div>
     <div class="contact-form reveal" id="contactForm">
-      <!-- Formspree: YOUR_FORM_ID bölümünü Formspree panelindeki gerçek form ID ile değiştirin. -->
-      <form id="contactFormEl" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="hidden" name="subject" value="Invaders Turizm — Yeni web sitesi mesajı">
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
+      <!-- FormSubmit: ücretsiz olarak form mesajlarını info@invaders.com.tr adresine iletir. -->
+      <form id="contactFormEl" action="https://formsubmit.co/ajax/info@invaders.com.tr" method="POST">
+        <input type="hidden" name="_subject" value="Invaders Turizm — Yeni web sitesi mesajı">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
         <div class="form-grid">
           <div class="field"><label data-i18n="form.name">Adınız</label><input type="text" name="name" required></div>
           <div class="field"><label data-i18n="form.phone">Telefon</label><input type="tel" name="phone" required></div>
@@ -605,7 +607,7 @@ const DEFAULT_SITE_SETTINGS={
   images:{hero:'splash.jpg',about:'https://images.unsplash.com/photo-1695415683093-ae5f213ea898?auto=format&fit=crop&w=1200&q=84',promise:'https://images.unsplash.com/photo-1695415683093-ae5f213ea898?auto=format&fit=crop&w=2000&q=82',regions:[],tours:[]},
   aboutSinceYear:'2008',
   contact:{phones:['+90 531 640 21 30','+90 532 593 46 99','+90 535 763 13 44'],email:'info@invaders.com.tr',whatsapp:'+90 535 763 13 44',address:{tr:'İnönü Mah. Cumhuriyet Cad. Şakir Paşa Apt. No:59/11 Şişli/İstanbul'},hours:{tr:'Her gün 08:00 – 22:00'}},
-  form:{action:'https://formspree.io/f/YOUR_FORM_ID',subject:'Invaders Turizm — Yeni web sitesi mesajı'},
+  form:{action:'https://formsubmit.co/ajax/info@invaders.com.tr',subject:'Invaders Turizm — Yeni web sitesi mesajı'},
   social:{instagram:'',facebook:'',whatsapp:'https://wa.me/905357631344'},
   audio:{src:'invadersbgmusic.mp3',volume:.35}
 };
@@ -653,10 +655,8 @@ function applySiteSettings(){
   const wa=document.querySelector('.whatsapp-btn');if(wa){wa.href=social.whatsapp||whatsappHref(contact.whatsapp||phones[0])}
   const socials=document.querySelectorAll('.socials a');const urls=[social.instagram,social.facebook,social.whatsapp||whatsappHref(contact.whatsapp||phones[0])];socials.forEach((a,i)=>{if(urls[i]){a.href=urls[i];a.target='_blank';a.rel='noopener noreferrer'}else{a.href='#';a.removeAttribute('target')}});
   const form=document.getElementById('contactFormEl');
-  const configuredFormAction=safeUrl(formSettings.action);
-  const isValidFormspreeAction=/^https:\/\/formspree\.io\/f\/[a-z0-9_-]+$/i.test(configuredFormAction)&&!configuredFormAction.includes('YOUR_FORM_ID');
-  if(form&&isValidFormspreeAction)form.action=configuredFormAction;
-  const subject=form?.querySelector('input[name="subject"]');if(subject&&formSettings.subject)subject.value=formSettings.subject;
+  if(form)form.action='https://formsubmit.co/ajax/info@invaders.com.tr';
+  const subject=form?.querySelector('input[name="_subject"]');if(subject&&formSettings.subject)subject.value=formSettings.subject;
   if(audio.src){const source=bgMusic.querySelector('source');if(source&&source.getAttribute('src')!==audio.src){source.src=audio.src;bgMusic.load()}}
   applyLocalizedContact();
 }
@@ -689,7 +689,7 @@ function closeMenu(){mobileNav.classList.remove('open');menuToggle.classList.rem
 menuToggle.addEventListener('click',()=>{const on=mobileNav.classList.toggle('open');menuToggle.classList.toggle('active',on);menuToggle.setAttribute('aria-expanded',String(on));document.body.classList.toggle('menu-open',on)});mobileNavBack.addEventListener('click',closeMenu);mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
 const header=document.getElementById('header'),shell=document.querySelector('.site-shell');window.addEventListener('scroll',()=>{const fixed=window.scrollY>shell.offsetHeight;header.classList.toggle('fixed',fixed);document.body.style.paddingTop=fixed?header.offsetHeight+'px':''},{passive:true});
 function initReveal(){const els=document.querySelectorAll('.reveal:not(.in)');if(!('IntersectionObserver'in window)){els.forEach(e=>e.classList.add('in'));return}const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -35px'});els.forEach(e=>o.observe(e))}
-const form=document.getElementById('contactFormEl');form.addEventListener('submit',async e=>{e.preventDefault();const submit=form.querySelector('button[type=submit]'),error=document.getElementById('formError'),success=document.getElementById('formSuccess');const ui={tr:{sending:'Gönderiliyor…',error:'Mesaj gönderilemedi. Lütfen tekrar deneyin.',setup:'Formspree form ID henüz eklenmemiş.'},en:{sending:'Sending…',error:'The message could not be sent. Please try again.',setup:'The Formspree form ID has not been added yet.'},ar:{sending:'جارٍ الإرسال…',error:'تعذر إرسال الرسالة. حاول مرة أخرى.',setup:'لم تتم إضافة معرّف نموذج Formspree بعد.'}};const original=submit.querySelector('span').textContent;submit.disabled=true;submit.querySelector('span').textContent=ui[currentLang].sending;error.classList.remove('show');try{if(form.action.includes('YOUR_FORM_ID'))throw new Error('formspree-setup');const data=new FormData(form),res=await fetch(form.action,{method:'POST',body:data,headers:{Accept:'application/json'}});const responseData=await res.json().catch(()=>null);if(!res.ok)throw new Error(responseData?.errors?.map(item=>item.message).filter(Boolean).join(' ')||'formspree-error');form.style.display='none';success.classList.add('show');form.reset()}catch(err){error.textContent=err.message==='formspree-setup'?ui[currentLang].setup:ui[currentLang].error;error.classList.add('show')}finally{submit.disabled=false;submit.querySelector('span').textContent=original}});
+const form=document.getElementById('contactFormEl');form.addEventListener('submit',async e=>{e.preventDefault();const submit=form.querySelector('button[type=submit]'),error=document.getElementById('formError'),success=document.getElementById('formSuccess');const ui={tr:{sending:'Gönderiliyor…',error:'Mesaj gönderilemedi. Lütfen tekrar deneyin.'},en:{sending:'Sending…',error:'The message could not be sent. Please try again.'},ar:{sending:'جارٍ الإرسال…',error:'تعذر إرسال الرسالة. حاول مرة أخرى.'}};const original=submit.querySelector('span').textContent;submit.disabled=true;submit.querySelector('span').textContent=ui[currentLang].sending;error.classList.remove('show');try{const data=new FormData(form),res=await fetch(form.action,{method:'POST',body:data,headers:{Accept:'application/json'}});if(!res.ok)throw new Error();form.style.display='none';success.classList.add('show');form.reset()}catch(err){error.textContent=ui[currentLang].error;error.classList.add('show')}finally{submit.disabled=false;submit.querySelector('span').textContent=original}});
 async function boot(){await loadSiteContent();openPopup()}
 boot();
 </script>
