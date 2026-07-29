@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "updatedAt": null,
+  "updatedAt": "2026-07-29T19:24:24.134Z",
   "settings": {
     "brand": {
       "main": "invaders",
       "domain": ".com.tr"
     },
     "seo": {
-      "title": "Invaders Turizm — Her yolculuk yeni bir fetih.",
-      "description": "Marmaris'ten Karadeniz'e premium ulaşım, konaklama, rehberlik ve özel tur hizmetleri."
+      "title": "Invaders Turizm ",
+      "description": "Marmaris'ten"
     },
     "images": {
       "hero": "https://images.unsplash.com/photo-1763965368246-5e89755e4455?auto=format&fit=crop&w=2600&q=88",
