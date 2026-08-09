@@ -767,6 +767,41 @@ img,svg,video{max-width:100%}
   .visa-gallery-dots{right:11px;bottom:11px}
 }
 
+
+/* ===== VISA PREMIUM REFINEMENT ===== */
+.visa-slogan{display:flex;align-items:center;gap:12px;margin-top:18px;max-width:540px}
+.visa-slogan-line{height:1px;width:30px;background:var(--gold);opacity:.72;flex:none}
+.visa-slogan strong{font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.05;font-weight:600;color:var(--navy);letter-spacing:.01em}
+.visa-region-tabs{gap:12px;background:transparent;border:0;box-shadow:none}
+.visa-region-tab{min-height:178px;grid-template-columns:38% 62%;border:1px solid rgba(20,32,42,.10)!important;border-radius:4px;box-shadow:0 10px 28px rgba(12,24,32,.045);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s ease}
+.visa-region-tab:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(12,24,32,.075)}
+.visa-region-tab.active{border-color:rgba(180,145,76,.48)!important;box-shadow:0 15px 38px rgba(12,24,32,.09)}
+.visa-region-image{min-height:178px}
+.visa-region-copy{padding:22px 28px}
+.visa-region-copy strong{font-size:31px}
+.visa-region-copy small{margin-top:8px;font-size:8px;letter-spacing:.14em}
+.visa-region-caption{left:12px;bottom:11px;font-size:7px;letter-spacing:.14em}
+.visa-region-shade{background:linear-gradient(90deg,rgba(6,21,34,.02),rgba(6,21,34,.30))}
+@media(max-width:820px){
+ .visa-slogan{margin-top:14px;gap:9px}
+ .visa-slogan strong{font-size:18px}
+ .visa-slogan-line{width:20px}
+ .visa-region-tabs{gap:9px}
+ .visa-region-tab{min-height:132px;grid-template-columns:36% 64%;border-radius:4px}
+ .visa-region-image{min-height:132px}
+ .visa-region-copy{padding:17px 18px}
+ .visa-region-copy strong{font-size:26px}
+ .visa-region-copy small{font-size:7px;margin-top:6px}
+}
+@media(max-width:430px){
+ .visa-slogan{max-width:100%;gap:7px}
+ .visa-slogan strong{font-size:16px}
+ .visa-slogan-line{width:15px}
+ .visa-region-tab{min-height:120px;grid-template-columns:34% 66%}
+ .visa-region-image{min-height:120px}
+ .visa-region-copy{padding:15px}
+ .visa-region-copy strong{font-size:23px}
+}
 </style>
 
 <style id="visa-region-polish">
@@ -933,6 +968,7 @@ img,svg,video{max-width:100%}
       <div>
         <span class="kicker" data-i18n="visa.eyebrow">VİZE DANIŞMANLIĞI</span>
         <h2 class="section-title" data-i18n="visa.title">Seyahatinizin ilk adımını <span class="gold">güvenle</span> planlayın</h2>
+        <div class="visa-slogan"><span class="visa-slogan-line"></span><strong data-i18n="visa.slogan">Vizenizi hızlı, kolay ve doğru şekilde planlayın.</strong><span class="visa-slogan-line"></span></div>
       </div>
       <div>
         <p class="visa-intro" data-i18n="visa.intro">Schengen ve Avrupa ülkeleri ile Orta Doğu destinasyonlarında; evrak hazırlığı, dosya kontrolü, randevu organizasyonu ve başvuru sürecinin takibinde yanınızdayız.</p>
@@ -1173,7 +1209,7 @@ tr:{
 
 "nav.visa":"Vize",
 "visa.regions.schengen.title":"Schengen / Avrupa","visa.regions.schengen.short":"Avrupa seyahatleri","visa.regions.schengen.caption":"SCHENGEN / AVRUPA","visa.regions.middleeast.title":"Orta Doğu","visa.regions.middleeast.short":"Ülkeye göre değişen şartlar","visa.regions.middleeast.caption":"ORTA DOĞU",
-"visa.eyebrow":"VİZE DANIŞMANLIĞI","visa.title":"Seyahatinizin ilk adımını <span class='gold'>güvenle</span> planlayın","visa.intro":"Schengen ve Avrupa ülkeleri ile Orta Doğu destinasyonlarında; evrak hazırlığı, dosya kontrolü, randevu organizasyonu ve başvuru sürecinin takibinde yanınızdayız.","visa.note":"Aşağıdaki listeler turistik kısa süreli başvurular için genel rehber niteliğindedir. Güncel başvuru şartları ülkeye, başvuru sahibinin durumuna ve seyahat amacına göre değişebilir.","visa.schengen":"Schengen","visa.countries.greece":"Yunanistan","visa.countries.italy":"İtalya","visa.countries.france":"Fransa","visa.countries.germany":"Almanya","visa.cta":"Vize başvurunuzu birlikte planlayalım","visa.docsTitle":"Gerekli evraklar","visa.docsIntro":"Başvuru dosyanızın temel kontrol listesi","visa.extrasEyebrow":"SEYAHATİNİZİ TAMAMLAYAN HİZMETLER","visa.extrasTitle":"Vizeden sonra da <span class='gold'>yanınızdayız</span>","visa.extrasCopy":"Başvurunuzun yanında seyahatinizin diğer parçalarını da tek noktadan planlayabilir; uçuş, konaklama ve şehir içi ulaşımınızı seyahat planınıza göre organize edebiliriz.","visa.extra.flight.title":"Uçak","visa.extra.flight.desc":"Seyahat tarihinize ve vize dosyanızdaki plana uygun uçuş seçeneklerinin organizasyonu.","visa.extra.hotel.title":"Otel","visa.extra.hotel.desc":"Konum, konfor ve seyahat planınıza göre konaklama alternatiflerinin planlanması.","visa.extra.transfer.title":"Transfer","visa.extra.transfer.desc":"Havalimanı–otel–havalimanı ve ihtiyaç halinde şehir içi özel transfer organizasyonu.","visa.extra.insurance.title":"Seyahat Sigortası","visa.extra.insurance.desc":"Başvurunuz için gereken seyahat sağlık sigortasının planlanmasına ve poliçe sürecine destek.","visa.processEyebrow":"BAŞVURU SÜRECİ","visa.processTitle":"İlk görüşmeden sonuç takibine","visa.processCopy":"Her başvuruyu seyahat amacınız, mesleki durumunuz ve önceki seyahat geçmişiniz doğrultusunda ayrı ayrı değerlendiriyoruz.","visa.step1.title":"Ön Görüşme","visa.step1.desc":"Seyahat amacı ve uygun başvuru kategorisi belirlenir.","visa.step2.title":"Evrak Listesi","visa.step2.desc":"Kişisel durumunuza göre gerekli belgeler planlanır.","visa.step3.title":"Dosya Hazırlığı","visa.step3.desc":"Belgeler kontrol edilir, eksik veya uyumsuz noktalar belirlenir.","visa.step4.title":"Randevu","visa.step4.desc":"Uygun başvuru merkezi ve randevu süreci organize edilir.","visa.step5.title":"Başvuru","visa.step5.desc":"Başvuru dosyanız son kontrolün ardından teslim sürecine hazırlanır.","visa.step6.title":"Sonuç Takibi","visa.step6.desc":"Başvuru sonrası süreç ve gerekli bilgilendirmeler takip edilir.","visa.disclaimer":"<strong>Önemli:</strong> Vize kararı ilgili konsolosluk veya yetkili makam tarafından verilir. Danışmanlık hizmetimiz başvurunun hazırlanması ve süreç yönetimine yöneliktir; vize onayı garanti edilmez.","form.optVisa":"Vize Danışmanlığı",
+"visa.eyebrow":"VİZE DANIŞMANLIĞI","visa.title":"Seyahatinizin ilk adımını <span class='gold'>güvenle</span> planlayın","visa.slogan":"Vizenizi hızlı, kolay ve doğru şekilde planlayın.","visa.intro":"Schengen ve Avrupa ülkeleri ile Orta Doğu destinasyonlarında; evrak hazırlığı, dosya kontrolü, randevu organizasyonu ve başvuru sürecinin takibinde yanınızdayız.","visa.note":"Aşağıdaki listeler turistik kısa süreli başvurular için genel rehber niteliğindedir. Güncel başvuru şartları ülkeye, başvuru sahibinin durumuna ve seyahat amacına göre değişebilir.","visa.schengen":"Schengen","visa.countries.greece":"Yunanistan","visa.countries.italy":"İtalya","visa.countries.france":"Fransa","visa.countries.germany":"Almanya","visa.cta":"Vize başvurunuzu birlikte planlayalım","visa.docsTitle":"Gerekli evraklar","visa.docsIntro":"Başvuru dosyanızın temel kontrol listesi","visa.extrasEyebrow":"SEYAHATİNİZİ TAMAMLAYAN HİZMETLER","visa.extrasTitle":"Vizeden sonra da <span class='gold'>yanınızdayız</span>","visa.extrasCopy":"Başvurunuzun yanında seyahatinizin diğer parçalarını da tek noktadan planlayabilir; uçuş, konaklama ve şehir içi ulaşımınızı seyahat planınıza göre organize edebiliriz.","visa.extra.flight.title":"Uçak","visa.extra.flight.desc":"Seyahat tarihinize ve vize dosyanızdaki plana uygun uçuş seçeneklerinin organizasyonu.","visa.extra.hotel.title":"Otel","visa.extra.hotel.desc":"Konum, konfor ve seyahat planınıza göre konaklama alternatiflerinin planlanması.","visa.extra.transfer.title":"Transfer","visa.extra.transfer.desc":"Havalimanı–otel–havalimanı ve ihtiyaç halinde şehir içi özel transfer organizasyonu.","visa.extra.insurance.title":"Seyahat Sigortası","visa.extra.insurance.desc":"Başvurunuz için gereken seyahat sağlık sigortasının planlanmasına ve poliçe sürecine destek.","visa.processEyebrow":"BAŞVURU SÜRECİ","visa.processTitle":"İlk görüşmeden sonuç takibine","visa.processCopy":"Her başvuruyu seyahat amacınız, mesleki durumunuz ve önceki seyahat geçmişiniz doğrultusunda ayrı ayrı değerlendiriyoruz.","visa.step1.title":"Ön Görüşme","visa.step1.desc":"Seyahat amacı ve uygun başvuru kategorisi belirlenir.","visa.step2.title":"Evrak Listesi","visa.step2.desc":"Kişisel durumunuza göre gerekli belgeler planlanır.","visa.step3.title":"Dosya Hazırlığı","visa.step3.desc":"Belgeler kontrol edilir, eksik veya uyumsuz noktalar belirlenir.","visa.step4.title":"Randevu","visa.step4.desc":"Uygun başvuru merkezi ve randevu süreci organize edilir.","visa.step5.title":"Başvuru","visa.step5.desc":"Başvuru dosyanız son kontrolün ardından teslim sürecine hazırlanır.","visa.step6.title":"Sonuç Takibi","visa.step6.desc":"Başvuru sonrası süreç ve gerekli bilgilendirmeler takip edilir.","visa.disclaimer":"<strong>Önemli:</strong> Vize kararı ilgili konsolosluk veya yetkili makam tarafından verilir. Danışmanlık hizmetimiz başvurunun hazırlanması ve süreç yönetimine yöneliktir; vize onayı garanti edilmez.","form.optVisa":"Vize Danışmanlığı",
 "popup.langLabel":"Dil Seçimi","popup.musicLabel":"Müzik","popup.musicOn":"Açık","popup.musicOff":"Kapalı","popup.confirm":"TAMAM",
 "nav.home":"Anasayfa","nav.about":"Hakkımızda","nav.services":"Hizmetler","nav.regions":"Bölgeler","nav.tours":"Turlar","nav.contact":"İletişim","nav.back":"Geri",
 "hero.eyebrow":"INVADERS TURİZM","hero.line1":"Her yolculuk,","hero.line2a":"yeni bir","hero.line2b":"fetih.","hero.subtitle":"Marmaris'ten Karadeniz'e uzanan rotalarda, 18 yılı aşkın deneyimimizle; konaklama, ulaşım ve rehberlik hizmetlerinde premium standart.","hero.cta1":"Hizmetleri Keşfet","hero.cta2":"İletişime Geç",
