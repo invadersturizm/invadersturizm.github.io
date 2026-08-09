@@ -475,6 +475,224 @@ img,svg,video{max-width:100%}
   [dir="rtl"] .socials{max-width:100%;flex-wrap:wrap;justify-content:center}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.hero-bg{animation:none}}
+
+/* ===== VISA MOBILE REFINEMENT v2 ===== */
+.visa-flag{width:30px;height:21px;display:flex;align-items:center;justify-content:center;flex:none}
+.visa-flag svg{display:block;width:28px;height:20px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.10))}
+.visa-tab .visa-flag + span{min-width:0}
+.visa-tab strong{white-space:nowrap}
+.visa-tab small{white-space:nowrap}
+
+@media(max-width:820px){
+  .visa-section{overflow:hidden}
+  .visa-head{gap:16px;margin-bottom:28px}
+  .visa-head .section-title{font-size:clamp(38px,8vw,52px);line-height:.98}
+  .visa-intro{max-width:none;font-size:13px;line-height:1.75}
+  .visa-note{font-size:11px;line-height:1.65;margin-top:16px;padding:13px 14px}
+  .visa-country-shell{border:0;box-shadow:none;background:transparent}
+  .visa-country-tabs{
+    background:#fff;
+    border:1px solid rgba(20,32,42,.10);
+    box-shadow:0 10px 30px rgba(12,24,32,.06);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .visa-tab{
+    min-height:70px;
+    padding:12px 14px;
+    justify-content:flex-start;
+    gap:11px;
+    border-inline-end:1px solid rgba(20,32,42,.08);
+  }
+  .visa-tab:nth-child(2n){border-inline-end:0}
+  .visa-tab:nth-child(-n+2){border-bottom:1px solid rgba(20,32,42,.08)}
+  .visa-tab.active::after{left:12px;right:12px}
+  .visa-flag{width:27px;height:20px}
+  .visa-flag svg{width:27px;height:19px}
+  .visa-tab strong{font-size:19px}
+  .visa-tab small{font-size:7px;letter-spacing:.12em;margin-top:4px}
+  .visa-content{
+    display:block;
+    margin-top:14px;
+    min-height:0;
+    background:#fff;
+    border:1px solid rgba(20,32,42,.10);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 14px 40px rgba(12,24,32,.07);
+  }
+  .visa-overview{
+    padding:27px 22px 25px;
+    border:0;
+    border-bottom:1px solid rgba(20,32,42,.10);
+    background:linear-gradient(145deg,#fbfaf7,#f6f2eb);
+  }
+  .visa-country-kicker{font-size:8px;letter-spacing:.19em}
+  .visa-country-title{font-size:46px;margin:16px 0 13px}
+  .visa-country-desc{font-size:12px;line-height:1.75}
+  .visa-meta{grid-template-columns:1fr 1fr;margin-top:22px}
+  .visa-meta-item{padding:13px}
+  .visa-meta-item small{font-size:7px;margin-bottom:5px}
+  .visa-meta-item strong{font-size:10.5px;line-height:1.45}
+  .visa-extra-link{margin-top:20px;font-size:9px;letter-spacing:.09em}
+  .visa-docs{padding:25px 20px 23px}
+  .visa-docs-head{margin-bottom:16px}
+  .visa-docs-head h3{font-size:31px}
+  .visa-docs-head p{font-size:9.5px;line-height:1.5;margin-top:6px}
+  .visa-doc{background:#fff}
+  .visa-doc-btn{
+    min-height:56px;
+    grid-template-columns:26px minmax(0,1fr) 17px;
+    gap:9px;
+  }
+  .visa-doc-num{width:23px;height:23px;font-size:8px}
+  .visa-doc-btn strong{font-size:11px;line-height:1.35}
+  .visa-doc-btn svg{width:14px;height:14px}
+  .visa-doc-body p{font-size:10.5px;line-height:1.7;padding:0 27px 15px 35px}
+  .visa-services{margin-top:43px}
+  .visa-services-head{margin-bottom:20px}
+  .visa-services-head .section-title{font-size:38px;line-height:1}
+  .visa-services-head p{font-size:12px;line-height:1.7}
+  .visa-service-grid{
+    grid-template-columns:1fr 1fr;
+    border:1px solid rgba(20,32,42,.10);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .visa-service-card{
+    min-height:190px;
+    padding:22px 17px;
+    border-inline-end:1px solid rgba(20,32,42,.09);
+    border-bottom:1px solid rgba(20,32,42,.09);
+  }
+  .visa-service-card:nth-child(2n){border-inline-end:0}
+  .visa-service-card:nth-last-child(-n+2){border-bottom:0}
+  .visa-service-card svg{width:29px;height:29px;margin-bottom:17px}
+  .visa-service-card .num{font-size:7px}
+  .visa-service-card h4{font-size:23px;margin:6px 0 8px}
+  .visa-service-card p{font-size:9.5px;line-height:1.6}
+  .visa-process{
+    margin-top:43px;
+    padding:27px 21px;
+    border-radius:12px;
+  }
+  .visa-process-head .section-title{font-size:38px;line-height:1}
+  .visa-process-head p{font-size:11px;line-height:1.7}
+  .visa-steps{grid-template-columns:1fr 1fr;gap:0}
+  .visa-step{min-height:155px;padding:0 13px 20px}
+  .visa-step:first-child{padding-inline-start:0}
+  .visa-step:nth-child(2n){padding-inline-end:0}
+  .visa-step .step-num{width:29px;height:29px;font-size:8px;margin-bottom:15px}
+  .visa-step h4{font-size:20px}
+  .visa-step p{font-size:9.5px;line-height:1.6}
+  .visa-disclaimer{font-size:9px;line-height:1.65;padding:0 8px}
+}
+
+@media(max-width:430px){
+  .visa-head .section-title{font-size:37px}
+  .visa-tab{min-height:66px;padding:10px 11px;gap:8px}
+  .visa-tab strong{font-size:17px}
+  .visa-tab small{font-size:6.5px}
+  .visa-flag{width:25px;height:18px}
+  .visa-flag svg{width:25px;height:18px}
+  .visa-overview{padding:24px 18px 22px}
+  .visa-country-title{font-size:42px}
+  .visa-country-desc{font-size:11.5px}
+  .visa-meta-item{padding:11px}
+  .visa-meta-item strong{font-size:10px}
+  .visa-docs{padding:22px 17px}
+  .visa-docs-head h3{font-size:29px}
+  .visa-doc-btn strong{font-size:10.5px}
+  .visa-service-card{min-height:200px;padding:20px 14px}
+  .visa-service-card h4{font-size:21px}
+  .visa-service-card p{font-size:9px}
+  .visa-process{padding:25px 17px}
+  .visa-process-head .section-title{font-size:35px}
+  .visa-step{min-height:165px}
+}
+
+
+/* ===== COUNTRY LANDMARK PHOTOS ===== */
+.visa-landmark{
+  position:relative;
+  width:100%;
+  height:225px;
+  margin:0 0 28px;
+  overflow:hidden;
+  background:#e9e5dc;
+  border:1px solid rgba(20,32,42,.10);
+  box-shadow:0 14px 35px rgba(12,24,32,.09);
+}
+.visa-landmark img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+  filter:saturate(.88) contrast(.96);
+  transform:scale(1.015);
+  transition:opacity .32s ease, transform .7s var(--ease), filter .4s ease;
+}
+.visa-landmark::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(6,21,34,0) 48%,rgba(6,21,34,.58) 100%);
+  pointer-events:none;
+}
+.visa-landmark-overlay{
+  position:absolute;
+  left:17px;
+  right:17px;
+  bottom:14px;
+  z-index:2;
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:15px;
+  color:#fff;
+}
+.visa-landmark-overlay span{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;
+  line-height:1;
+  text-shadow:0 2px 8px rgba(0,0,0,.28);
+}
+.visa-landmark-overlay a{
+  color:rgba(255,255,255,.78);
+  font-size:8px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  border-bottom:1px solid rgba(255,255,255,.45);
+  padding-bottom:3px;
+}
+.visa-landmark.is-changing img{
+  opacity:.12;
+  transform:scale(1.04);
+  filter:blur(1px) saturate(.7);
+}
+@media(max-width:820px){
+  .visa-landmark{
+    height:182px;
+    margin:0 0 22px;
+    border-radius:9px;
+  }
+  .visa-landmark-overlay{
+    left:13px;
+    right:13px;
+    bottom:11px;
+  }
+  .visa-landmark-overlay span{font-size:21px}
+  .visa-landmark-overlay a{font-size:7px}
+}
+@media(max-width:430px){
+  .visa-landmark{
+    height:165px;
+    margin-bottom:19px;
+  }
+  .visa-landmark-overlay span{font-size:19px}
+}
+
 </style>
 </head>
 <body>
@@ -645,21 +863,28 @@ img,svg,video{max-width:100%}
     <div class="visa-country-shell reveal">
       <div class="visa-country-tabs" role="tablist" aria-label="Vize ülkeleri">
         <button class="visa-tab active" type="button" data-country="greece" role="tab" aria-selected="true">
-          <span class="flag">🇬🇷</span><span><strong data-i18n="visa.countries.greece">Yunanistan</strong><small data-i18n="visa.schengen">Schengen</small></span>
+          <span class="visa-flag visa-flag-gr"><svg viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="2" fill="#fff"/><path fill="#0D5EAF" d="M0 0h28v2.2H0zM0 4.4h28v2.2H0zM0 8.8h28V11H0zM0 13.2h28v2.2H0zM0 17.6h28V20H0z"/><path fill="#0D5EAF" d="M0 0h11v11H0z"/><path fill="#fff" d="M4.4 0h2.2v11H4.4zM0 4.4h11v2.2H0z"/></svg></span><span><strong data-i18n="visa.countries.greece">Yunanistan</strong><small data-i18n="visa.schengen">Schengen</small></span>
         </button>
         <button class="visa-tab" type="button" data-country="italy" role="tab" aria-selected="false">
-          <span class="flag">🇮🇹</span><span><strong data-i18n="visa.countries.italy">İtalya</strong><small data-i18n="visa.schengen">Schengen</small></span>
+          <span class="visa-flag"><svg viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="2" fill="#fff"/><path fill="#009246" d="M0 0h9.34v20H0z"/><path fill="#CE2B37" d="M18.66 0H28v20h-9.34z"/></svg></span><span><strong data-i18n="visa.countries.italy">İtalya</strong><small data-i18n="visa.schengen">Schengen</small></span>
         </button>
         <button class="visa-tab" type="button" data-country="france" role="tab" aria-selected="false">
-          <span class="flag">🇫🇷</span><span><strong data-i18n="visa.countries.france">Fransa</strong><small data-i18n="visa.schengen">Schengen</small></span>
+          <span class="visa-flag"><svg viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="2" fill="#fff"/><path fill="#0055A4" d="M0 0h9.34v20H0z"/><path fill="#EF4135" d="M18.66 0H28v20h-9.34z"/></svg></span><span><strong data-i18n="visa.countries.france">Fransa</strong><small data-i18n="visa.schengen">Schengen</small></span>
         </button>
         <button class="visa-tab" type="button" data-country="germany" role="tab" aria-selected="false">
-          <span class="flag">🇩🇪</span><span><strong data-i18n="visa.countries.germany">Almanya</strong><small data-i18n="visa.schengen">Schengen</small></span>
+          <span class="visa-flag"><svg viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="2" fill="#FFCE00"/><path fill="#000" d="M0 0h28v6.67H0z"/><path fill="#D00" d="M0 6.67h28v6.66H0z"/></svg></span><span><strong data-i18n="visa.countries.germany">Almanya</strong><small data-i18n="visa.schengen">Schengen</small></span>
         </button>
       </div>
 
       <div class="visa-content">
         <div class="visa-overview">
+          <figure class="visa-landmark">
+            <img id="visaCountryImage" src="" alt="" loading="lazy" decoding="async">
+            <div class="visa-landmark-overlay">
+              <span id="visaCountryImageLabel">Yunanistan</span>
+              <a id="visaCountryImageCredit" href="#" target="_blank" rel="noopener noreferrer">Fotoğraf</a>
+            </div>
+          </figure>
           <div class="visa-country-kicker" id="visaCountryKicker">TURİSTİK VİZE</div>
           <h3 class="visa-country-title" id="visaCountryTitle">Yunanistan</h3>
           <p class="visa-country-desc" id="visaCountryDesc"></p>
@@ -1195,10 +1420,58 @@ VISA_DATA.ar={
   }
 };
 
+
+const VISA_IMAGES={
+  greece:{
+    src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Parthenon%2C_Athens%2C_Greece.jpg',
+    label:'Akropolis • Atina',
+    credit:'Fotoğraf: DJDunsie / Wikimedia Commons',
+    source:'https://commons.wikimedia.org/wiki/File:Parthenon,_Athens,_Greece.jpg'
+  },
+  italy:{
+    src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Colosseum%2C_Rome.JPG',
+    label:'Kolezyum • Roma',
+    credit:'Fotoğraf: Podluzhnaya / Wikimedia Commons',
+    source:'https://commons.wikimedia.org/wiki/File:Colosseum,_Rome.JPG'
+  },
+  france:{
+    src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Paris_Eiffel_Tower.JPG',
+    label:'Eyfel Kulesi • Paris',
+    credit:'Fotoğraf: Dickelbers / Wikimedia Commons',
+    source:'https://commons.wikimedia.org/wiki/File:Paris_Eiffel_Tower.JPG'
+  },
+  germany:{
+    src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Brandenburg_Gate%2C_Berlin.jpg',
+    label:'Brandenburg Kapısı • Berlin',
+    credit:'Fotoğraf: Mike Peel / Wikimedia Commons',
+    source:'https://commons.wikimedia.org/wiki/File:Brandenburg_Gate,_Berlin.jpg'
+  }
+};
+
 function renderVisaCountry(country='greece'){
   const lang=currentLang||'tr';
   const data=(VISA_DATA[lang]&&VISA_DATA[lang][country])||(VISA_DATA.tr[country]);
   if(!data)return;
+
+  const photo=VISA_IMAGES[country];
+  const photoWrap=document.querySelector('.visa-landmark');
+  const photoEl=document.getElementById('visaCountryImage');
+  const photoLabel=document.getElementById('visaCountryImageLabel');
+  const photoCredit=document.getElementById('visaCountryImageCredit');
+  if(photo && photoEl){
+    if(photoWrap) photoWrap.classList.add('is-changing');
+    window.setTimeout(()=>{
+      photoEl.src=photo.src;
+      photoEl.alt=photo.label;
+      if(photoLabel) photoLabel.textContent=photo.label;
+      if(photoCredit){
+        photoCredit.textContent=photo.credit;
+        photoCredit.href=photo.source;
+      }
+      photoEl.onload=()=>window.setTimeout(()=>photoWrap&&photoWrap.classList.remove('is-changing'),60);
+    },90);
+  }
+
   const title=document.getElementById('visaCountryTitle');
   const desc=document.getElementById('visaCountryDesc');
   const values=data.values||[];
