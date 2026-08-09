@@ -740,6 +740,33 @@ img,svg,video{max-width:100%}
   .visa-landmark-overlay span{font-size:19px}
 }
 
+
+/* ===== VISA DESTINATION GALLERY — PREMIUM CROSSFADE ===== */
+.visa-landmark{isolation:isolate}
+.visa-gallery-stage{position:absolute;inset:0;overflow:hidden;background:#ded8cc}
+.visa-gallery-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;opacity:0;transform:scale(1.035);filter:saturate(.82) contrast(.97);transition:opacity .85s cubic-bezier(.22,.61,.36,1),transform 5.6s cubic-bezier(.2,.6,.2,1),filter .8s ease}
+.visa-gallery-image.active{opacity:1;transform:scale(1);filter:saturate(.91) contrast(.98)}
+.visa-gallery-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,18,30,.04) 34%,rgba(5,18,30,.70) 100%);pointer-events:none}
+.visa-landmark-overlay{bottom:17px;left:19px;right:19px}
+.visa-landmark-overlay span{font-size:25px}
+.visa-gallery-dots{position:absolute;right:19px;bottom:17px;z-index:4;display:flex;align-items:center;gap:6px;padding:5px 7px;border:1px solid rgba(255,255,255,.18);background:rgba(7,24,38,.22);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:999px}
+.visa-gallery-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.42);transition:width .35s ease,background .35s ease,opacity .35s ease}
+.visa-gallery-dot.active{width:18px;border-radius:999px;background:#fff}
+.visa-landmark.is-changing .visa-gallery-image{filter:saturate(.65) contrast(.95)}
+@media(max-width:820px){
+  .visa-landmark{height:182px}
+  .visa-landmark-overlay{left:13px;right:13px;bottom:13px}
+  .visa-landmark-overlay span{font-size:21px}
+  .visa-gallery-dots{right:13px;bottom:13px;gap:5px;padding:4px 6px}
+  .visa-gallery-dot{width:4px;height:4px}
+  .visa-gallery-dot.active{width:15px}
+}
+@media(max-width:430px){
+  .visa-landmark{height:165px}
+  .visa-landmark-overlay span{font-size:19px}
+  .visa-gallery-dots{right:11px;bottom:11px}
+}
+
 </style>
 
 <style id="visa-region-polish">
@@ -920,7 +947,7 @@ img,svg,video{max-width:100%}
       <div class="visa-country-tabs visa-region-tabs" role="tablist" aria-label="Vize bölgeleri">
         <button class="visa-tab visa-region-tab active" type="button" data-country="schengen" role="tab" aria-selected="true">
           <span class="visa-region-image">
-            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Eiffel_Tower,_Paris.jpg" alt="Eyfel Kulesi, Paris" loading="eager" decoding="async">
+            <img src="https://images.pexels.com/photos/30690158/pexels-photo-30690158.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Eyfel Kulesi, Paris" loading="eager" decoding="async">
             <span class="visa-region-shade"></span>
             <span class="visa-region-caption" data-i18n="visa.regions.schengen.caption">SCHENGEN / AVRUPA</span>
           </span>
@@ -931,7 +958,7 @@ img,svg,video{max-width:100%}
         </button>
         <button class="visa-tab visa-region-tab" type="button" data-country="middleeast" role="tab" aria-selected="false">
           <span class="visa-region-image">
-            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dubai_Burj_Khalifa.jpg" alt="Burj Khalifa, Dubai" loading="lazy" decoding="async">
+            <img src="https://images.pexels.com/photos/34029396/pexels-photo-34029396.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Burj Khalifa, Dubai" loading="lazy" decoding="async">
             <span class="visa-region-shade"></span>
             <span class="visa-region-caption" data-i18n="visa.regions.middleeast.caption">ORTA DOĞU</span>
           </span>
@@ -944,12 +971,16 @@ img,svg,video{max-width:100%}
 
       <div class="visa-content">
         <div class="visa-overview">
-          <figure class="visa-landmark">
-            <img id="visaCountryImage" src="" alt="" loading="eager" decoding="async">
-            <div class="visa-landmark-overlay">
-              <span id="visaCountryImageLabel">Avrupa • Paris</span>
-              <a id="visaCountryImageCredit" href="#" target="_blank" rel="noopener noreferrer">Fotoğraf</a>
+          <figure class="visa-landmark" aria-label="Destinasyon fotoğrafları">
+            <div class="visa-gallery-stage">
+              <img id="visaGalleryA" class="visa-gallery-image active" src="https://images.pexels.com/photos/1010648/pexels-photo-1010648.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Santorini, Yunanistan" loading="eager" decoding="async">
+              <img id="visaGalleryB" class="visa-gallery-image" src="" alt="" loading="lazy" decoding="async">
             </div>
+            <div class="visa-landmark-overlay">
+              <span id="visaCountryImageLabel">Santorini • Yunanistan</span>
+              <a id="visaCountryImageCredit" href="https://www.pexels.com/photo/santorini-greece-1010648/" target="_blank" rel="noopener noreferrer">Fotoğraf kaynağı</a>
+            </div>
+            <div class="visa-gallery-dots" id="visaGalleryDots" aria-hidden="true"></div>
           </figure>
           <div class="visa-country-kicker" id="visaCountryKicker">TURİSTİK VİZE</div>
           <h3 class="visa-country-title" id="visaCountryTitle">Schengen / Avrupa</h3>
@@ -1392,44 +1423,94 @@ const VISA_DATA={
   }
 };
 
-const VISA_IMAGES={
-  schengen:{
-    src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Eiffel_Tower,_Paris.jpg',
-    label:'Avrupa • Paris',
-    credit:'Kate • Wikimedia Commons',
-    source:'https://commons.wikimedia.org/wiki/File:Eiffel_Tower,_Paris.jpg'
-  },
-  middleeast:{
-    src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Dubai_Burj_Khalifa.jpg',
-    label:'Orta Doğu • Dubai',
-    credit:'Bahaa aldien • Wikimedia Commons',
-    source:'https://commons.wikimedia.org/wiki/File:Dubai_Burj_Khalifa.jpg'
-  }
+const VISA_GALLERIES={
+  schengen:[
+    {src:'https://images.pexels.com/photos/1010648/pexels-photo-1010648.jpeg?auto=compress&cs=tinysrgb&w=1600',label:'Santorini • Yunanistan',credit:'Pexels • Jimmy Teoh',source:'https://www.pexels.com/photo/santorini-greece-1010648/'},
+    {src:'https://images.pexels.com/photos/37505735/pexels-photo-37505735.jpeg?auto=compress&cs=tinysrgb&w=1600',label:'Kolezyum • Roma',credit:'Pexels • Osviel Rodriguez Valdés',source:'https://www.pexels.com/photo/colosseum-in-rome-at-sunset-37505735/'},
+    {src:'https://images.pexels.com/photos/31792430/pexels-photo-31792430.jpeg?auto=compress&cs=tinysrgb&w=1600',label:'Kanallar • Amsterdam',credit:'Pexels • Omar Ramadan',source:'https://www.pexels.com/photo/scenic-amsterdam-canal-view-at-sunset-31792430/'},
+    {src:'https://images.pexels.com/photos/19992083/pexels-photo-19992083.jpeg?auto=compress&cs=tinysrgb&w=1600',label:'Zafer Takı • Paris',credit:'Pexels • YFS Visuals',source:'https://www.pexels.com/photo/arc-de-triomphe-in-paris-in-evening-19992083/'}
+  ],
+  middleeast:[
+    {src:'https://images.pexels.com/photos/29497728/pexels-photo-29497728.jpeg?auto=compress&cs=tinysrgb&w=1600',label:'Burj Khalifa • Dubai',credit:'Pexels • Zaur Takhgiriev',source:'https://www.pexels.com/photo/dubai-skyline-with-burj-khalifa-in-sunset-light-29497728/'},
+    {src:'https://images.pexels.com/photos/13256066/pexels-photo-13256066.jpeg?auto=compress&cs=tinysrgb&w=1600',label:'Dubai • Gece Silüeti',credit:'Pexels • Nihongraphy',source:'https://www.pexels.com/photo/dubai-skyline-at-night-13256066/'},
+    {src:'https://images.pexels.com/photos/17472769/pexels-photo-17472769.jpeg?auto=compress&cs=tinysrgb&w=1600',label:'Petra • Ürdün',credit:'Pexels • Andrea Imre',source:'https://www.pexels.com/photo/photo-of-petra-jordan-17472769/'},
+    {src:'https://images.pexels.com/photos/35481866/pexels-photo-35481866.jpeg?auto=compress&cs=tinysrgb&w=1600',label:'Doha • Katar',credit:'Pexels • Busalpa Ernest',source:'https://www.pexels.com/photo/dazzling-nighttime-doha-skyline-35481866/'}
+  ]
 };
+
+let visaCarouselTimer=null;
+let visaCarouselRegion='schengen';
+let visaCarouselIndex=0;
+let visaCarouselLayer=0;
+
+function renderVisaGalleryDots(gallery){
+  const dots=document.getElementById('visaGalleryDots');
+  if(!dots)return;
+  dots.innerHTML=gallery.map((_,i)=>`<span class="visa-gallery-dot ${i===0?'active':''}"></span>`).join('');
+}
+
+function setVisaGalleryImage(index,instant=false){
+  const gallery=VISA_GALLERIES[visaCarouselRegion]||[];
+  if(!gallery.length)return;
+  index=(index+gallery.length)%gallery.length;
+  const item=gallery[index];
+  const a=document.getElementById('visaGalleryA');
+  const b=document.getElementById('visaGalleryB');
+  const label=document.getElementById('visaCountryImageLabel');
+  const credit=document.getElementById('visaCountryImageCredit');
+  const wrap=document.querySelector('.visa-landmark');
+  const layers=[a,b];
+  if(!a||!b)return;
+
+  const nextLayer=visaCarouselLayer===0?1:0;
+  const next=layers[nextLayer];
+  const current=layers[visaCarouselLayer];
+  const apply=()=>{
+    next.src=item.src;
+    next.alt=item.label;
+    next.classList.toggle('active',true);
+    current.classList.toggle('active',false);
+    visaCarouselLayer=nextLayer;
+    visaCarouselIndex=index;
+    if(label)label.textContent=item.label;
+    if(credit){credit.textContent=item.credit;credit.href=item.source}
+    document.querySelectorAll('#visaGalleryDots .visa-gallery-dot').forEach((dot,i)=>dot.classList.toggle('active',i===index));
+    if(wrap)wrap.classList.remove('is-changing');
+  };
+
+  if(instant){
+    a.classList.remove('active');b.classList.remove('active');
+    a.src=item.src;a.alt=item.label;a.classList.add('active');
+    visaCarouselLayer=0;visaCarouselIndex=index;
+    if(label)label.textContent=item.label;
+    if(credit){credit.textContent=item.credit;credit.href=item.source}
+    return;
+  }
+  if(wrap)wrap.classList.add('is-changing');
+  next.onload=()=>{next.onload=null;apply()};
+  next.src=item.src;
+  if(next.complete)apply();
+}
+
+function startVisaGallery(region='schengen'){
+  clearInterval(visaCarouselTimer);
+  visaCarouselRegion=VISA_GALLERIES[region]?region:'schengen';
+  visaCarouselIndex=0;
+  visaCarouselLayer=0;
+  const gallery=VISA_GALLERIES[visaCarouselRegion]||[];
+  renderVisaGalleryDots(gallery);
+  setVisaGalleryImage(0,true);
+  gallery.slice(1).forEach(item=>{const img=new Image();img.src=item.src});
+  visaCarouselTimer=setInterval(()=>setVisaGalleryImage(visaCarouselIndex+1),5000);
+}
+
 
 function renderVisaCountry(country='schengen'){
   const lang=currentLang||'tr';
   const data=(VISA_DATA[lang]&&VISA_DATA[lang][country])||(VISA_DATA.tr[country]);
   if(!data)return;
 
-  const photo=VISA_IMAGES[country];
-  const photoWrap=document.querySelector('.visa-landmark');
-  const photoEl=document.getElementById('visaCountryImage');
-  const photoLabel=document.getElementById('visaCountryImageLabel');
-  const photoCredit=document.getElementById('visaCountryImageCredit');
-  if(photo && photoEl){
-    if(photoWrap) photoWrap.classList.add('is-changing');
-    window.setTimeout(()=>{
-      photoEl.src=photo.src;
-      photoEl.alt=photo.label;
-      if(photoLabel) photoLabel.textContent=photo.label;
-      if(photoCredit){
-        photoCredit.textContent=photo.credit;
-        photoCredit.href=photo.source;
-      }
-      photoEl.onload=()=>window.setTimeout(()=>photoWrap&&photoWrap.classList.remove('is-changing'),60);
-    },90);
-  }
+  if(country!==visaCarouselRegion){startVisaGallery(country)}
 
   const title=document.getElementById('visaCountryTitle');
   const desc=document.getElementById('visaCountryDesc');
@@ -1467,7 +1548,7 @@ document.querySelectorAll('.visa-tab').forEach(tab=>{
   });
 });
 
-async function boot(){await loadSiteContent();renderVisaCountry("schengen");openPopup()}
+async function boot(){await loadSiteContent();startVisaGallery("schengen");renderVisaCountry("schengen");openPopup()}
 boot();
 </script>
 </body>
