@@ -1513,7 +1513,7 @@ const DEFAULT_SITE_SETTINGS={
   aboutSinceYear:'2008',
   contact:{phones:['+90 531 640 21 30','+90 532 593 46 99','+90 535 763 13 44'],email:'info@invaders.com.tr',whatsapp:'+90 531 640 21 30',address:{tr:'İnönü Mah. Cumhuriyet Cad. Şakir Paşa Apt. No:59/11 Şişli/İstanbul'},hours:{tr:'Her gün 08:00 – 22:00'}},
   form:{action:'https://formsubmit.co/ajax/info@invaders.com.tr',subject:'Invaders Turizm — Yeni web sitesi mesajı'},
-  social:{instagram:'',facebook:'',whatsapp:'https://wa.me/905357631344'},
+  social:{instagram:'',facebook:'',whatsapp:'https://wa.me/905316402130'},
   audio:{src:'invadersbgmusic.mp3',volume:.35}
 };
 let SITE={settings:structuredClone(DEFAULT_SITE_SETTINGS),translations:T};
@@ -1557,8 +1557,8 @@ function applySiteSettings(){
   const topEmail=document.querySelector('.top-email');if(topEmail&&email){topEmail.textContent=email;topEmail.href='mailto:'+email}
   const emailItem=document.querySelector('.contact-list .contact-item:nth-child(2)');if(emailItem&&email){const label=emailItem.querySelector('small')?.outerHTML||'<small data-i18n="contact.emailLabel">E-posta</small>';emailItem.innerHTML=label+`<a href="mailto:${email}">${email}</a>`}
   const footerContact=document.querySelector('.footer-grid>div:last-child');if(footerContact){const heading=footerContact.querySelector('h4')?.outerHTML||'<h4 data-i18n="footer.contactInfo">İletişim Bilgileri</h4>';footerContact.innerHTML=heading+phones.map(p=>`<a class="meta" href="${phoneHref(p)}">${p}</a>`).join('')+(email?`<a class="meta" href="mailto:${email}">${email}</a>`:'')}
-  const wa=document.querySelector('.whatsapp-btn');if(wa){wa.href=social.whatsapp||whatsappHref(contact.whatsapp||phones[0])}
-  const socials=document.querySelectorAll('.socials a');const urls=[social.instagram,social.facebook,social.whatsapp||whatsappHref(contact.whatsapp||phones[0])];socials.forEach((a,i)=>{if(urls[i]){a.href=urls[i];a.target='_blank';a.rel='noopener noreferrer'}else{a.href='#';a.removeAttribute('target')}});
+  const wa=document.querySelector('.whatsapp-btn');if(wa){wa.href='https://wa.me/905316402130';wa.target='_blank';wa.rel='noopener noreferrer'}
+  const socials=document.querySelectorAll('.socials a');const urls=[social.instagram,social.facebook,'https://wa.me/905316402130'];socials.forEach((a,i)=>{if(urls[i]){a.href=urls[i];a.target='_blank';a.rel='noopener noreferrer'}else{a.href='#';a.removeAttribute('target')}});
   const form=document.getElementById('contactFormEl');
   if(form)form.action='https://formsubmit.co/ajax/info@invaders.com.tr';
   const subject=form?.querySelector('input[name="_subject"]');if(subject&&formSettings.subject)subject.value=formSettings.subject;
