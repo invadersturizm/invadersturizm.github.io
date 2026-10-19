@@ -159,7 +159,7 @@ body.menu-open{overflow:hidden}
 .services-head{position:relative;display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:52px}
 .services-head .section-title{color:#fff;max-width:700px;margin-top:24px}
 .services-head p{max-width:420px;color:rgba(255,255,255,.62);font-size:15px;line-height:1.8}
-.services-grid{position:relative;display:grid;grid-template-columns:repeat(6,1fr);border:1px solid rgba(200,155,92,.28)}
+.services-grid{position:relative;display:grid;grid-template-columns:repeat(5,1fr);border:1px solid rgba(200,155,92,.28)}
 .service-card{min-height:345px;padding:34px 26px;border-inline-end:1px solid rgba(200,155,92,.22);display:flex;flex-direction:column;transition:.4s var(--ease);background:rgba(255,255,255,.018)}
 .service-card:last-child{border-inline-end:0}
 .service-card:hover{background:var(--cream);color:var(--ink);transform:translateY(-8px);box-shadow:0 22px 55px rgba(0,0,0,.22)}
@@ -206,6 +206,21 @@ body.menu-open{overflow:hidden}
 .tour-body p{font-size:14px;color:var(--muted);line-height:1.75;min-height:74px}
 .tour-foot{display:flex;justify-content:space-between;align-items:center;margin-top:22px;padding-top:19px;border-top:1px solid rgba(20,32,42,.09)}
 .tour-foot span{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-dark);font-weight:700}
+
+
+
+/* ===== TOUR CATEGORIES ===== */
+#internationalTours[hidden]{display:none!important}
+.tour-category-tabs{display:flex;gap:10px;margin:-16px 0 32px;border-bottom:1px solid rgba(20,32,42,.12);padding-bottom:16px}
+.tour-category-tab{padding:13px 22px;border:1px solid rgba(20,32,42,.16);color:#596169;font-size:12px;font-weight:700;letter-spacing:.06em;transition:.3s}
+.tour-category-tab:hover{border-color:var(--gold-dark);color:var(--navy)}
+.tour-category-tab.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.local-tours-notice{padding:70px 28px;text-align:center;background:linear-gradient(145deg,#fbfaf7,#f2ece1);border:1px solid rgba(200,155,92,.28)}
+.local-tours-notice[hidden]{display:none}
+.local-tours-mark{display:inline-flex;align-items:center;justify-content:center;width:54px;height:54px;border:1px solid var(--gold);border-radius:50%;color:var(--gold-dark);font-size:22px;margin-bottom:18px}
+.local-tours-notice h3{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,42px);font-weight:500;color:var(--navy);margin-bottom:10px}
+.local-tours-notice p{font-size:14px;color:var(--muted);max-width:520px;margin:0 auto;line-height:1.8}
+@media(max-width:560px){.tour-category-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:-8px}.tour-category-tab{padding:12px 8px;font-size:10px}.local-tours-notice{padding:48px 20px}}
 
 /* ===== PROMISE ===== */
 .promise{background:linear-gradient(rgba(6,21,34,.82),rgba(6,21,34,.9)),url('https://images.unsplash.com/photo-1695415683093-ae5f213ea898?auto=format&fit=crop&w=2000&q=82') center/cover fixed;color:#fff;text-align:center;padding:110px 0}
@@ -1033,7 +1048,6 @@ img,svg,video{max-width:100%}
         <a href="#about" class="nav-link" data-i18n="nav.about">Hakkımızda</a>
         <a href="#services" class="nav-link" data-i18n="nav.services">Hizmetler</a>
         <a href="#visa" class="nav-link" data-i18n="nav.visa">Vize</a>
-        <a href="#regions" class="nav-link" data-i18n="nav.regions">Bölgeler</a>
         <a href="#tours" class="nav-link" data-i18n="nav.tours">Turlar</a>
         <a href="#contactForm" class="nav-link" data-i18n="nav.contact">İletişim</a>
       </nav>
@@ -1050,7 +1064,6 @@ img,svg,video{max-width:100%}
   <a href="#about" class="nav-link" data-i18n="nav.about">Hakkımızda</a>
   <a href="#services" class="nav-link" data-i18n="nav.services">Hizmetler</a>
   <a href="#visa" class="nav-link" data-i18n="nav.visa">Vize</a>
-  <a href="#regions" class="nav-link" data-i18n="nav.regions">Bölgeler</a>
   <a href="#tours" class="nav-link" data-i18n="nav.tours">Turlar</a>
   <a href="#contactForm" class="nav-link" data-i18n="nav.contact">İletişim</a>
   <div class="mobile-lang"><button class="lang-btn active" data-lang="tr">TR</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="ar">AR</button></div>
@@ -1129,62 +1142,13 @@ img,svg,video{max-width:100%}
       <article class="service-card"><span class="num">03</span><svg viewBox="0 0 48 48"><circle cx="24" cy="15" r="7"/><path d="M11 42v-6c0-8 5-13 13-13s13 5 13 13v6M18 26l6 6 6-6"/></svg><h3 data-i18n="services.s3.title">Münferit Rezervasyon</h3><p data-i18n="services.s3.desc">Tercihlerinize göre şekillenen tamamen kişiselleştirilmiş seyahat programları.</p><span class="card-arrow">→</span></article>
       <article class="service-card"><span class="num">04</span><svg viewBox="0 0 48 48"><circle cx="17" cy="16" r="5"/><circle cx="32" cy="16" r="5"/><path d="M7 41v-5c0-7 4-11 10-11s10 4 10 11v5M23 27c2-2 5-3 9-3 6 0 10 4 10 11v6"/></svg><h3 data-i18n="services.s4.title">Grup Rezervasyon</h3><p data-i18n="services.s4.desc">Kurumsal veya özel gruplar için koordineli organizasyon ve avantajlı planlama.</p><span class="card-arrow">→</span></article>
       <article class="service-card"><span class="num">05</span><svg viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="26" rx="2"/><path d="M6 18h36M17 36v6M31 36v6M13 42h22"/></svg><h3 data-i18n="services.s5.title">İş Toplantıları</h3><p data-i18n="services.s5.desc">Misafirleriniz için profesyonel transfer, konaklama ve operasyon desteği.</p><span class="card-arrow">→</span></article>
-      <article class="service-card"><span class="num">06</span><svg viewBox="0 0 48 48"><path d="M19 5h10v14h14v10H29v14H19V29H5V19h14V5z"/></svg><h3 data-i18n="services.s6.title">Sağlık Turizmi</h3><p data-i18n="services.s6.desc">Sağlık hizmeti yolculuğunuz için doktor, konaklama ve VIP transfer organizasyonunu tek noktadan planlıyoruz.</p><span class="card-arrow">→</span></article>
     </div>
   </div>
 </section>
 
 
 
-<section class="health section" id="health">
-  <div class="container">
-    <div class="health-head reveal">
-      <div>
-        <span class="kicker" data-i18n="health.eyebrow">SAĞLIK TURİZMİ</span>
-        <h2 class="section-title" data-i18n="health.title">Türkiye'deki sağlık yolculuğunuzu <span class="gold">Invaders ile</span> planlayın</h2>
-      </div>
-      <div class="health-head-copy">
-        <p class="health-intro" data-i18n="health.intro">Invaders iş birliğiyle, Türkiye'nin önde gelen saç ekimi uzmanlarından Dr. Mehmet Güçlü ile saç dökülmesi ve saç ekimi konusunda misafirlerimize özel avantajlar sunuyoruz.</p>
-        <div class="health-partner-line" data-i18n="health.partner">Dr. Mehmet Güçlü · Saç Ekimi Uzmanı</div>
-        <a class="health-link" href="https://avrupahairtransplant.com/tr/medya-ve-iletisim/" target="_blank" rel="noopener noreferrer"><span data-i18n="health.link">Dr. Mehmet Güçlü iş birliğini inceleyin</span><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-    </div>
 
-    <div class="health-banner reveal">
-      <span class="health-banner-credit" data-i18n="health.badge">INVADERS × DR. MEHMET GÜÇLÜ</span>
-      <img src="health-tourism-banner.png" alt="Invaders Turizm ve Dr. Mehmet Güçlü sağlık turizmi iş birliği" loading="lazy" decoding="async">
-    </div>
-
-    <div class="health-offer-bar reveal">
-      <div class="health-discount">
-        <span data-i18n="health.discountBadge">INVADERS MİSAFİRLERİNE</span>
-        <strong>%10</strong>
-        <small data-i18n="health.discountSmall">Özel indirim</small>
-      </div>
-
-      <div class="health-benefit">
-        <svg viewBox="0 0 48 48"><path d="M5 23L24 7l19 16M9 20v22h30V20M19 42V29h10v13"/></svg>
-        <div><strong data-i18n="health.b1.title">Konaklama</strong><p data-i18n="health.b1.desc">Seyahat planınıza uygun konaklama seçeneklerini sizin için organize ediyoruz.</p></div>
-      </div>
-
-      <div class="health-benefit">
-        <svg viewBox="0 0 48 48"><path d="M5 30h38L30 20l-4-14h-4l-2 14-15 10zM10 30l-4 8h36l-4-8M18 38v5M30 38v5"/></svg>
-        <div><strong data-i18n="health.b2.title">Gidiş – Dönüş</strong><p data-i18n="health.b2.desc">Ulaşım ve transfer planını gelişten dönüşe kadar tek noktadan yönetiyoruz.</p></div>
-      </div>
-
-      <div class="health-benefit">
-        <svg viewBox="0 0 48 48"><path d="M7 31h34M10 31V17h28v14M15 17V9h18v8M16 31v7M32 31v7M13 42h22"/><circle cx="15" cy="38" r="3"/><circle cx="33" cy="38" r="3"/></svg>
-        <div><strong data-i18n="health.b3.title">VIP Transfer</strong><p data-i18n="health.b3.desc">Havalimanı, otel ve klinik arasındaki VIP transfer organizasyonunu sağlıyoruz.</p></div>
-      </div>
-
-      <div class="health-actions">
-        <a href="#contactForm" class="btn btn-gold"><span data-i18n="health.cta">Sağlık turizmi için iletişime geçin</span><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-    </div>
-
-    <p class="health-note reveal" data-i18n="health.note">İndirim, Invaders üzerinden yönlendirilen misafirler için geçerlidir. Tıbbi işlem ve klinik hizmetleri ilgili sağlık kuruluşu tarafından sunulur.</p>
-  </div>
-</section>
 
 <section class="visa-section section" id="visa">
   <div class="container">
@@ -1340,21 +1304,7 @@ img,svg,video{max-width:100%}
   </div>
 </section>
 
-<section class="regions section" id="regions">
-  <div class="container">
-    <div class="section-head-center reveal">
-      <span class="kicker" data-i18n="regions.eyebrow">HİZMET BÖLGELERİMİZ</span>
-      <h2 class="section-title" data-i18n="regions.title">Türkiye'nin seçkin rotalarında yanınızdayız</h2>
-      <p class="section-copy" data-i18n="regions.copy">Denizden yaylalara, antik kentlerden modern şehirlere uzanan farklı deneyimleri tek bir premium hizmet standardında buluşturuyoruz.</p>
-    </div>
-    <div class="region-grid reveal">
-      <article class="region-card"><img src="https://images.unsplash.com/photo-1760452645667-30f1c3b40835?auto=format&fit=crop&w=1400&q=82" alt="İstanbul" loading="lazy"><div class="region-content"><small>01</small><h3 data-i18n="regions.r1.name">İstanbul</h3><p data-i18n="regions.r1.desc">Boğaz, tarih ve modern şehir yaşamının eşsiz birlikteliği.</p></div></article>
-      <article class="region-card"><img src="https://images.unsplash.com/photo-1695415683093-ae5f213ea898?auto=format&fit=crop&w=1000&q=82" alt="Kapadokya" loading="lazy"><div class="region-content"><small>02</small><h3 data-i18n="regions.r2.name">Kapadokya</h3><p data-i18n="regions.r2.desc">Balonlar, vadiler ve sıra dışı kaya oluşumları.</p></div></article>
-      <article class="region-card"><img src="https://unsplash.com/photos/B9YwOz2wNmY/download?force=true&w=1400" alt="Rize Ayder Yaylası" loading="lazy"><div class="region-content"><small>03</small><h3 data-i18n="regions.r3.name">Rize</h3><p data-i18n="regions.r3.desc">Yemyeşil yaylalar, çay bahçeleri ve sisli Kaçkar manzaraları.</p></div></article>
-      <article class="region-card"><img src="https://images.unsplash.com/photo-1714255544821-b8a307118353?auto=format&fit=crop&w=1400&q=82" alt="Efes" loading="lazy"><div class="region-content"><small>04</small><h3 data-i18n="regions.r4.name">Efes & Ege</h3><p data-i18n="regions.r4.desc">Antik medeniyetlerin izleri, sakin koylar ve zeytin kokulu yollar.</p></div></article>
-    </div>
-  </div>
-</section>
+
 
 <section class="tours section" id="tours">
   <div class="container">
@@ -1362,6 +1312,16 @@ img,svg,video{max-width:100%}
       <div><span class="kicker" data-tour-ui="eyebrow">2026–2027 SEZON PROGRAMI</span><h2 class="section-title"><span data-tour-ui="title">Yeni rotalar,</span><br><span class="gold" data-tour-ui="title2">unutulmaz yolculuklar.</span></h2></div>
       <a href="#contactForm" class="text-link"><span data-tour-ui="contact">Rezervasyon ve bilgi</span> <span aria-hidden="true">↗</span></a>
     </div>
+    <div class="tour-category-tabs" role="group" aria-label="Tur türü">
+      <button class="tour-category-tab" type="button" data-tour-category="local">Yerel Turlar</button>
+      <button class="tour-category-tab active" type="button" data-tour-category="international">Yurt Dışı Turlar</button>
+    </div>
+    <div class="local-tours-notice" id="localToursNotice" hidden>
+      <span class="local-tours-mark" aria-hidden="true">✦</span>
+      <h3>Yerel Turlar Yakında Ekleniyor</h3>
+      <p>Türkiye içindeki özel rotalarımız ve yerel tur programlarımız çok yakında burada olacak.</p>
+    </div>
+    <div id="internationalTours">
     <div class="tour-filters" data-tour-ui-aria="filters" aria-label="Tur filtreleri">
       <div class="tour-filter-years" role="group" data-tour-ui-aria="year" aria-label="Yıl seçin">
         <button class="tour-filter active" type="button" data-tour-year="2026">2026</button>
@@ -1377,6 +1337,7 @@ img,svg,video{max-width:100%}
     </div>
     <section class="tour-detail" id="tourDetail" hidden aria-live="polite"></section>
     <p class="tour-source-note" data-tour-ui="priceNote">Fiyatlar kişi başı başlangıç fiyatlarıdır. Ekstra turlar ve bazı yerel vergiler ayrıca ücretlendirilebilir. Kesin fiyat ve kontenjan için lütfen bizimle iletişime geçin.</p>
+    </div>
   </div>
 </section>
 
@@ -1413,7 +1374,7 @@ img,svg,video{max-width:100%}
           <div class="field"><label data-i18n="form.name">Adınız</label><input type="text" name="name" required></div>
           <div class="field"><label data-i18n="form.phone">Telefon</label><input type="tel" name="phone" required></div>
           <div class="field full"><label data-i18n="form.email">E-posta</label><input type="email" name="email" required></div>
-          <div class="field full"><label data-i18n="form.service">Hizmet Türü</label><select name="service" required><option value="" data-i18n="form.selectService">Hizmet seçiniz</option><option value="transport" data-i18n="form.optTransport">Ulaşım</option><option value="accommodation" data-i18n="form.optAccommodation">Konaklama</option><option value="individual" data-i18n="form.optIndividual">Münferit Rezervasyon</option><option value="group" data-i18n="form.optGroup">Grup Rezervasyon</option><option value="meeting" data-i18n="form.optMeeting">İş Toplantıları</option><option value="tour" data-i18n="form.optTour">Tur</option><option value="visa" data-i18n="form.optVisa">Vize Danışmanlığı</option><option value="health" data-i18n="form.optHealth">Sağlık Turizmi</option></select></div>
+          <div class="field full"><label data-i18n="form.service">Hizmet Türü</label><select name="service" required><option value="" data-i18n="form.selectService">Hizmet seçiniz</option><option value="transport" data-i18n="form.optTransport">Ulaşım</option><option value="accommodation" data-i18n="form.optAccommodation">Konaklama</option><option value="individual" data-i18n="form.optIndividual">Münferit Rezervasyon</option><option value="group" data-i18n="form.optGroup">Grup Rezervasyon</option><option value="meeting" data-i18n="form.optMeeting">İş Toplantıları</option><option value="tour" data-i18n="form.optTour">Tur</option><option value="visa" data-i18n="form.optVisa">Vize Danışmanlığı</option></select></div>
           <div class="field full"><label data-i18n="form.message">Mesajınız</label><textarea name="message" required></textarea></div>
         </div>
         <button type="submit" class="btn btn-gold form-submit"><span data-i18n="form.submit">Gönder</span><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
@@ -1429,8 +1390,7 @@ img,svg,video{max-width:100%}
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand"><a href="#top" class="logo"><span class="logo-main">invaders</span><span class="logo-domain">.com.tr</span></a><p data-i18n="footer.desc">Türkiye genelinde kişiselleştirilmiş, güvenilir ve premium turizm hizmetleri.</p></div>
-      <div><h4 data-i18n="footer.quickLinks">Hızlı Bağlantılar</h4><a href="#about" data-i18n="nav.about">Hakkımızda</a><a href="#services" data-i18n="nav.services">Hizmetler</a><a href="#visa" data-i18n="nav.visa">Vize</a><a href="#regions" data-i18n="nav.regions">Bölgeler</a><a href="#tours" data-i18n="nav.tours">Turlar</a></div>
-      <div><h4 data-i18n="footer.regions">Rotalar</h4><a href="#regions" data-i18n="dest.istanbul">İstanbul</a><a href="#regions" data-i18n="dest.cappadocia">Kapadokya</a><a href="#regions" data-i18n="dest.rize">Rize</a><a href="#regions" data-i18n="dest.ephesus">Efes</a><a href="#contactForm" data-i18n="footer.more">Daha Fazlası...</a></div>
+      <div><h4 data-i18n="footer.quickLinks">Hızlı Bağlantılar</h4><a href="#about" data-i18n="nav.about">Hakkımızda</a><a href="#services" data-i18n="nav.services">Hizmetler</a><a href="#visa" data-i18n="nav.visa">Vize</a><a href="#tours" data-i18n="nav.tours">Turlar</a></div>
       <div><h4 data-i18n="footer.contactInfo">İletişim Bilgileri</h4><a class="meta" href="tel:+905316402130">+90 531 640 21 30</a><a class="meta" href="tel:+905325934699">+90 532 593 46 99</a><a class="meta" href="tel:+905357631344">+90 535 763 13 44</a><a class="meta" href="mailto:info@invaders.com.tr">info@invaders.com.tr</a></div>
     </div>
     <div class="footer-bottom"><span>&copy; 2026 Invaders Turizm. <span data-i18n="footer.rights">Tüm hakları saklıdır.</span></span><div class="socials"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="Facebook">FB</a><a href="#" aria-label="WhatsApp">WA</a></div></div>
@@ -1827,6 +1787,15 @@ document.querySelectorAll('.visa-tab').forEach(tab=>{
   });
 });
 
+
+document.querySelectorAll('[data-tour-category]').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    const local=tab.dataset.tourCategory==='local';
+    document.querySelectorAll('[data-tour-category]').forEach(item=>item.classList.toggle('active',item===tab));
+    document.getElementById('internationalTours').hidden=local;
+    document.getElementById('localToursNotice').hidden=!local;
+  });
+});
 
 const TOUR_ITEMS = [
 {date:'2026-11-14',name:'Büyük İtalya Plus Turu',route:'Roma · Floransa · Venedik · Milano',duration:'7 gece / 8 gün',price:'899 €',desc:'Roma, Floransa, Venedik ve Milano; panoramik şehir turları ve isteğe bağlı Como Gölü gezisi.',kind:'plus'},
