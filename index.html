@@ -1893,6 +1893,178 @@ ar:{ui:{eyebrow:'برامج موسم 2026–2027',title:'مسارات جديدة
  }
 }
 };
+
+// Egypt tours added from turlar.pdf. Prices below are the requested website prices.
+const EGYPT_TOUR_TEXT = {
+  tr: {
+    names: {
+      Cairo_and_Desert_Safari: 'Kahire, Siyah ve Beyaz Çöl Safarisi',
+      'Cairo_Sharm_el-Sheikh': 'Kahire & Şarm El-Şeyh Turu'
+    },
+    descriptions: {
+      Cairo_and_Desert_Safari: 'Gize Piramitleri ve Büyük Mısır Müzesi’nden Siyah ve Beyaz Çöl’ün 4x4 safari rotalarına, vahalara ve yıldızlar altında kamp deneyimine uzanan 6 günlük keşif.',
+      'Cairo_Sharm_el-Sheikh': 'Şarm El-Şeyh’in deniz ve safari deneyimlerini Kahire’nin piramitleri, Büyük Mısır Müzesi ve Sfenks ziyaretiyle birleştiren 5 günlük program.'
+    },
+    duration6: '5 gece / 6 gün', duration5: '4 gece / 5 gün',
+    onRequest: 'Tarih ve müsaitlik için iletişime geçin',
+    daysDesert: [
+      ['1. Gün','Kahire Uluslararası Havalimanı’nda karşılama, havalimanı işlemlerinde asistans ve özel klimalı araçla otele transfer. Kahire’de konaklama.'],
+      ['2. Gün','Kahvaltı sonrası Büyük Mısır Müzesi ziyareti. Ardından Gize Piramitleri (Keops, Kefren ve Mikerinos) ile Büyük Sfenks gezisi ve piramit manzaralı restoranda öğle yemeği. Kahire’de konaklama.'],
+      ['3. Gün','Selahaddin Eyyubi Kalesi ve Kavalalı Mehmet Ali Paşa Camii ziyareti. El-Muiz Caddesi’nde yürüyüş ve geleneksel restoranda öğle yemeği. Akşam Han el-Halili Çarşısı’nda serbest zaman. Kahire’de konaklama.'],
+      ['4. Gün','07:00’de Bahariye Vahası’na (yaklaşık 360 km) hareket. 4x4 Land Cruiser ile Siyah Çöl, El-Heiz köyündeki doğal sıcak kükürtlü kaynaklar, Kristal Dağı ve Akabat Vadisi keşfi; kum sörfü ve gün batımı. Beyaz Çöl’de kamp, barbekü akşam yemeği ve Bedevi çayı. Çadırda konaklama.'],
+      ['5. Gün','Beyaz Çöl’de keşif, sarkıt ve dikitleriyle Gara Mağarası ziyareti ve öğle yemeği. Ayn Dağı, Karawin Kum Tepeleri’nde kum sörfü ve Fosil Bölgesi gezisi. Yeni Beyaz Çöl’de kamp ve akşam yemeği. Çadırda konaklama.'],
+      ['6. Gün','Kampta kahvaltı ve Bahariye Vahası üzerinden Kahire’ye dönüş. Kahire’ye varışta dönüş uçuşu için havalimanına transfer.']
+    ],
+    daysSharm: [
+      ['1. Gün','Şarm El-Şeyh Havalimanı’nda karşılama ve asistans (giriş vizesi hariç). Özel araçla otele transfer ve giriş.'],
+      ['2. Gün','VIP safari programı: ATV safari, deve turu, Bedevi çayı, akşam yemeği, oryantal dans gösterisi ve ateş gösterisi.'],
+      ['3. Gün','Tam gün tekne turu, tüplü dalış, White Island ziyareti ve yüzme molaları. Teknede açık büfe öğle yemeği ve alkolsüz içecekler. Akşam Eski Pazar, El Shaba Camii, alışveriş ve serbest zaman.'],
+      ['4. Gün','Kahvaltı sonrası saat 12:00’de otelden çıkış ve serbest zaman. Farsha Cafe ziyareti ve gün batımı fotoğraf molası. Saat 19:00’da Kahire’ye hareket; varışta otele transfer.'],
+      ['5. Gün','Kahvaltı sonrası Büyük Mısır Müzesi, Gize Piramitleri ve Büyük Sfenks ziyareti. Fragrance & Paphirus atölyeleri ziyareti. Turun 18:00’de sona ermesi, bagajların alınması ve havalimanına transfer.']
+    ],
+    includedDesert: [
+      'Havalimanı varış ve çıkış kapılarında karşılama ve asistans.',
+      'Kahire’de 3 yıldızlı otelde 3 gece konaklama; Beyaz Çöl / Bahariye Vahası’nda 2 gece çadır kampı.',
+      'Havalimanı ve gezi transferleri özel, klimalı araçlarla.',
+      'Kamp ekipmanları, rehberler ve yemekler dahil 4x4 Land Cruiser çöl safarisi (6 kişiden az katılımda paylaşımlı araç).',
+      'Programda belirtilen kahvaltı, öğle ve akşam yemekleri.',
+      'Piramitler, Büyük Mısır Müzesi, Selahaddin Eyyubi Kalesi, El-Muiz Caddesi ve Han el-Halili giriş biletleri.',
+      'Tarihi alanlarda ve çöl kampında profesyonel Türkçe rehberlik.'
+    ],
+    includedSharm: [
+      'Şarm El-Şeyh Havalimanı’nda karşılama ve özel araçla otel transferi (giriş vizesi hariç).',
+      '16–20 Kasım tarihleri arasında Şarm’da 4 gece: Renaissance Sharm, çift kişilik deniz manzaralı oda, oda-kahvaltı.',
+      '20–21 Kasım tarihleri arasında Kahire’de 1 gece: Occidental Cairo Grand Museum Hotel, çift kişilik superior şehir manzaralı oda, oda-kahvaltı.',
+      'Programda belirtilen VIP safari, tekne turu, White Island ziyareti ve Kahire gezisi.',
+      'Tekne turunda açık büfe öğle yemeği ve alkolsüz içecekler.'
+    ],
+    excludedDesert: ['PDF programında ayrıca belirtilmiş hariç hizmet listesi bulunmuyor. Kapsam ve olası ek ücretleri rezervasyon öncesinde teyit edin.'],
+    excludedSharm: ['Havalimanı giriş vizesi dahil değildir. PDF’de bunun dışında ayrıca belirtilmiş hariç hizmet listesi bulunmuyor; kapsamı rezervasyon öncesinde teyit edin.'],
+    extrasDesert: ['Çöl safarisinde katılımcı sayısı 6 kişiden az ise 4x4 araç paylaşımı uygulanır.'],
+    extrasSharm: ['PDF’de ayrıca fiyatlandırılmış ekstra tur listesi belirtilmemiştir.'],
+    notesDesert: ['Program 6 gün / 5 gece olarak düzenlenmiştir. PDF’de grup bazlı paket fiyatları yer alsa da web sitesi fiyatı talebiniz doğrultusunda kişi başı 825 USD olarak gösterilir.'],
+    notesSharm: ['PDF’deki program tarihleri 16–21 Kasım’dır. Web sitesi fiyatı talebiniz doğrultusunda kişi başı 795 USD olarak gösterilir. Giriş vizesi hariçtir.']
+  },
+  en: {
+    names: {
+      Cairo_and_Desert_Safari: 'Cairo, Black & White Desert Safari',
+      'Cairo_Sharm_el-Sheikh': 'Cairo & Sharm El-Sheikh Tour'
+    },
+    descriptions: {
+      Cairo_and_Desert_Safari: 'A six-day journey combining the Giza Pyramids and Grand Egyptian Museum with 4x4 adventures across the Black and White Deserts, oases and nights under the stars.',
+      'Cairo_Sharm_el-Sheikh': 'A five-day itinerary combining Sharm El-Sheikh’s sea and safari experiences with Cairo’s pyramids, Grand Egyptian Museum and the Sphinx.'
+    },
+    duration6: '6 days / 5 nights', duration5: '5 days / 4 nights',
+    onRequest: 'Contact us for dates and availability',
+    daysDesert: [
+      ['Day 1','Meet and assist at Cairo International Airport, assistance with arrival procedures and private air-conditioned transfer to the hotel. Overnight in Cairo.'],
+      ['Day 2','After breakfast, visit the Grand Egyptian Museum, then the Giza Pyramids (Khufu, Khafre and Menkaure) and the Great Sphinx. Lunch at a restaurant overlooking the pyramids. Overnight in Cairo.'],
+      ['Day 3','Visit the Citadel of Saladin and the Mosque of Muhammad Ali. Walk along Al-Muizz Street and have lunch at a traditional restaurant. Free time in Khan el-Khalili Bazaar in the evening. Overnight in Cairo.'],
+      ['Day 4','Depart at 07:00 for Bahariya Oasis (approximately 360 km). Explore the Black Desert, El-Heiz village’s natural warm sulphur springs, Crystal Mountain and Aqabat Valley by 4x4 Land Cruiser; enjoy sandboarding and sunset. Set up camp in the White Desert, with BBQ dinner and Bedouin tea. Overnight in tents.'],
+      ['Day 5','Explore the White Desert and visit Gara Cave with its stalactites and stalagmites, followed by lunch. Visit Ain Mountain, the Karawin dunes for sandboarding and the Fossil Area. Camp in the New White Desert and enjoy dinner. Overnight in tents.'],
+      ['Day 6','Breakfast at camp and return to Cairo via Bahariya Oasis. On arrival in Cairo, transfer to the airport for your departure flight.']
+    ],
+    daysSharm: [
+      ['Day 1','Meet and assist at Sharm El-Sheikh Airport (entry visa excluded). Private transfer to the hotel and check-in.'],
+      ['Day 2','VIP safari: ATV safari, camel ride, Bedouin tea, dinner, oriental dance show and fire show.'],
+      ['Day 3','Full-day boat trip, scuba diving, visit to White Island and swimming breaks. Open-buffet lunch and non-alcoholic beverages on board. In the evening, visit the Old Market and El Shaba Mosque, with shopping and free time.'],
+      ['Day 4','Breakfast and hotel check-out at 12:00. Free time, followed by a visit to Farsha Cafe and sunset photo time. Depart for Cairo at 19:00 and transfer to the hotel on arrival.'],
+      ['Day 5','After breakfast, visit the Grand Egyptian Museum, Giza Pyramids and Great Sphinx, followed by visits to Fragrance & Paphirus ateliers. Tour ends at 18:00; collect luggage and transfer to the airport.']
+    ],
+    includedDesert: [
+      'Meet-and-assist service at airport arrival and departure gates.',
+      'Three nights in a 3-star Cairo hotel and two nights camping in the White Desert / Bahariya Oasis.',
+      'Private, air-conditioned vehicles for airport and sightseeing transfers.',
+      '4x4 Land Cruiser desert safari including camp equipment, guides and meals (shared vehicle if fewer than six participants).',
+      'Breakfast, lunch and dinner as specified in the daily itinerary.',
+      'Entrance tickets for the Pyramids, Grand Egyptian Museum, Citadel of Saladin, Al-Muizz Street and Khan el-Khalili.',
+      'Professional Turkish-speaking guide at historic sites and desert camp.'
+    ],
+    includedSharm: [
+      'Meet and assist at Sharm El-Sheikh Airport and private transfer to the hotel (entry visa excluded).',
+      'Four nights in Sharm, 16–20 November: Renaissance Sharm, double sea-view room, bed and breakfast.',
+      'One night in Cairo, 20–21 November: Occidental Cairo Grand Museum Hotel, double superior city-view room, bed and breakfast.',
+      'VIP safari, boat trip, White Island visit and Cairo sightseeing as listed in the itinerary.',
+      'Open-buffet lunch and non-alcoholic beverages during the boat trip.'
+    ],
+    excludedDesert: ['The PDF does not provide a separate list of excluded services. Please confirm the package scope and any additional charges before booking.'],
+    excludedSharm: ['Airport entry visa is excluded. The PDF does not provide any other separate list of excluded services; please confirm the scope before booking.'],
+    extrasDesert: ['If fewer than six participants join the desert safari, the 4x4 vehicle is shared.'],
+    extrasSharm: ['No separately priced optional excursions are listed in the PDF.'],
+    notesDesert: ['The itinerary is 6 days / 5 nights. The PDF lists group-based package rates; the website price is shown as USD 825 per person as requested.'],
+    notesSharm: ['The PDF itinerary dates are 16–21 November. The website price is shown as USD 795 per person as requested. Entry visa is excluded.']
+  },
+  ar: {
+    names: {
+      Cairo_and_Desert_Safari: 'القاهرة وسفاري الصحراء البيضاء والسوداء',
+      'Cairo_Sharm_el-Sheikh': 'جولة القاهرة وشرم الشيخ'
+    },
+    descriptions: {
+      Cairo_and_Desert_Safari: 'رحلة لمدة ستة أيام تجمع بين أهرامات الجيزة والمتحف المصري الكبير ومغامرات الدفع الرباعي في الصحراء السوداء والبيضاء والواحات والتخييم تحت النجوم.',
+      'Cairo_Sharm_el-Sheikh': 'برنامج لمدة خمسة أيام يجمع بين البحر ورحلات السفاري في شرم الشيخ وأهرامات القاهرة والمتحف المصري الكبير وأبو الهول.'
+    },
+    duration6: '6 أيام / 5 ليالٍ', duration5: '5 أيام / 4 ليالٍ',
+    onRequest: 'يرجى التواصل لمعرفة المواعيد والتوافر',
+    daysDesert: [
+      ['اليوم الأول','الاستقبال والمساعدة في مطار القاهرة الدولي، والمساعدة في إجراءات الوصول، ثم الانتقال بسيارة خاصة مكيفة إلى الفندق. المبيت في القاهرة.'],
+      ['اليوم الثاني','بعد الإفطار زيارة المتحف المصري الكبير، ثم أهرامات الجيزة (خوفو وخفرع ومنقرع) وأبو الهول العظيم. تناول الغداء في مطعم يطل على الأهرامات. المبيت في القاهرة.'],
+      ['اليوم الثالث','زيارة قلعة صلاح الدين الأيوبي ومسجد محمد علي، ثم جولة في شارع المعز وتناول الغداء في مطعم تقليدي. وقت حر مساءً في سوق خان الخليلي. المبيت في القاهرة.'],
+      ['اليوم الرابع','الانطلاق الساعة 07:00 إلى واحة البحرية (حوالي 360 كم). استكشاف الصحراء السوداء وقرية الحيز وينابيع المياه الكبريتية الدافئة وجبل الكريستال ووادي العقبات بسيارات لاند كروزر رباعية الدفع، مع التزلج على الرمال ومشاهدة الغروب. التخييم في الصحراء البيضاء مع عشاء شواء وشاي بدوي. المبيت في الخيام.'],
+      ['اليوم الخامس','استكشاف الصحراء البيضاء وزيارة كهف الجارة بتكويناته الطبيعية، ثم الغداء. زيارة جبل عين وكثبان كراوين للتزلج على الرمال ومنطقة الحفريات. التخييم في الصحراء البيضاء الجديدة وتناول العشاء. المبيت في الخيام.'],
+      ['اليوم السادس','الإفطار في المخيم والعودة إلى القاهرة عبر واحة البحرية. عند الوصول، الانتقال إلى المطار لرحلة المغادرة.']
+    ],
+    daysSharm: [
+      ['اليوم الأول','الاستقبال والمساعدة في مطار شرم الشيخ (تأشيرة الدخول غير مشمولة). الانتقال بسيارة خاصة إلى الفندق وتسجيل الدخول.'],
+      ['اليوم الثاني','رحلة سفاري VIP تشمل قيادة مركبات ATV وركوب الجمال وشاي بدوي وعشاء وعرض رقص شرقي وعرض نار.'],
+      ['اليوم الثالث','رحلة بحرية ليوم كامل، وغوص، وزيارة الجزيرة البيضاء، وفترات للسباحة. غداء مفتوح ومشروبات غير كحولية على القارب. مساءً زيارة السوق القديم ومسجد الشابا والتسوق ووقت حر.'],
+      ['اليوم الرابع','الإفطار وتسجيل الخروج من الفندق الساعة 12:00. وقت حر ثم زيارة مقهى فرشة والتقاط صور الغروب. المغادرة إلى القاهرة الساعة 19:00 والانتقال إلى الفندق عند الوصول.'],
+      ['اليوم الخامس','بعد الإفطار زيارة المتحف المصري الكبير وأهرامات الجيزة وأبو الهول العظيم، ثم زيارة ورش العطور وPaphirus. تنتهي الجولة الساعة 18:00، ثم استلام الأمتعة والانتقال إلى المطار.']
+    ],
+    includedDesert: [
+      'الاستقبال والمساعدة عند بوابتي الوصول والمغادرة في المطار.',
+      'ثلاث ليالٍ في فندق 3 نجوم بالقاهرة وليلتان في مخيم بالصحراء البيضاء / واحة البحرية.',
+      'جميع انتقالات المطار والزيارات بسيارات خاصة مكيفة.',
+      'سفاري صحراوي بسيارات لاند كروزر رباعية الدفع، مع معدات التخييم والمرشدين والوجبات (تكون السيارة مشتركة إذا كان العدد أقل من ستة أشخاص).',
+      'وجبات الإفطار والغداء والعشاء حسب البرنامج اليومي.',
+      'تذاكر دخول الأهرامات والمتحف المصري الكبير وقلعة صلاح الدين وشارع المعز وخان الخليلي.',
+      'مرشد محترف يتحدث التركية في المواقع التاريخية ومخيم الصحراء.'
+    ],
+    includedSharm: [
+      'الاستقبال والمساعدة في مطار شرم الشيخ والانتقال الخاص إلى الفندق (تأشيرة الدخول غير مشمولة).',
+      'أربع ليالٍ في شرم الشيخ من 16 إلى 20 نوفمبر: فندق Renaissance Sharm، غرفة مزدوجة بإطلالة على البحر، إقامة مع الإفطار.',
+      'ليلة واحدة في القاهرة من 20 إلى 21 نوفمبر: فندق Occidental Cairo Grand Museum، غرفة سوبيريور مزدوجة بإطلالة على المدينة، إقامة مع الإفطار.',
+      'رحلة سفاري VIP ورحلة بحرية وزيارة الجزيرة البيضاء وجولة القاهرة حسب البرنامج.',
+      'غداء مفتوح ومشروبات غير كحولية خلال الرحلة البحرية.'
+    ],
+    excludedDesert: ['لا تتضمن وثيقة PDF قائمة منفصلة بالخدمات غير المشمولة. يرجى تأكيد تفاصيل الباقة وأي رسوم إضافية قبل الحجز.'],
+    excludedSharm: ['تأشيرة الدخول في المطار غير مشمولة. لا تتضمن وثيقة PDF قائمة أخرى منفصلة بالخدمات غير المشمولة؛ يرجى تأكيد التفاصيل قبل الحجز.'],
+    extrasDesert: ['إذا كان عدد المشاركين في سفاري الصحراء أقل من ستة أشخاص، تكون سيارة الدفع الرباعي مشتركة.'],
+    extrasSharm: ['لا توجد في ملف PDF قائمة برحلات اختيارية ذات أسعار منفصلة.'],
+    notesDesert: ['مدة البرنامج 6 أيام / 5 ليالٍ. يعرض الموقع السعر المطلوب وهو 825 دولاراً أمريكياً للشخص، رغم أن ملف PDF يورد أسعاراً للمجموعات.'],
+    notesSharm: ['تواريخ البرنامج في ملف PDF من 16 إلى 21 نوفمبر. يعرض الموقع السعر المطلوب وهو 795 دولاراً أمريكياً للشخص. تأشيرة الدخول غير مشمولة.']
+  }
+};
+const EGYPT_TOUR_PROGRAMS = {
+  Cairo_and_Desert_Safari: {
+    get days(){return EGYPT_TOUR_TEXT[currentLang].daysDesert},
+    get included(){return EGYPT_TOUR_TEXT[currentLang].includedDesert},
+    get excluded(){return EGYPT_TOUR_TEXT[currentLang].excludedDesert},
+    get extras(){return EGYPT_TOUR_TEXT[currentLang].extrasDesert},
+    get notes(){return EGYPT_TOUR_TEXT[currentLang].notesDesert}
+  },
+  'Cairo_Sharm_el-Sheikh': {
+    get days(){return EGYPT_TOUR_TEXT[currentLang].daysSharm},
+    get included(){return EGYPT_TOUR_TEXT[currentLang].includedSharm},
+    get excluded(){return EGYPT_TOUR_TEXT[currentLang].excludedSharm},
+    get extras(){return EGYPT_TOUR_TEXT[currentLang].extrasSharm},
+    get notes(){return EGYPT_TOUR_TEXT[currentLang].notesSharm}
+  }
+};
+const EGYPT_TOUR_ITEMS = [
+  {date:'',tourId:'Cairo_and_Desert_Safari',name:'Cairo, Black & White Desert Safari',route:'Cairo · Bahariya Oasis · Black Desert · White Desert',duration:'6 days / 5 nights',price:'825 USD',desc:'',detailKey:'Cairo_and_Desert_Safari',kind:'Cairo_and_Desert_Safari',category:'international',active:true,whatsappNumber:'905316402130'},
+  {date:'',tourId:'Cairo_Sharm_el-Sheikh',name:'Cairo & Sharm El-Sheikh',route:'Sharm El-Sheikh · Cairo',duration:'5 days / 4 nights',price:'795 USD',desc:'',detailKey:'Cairo_Sharm_el-Sheikh',kind:'Cairo_Sharm_el-Sheikh',category:'international',active:true,whatsappNumber:'905316402130'}
+];
+
 let activeTourYear='2026',activeTourMonth='all',selectedTourKey=null,activeTourCategory='international';
 function tourLang(){return TOUR_I18N[currentLang]||TOUR_I18N.tr}
 function applyTourStaticLanguage(){const lang=tourLang();document.querySelectorAll('[data-tour-ui]').forEach(el=>{const k=el.dataset.tourUi;if(lang.ui[k]!==undefined)el.textContent=lang.ui[k]});document.querySelectorAll('[data-tour-ui-aria]').forEach(el=>{const k=el.dataset.tourUiAria;if(lang.ui[k]!==undefined)el.setAttribute('aria-label',lang.ui[k])})}
@@ -1902,12 +2074,12 @@ function tourIsActive(value){return !(value===false||String(value).trim().toLowe
 function tourCategoryOf(t){return String((t.master&&t.master.category)||t.category||'international').trim().toLowerCase()}
 function tourSafeImage(value,fallback){try{const url=new URL(String(value||''),location.href);if(url.protocol==='https:'||url.protocol==='http:')return url.href}catch(e){}return fallback||''}
 function tourGroupKey(t){return String(t.tourId||`${t.name}|${t.duration}`)}
-function renderTourYears(){const wrap=document.getElementById('tourYearButtons');if(!wrap)return;const years=[...new Set(TOUR_ITEMS.filter(t=>tourIsActive(t.active)&&tourCategoryOf(t)===activeTourCategory).map(t=>String(t.date||'').slice(0,4)).filter(y=>/^\d{4}$/.test(y)))].sort();if(!years.length)years.push(String(activeTourYear||'2026'));if(!years.includes(String(activeTourYear)))activeTourYear=years[0];wrap.innerHTML=years.map(y=>`<button class="tour-filter ${String(activeTourYear)===y?'active':''}" type="button" data-tour-year="${tourEscape(y)}">${tourEscape(y)}</button>`).join('');wrap.querySelectorAll('[data-tour-year]').forEach(btn=>btn.addEventListener('click',()=>{activeTourYear=btn.dataset.tourYear;activeTourMonth='all';selectedTourKey=null;const detail=document.getElementById('tourDetail');if(detail)detail.hidden=true;renderTourYears();renderTourMonths();renderTourList()}))}
-function tourGroups(){const lang=tourLang();const map=new Map();TOUR_ITEMS.filter(t=>tourIsActive(t.active)&&tourCategoryOf(t)===activeTourCategory&&String(t.date).slice(0,4)===String(activeTourYear)).forEach(t=>{const key=tourGroupKey(t);if(!map.has(key))map.set(key,{key,tourId:t.tourId||'',name:t.name,duration:t.duration,items:[],route:t.route,desc:t.desc,kind:t.detailKey||t.kind,master:t.master||null,whatsappNumber:t.whatsappNumber||''});map.get(key).items.push(t)});return [...map.values()].map(g=>{g.items.sort((a,b)=>String(a.date).localeCompare(String(b.date)));g.routes=[...new Set(g.items.map(t=>t.route).filter(Boolean))];g.kind=g.items[0].detailKey||g.items[0].kind||g.kind;const m=g.master||{};g.image=tourSafeImage(m.imageUrl||g.items[0].imageUrl,TOUR_IMAGES[g.kind]||TOUR_IMAGES.express);g.priceList=[...new Set(g.items.map(t=>t.price).filter(Boolean))];g.price=g.priceList.length===1?g.priceList[0]:(g.priceList.length?g.priceList[0]+'+':'');g.months=[...new Set(g.items.map(t=>Number(String(t.date).slice(5,7))-1))];g.displayName=m['name_'+currentLang]||lang.names[g.kind]||g.name;g.displayDesc=m['description_'+currentLang]||g.items[0]['description_'+currentLang]||lang.desc[g.kind]||g.desc;g.displayDuration=m['duration_'+currentLang]||lang.duration(g.duration);const routeField='route_'+currentLang;const localRoutes=[...new Set(g.items.map(t=>t[routeField]).filter(Boolean))];g.displayRoutes=localRoutes.length?localRoutes:g.routes.map(r=>r.split(' · ').map(city=>lang.routes[city.trim()]||city.trim()).join(' · '));g.whatsappNumber=String(m.whatsappNumber||g.whatsappNumber||'905316402130').replace(/\D/g,'');return g}).sort((a,b)=>String(a.items[0].date).localeCompare(String(b.items[0].date)))}
+function renderTourYears(){const wrap=document.getElementById('tourYearButtons');if(!wrap)return;const years=[...new Set(TOUR_ITEMS.filter(t=>tourIsActive(t.active)&&tourCategoryOf(t)===activeTourCategory).map(t=>String(t.date||'').slice(0,4)).filter(y=>/^\d{4}$/.test(y)))].sort();if(TOUR_ITEMS.some(t=>tourIsActive(t.active)&&tourCategoryOf(t)===activeTourCategory&&!t.date)){const y=String(new Date().getFullYear());if(!years.includes(y))years.push(y);years.sort()}if(!years.length)years.push(String(activeTourYear||'2026'));if(!years.includes(String(activeTourYear)))activeTourYear=years[0];wrap.innerHTML=years.map(y=>`<button class="tour-filter ${String(activeTourYear)===y?'active':''}" type="button" data-tour-year="${tourEscape(y)}">${tourEscape(y)}</button>`).join('');wrap.querySelectorAll('[data-tour-year]').forEach(btn=>btn.addEventListener('click',()=>{activeTourYear=btn.dataset.tourYear;activeTourMonth='all';selectedTourKey=null;const detail=document.getElementById('tourDetail');if(detail)detail.hidden=true;renderTourYears();renderTourMonths();renderTourList()}))}
+function tourGroups(){const lang=tourLang();const map=new Map();TOUR_ITEMS.filter(t=>tourIsActive(t.active)&&tourCategoryOf(t)===activeTourCategory&&(!t.date||String(t.date).slice(0,4)===String(activeTourYear))).forEach(t=>{const key=tourGroupKey(t);if(!map.has(key))map.set(key,{key,tourId:t.tourId||'',name:t.name,duration:t.duration,items:[],route:t.route,desc:t.desc,kind:t.detailKey||t.kind,master:t.master||null,whatsappNumber:t.whatsappNumber||''});map.get(key).items.push(t)});return [...map.values()].map(g=>{g.items.sort((a,b)=>String(a.date).localeCompare(String(b.date)));g.routes=[...new Set(g.items.map(t=>t.route).filter(Boolean))];g.kind=g.items[0].detailKey||g.items[0].kind||g.kind;const m=g.master||{};g.image=tourSafeImage(m.imageUrl||g.items[0].imageUrl,TOUR_IMAGES[g.kind]||TOUR_IMAGES.express);g.priceList=[...new Set(g.items.map(t=>t.price).filter(Boolean))];g.price=g.priceList.length===1?g.priceList[0]:(g.priceList.length?g.priceList[0]+'+':'');g.months=[...new Set(g.items.map(t=>Number(String(t.date).slice(5,7))-1))];g.displayName=(EGYPT_TOUR_TEXT[currentLang]&&EGYPT_TOUR_TEXT[currentLang].names[g.kind])||m['name_'+currentLang]||lang.names[g.kind]||g.name;g.displayDesc=(EGYPT_TOUR_TEXT[currentLang]&&EGYPT_TOUR_TEXT[currentLang].descriptions[g.kind])||m['description_'+currentLang]||g.items[0]['description_'+currentLang]||lang.desc[g.kind]||g.desc;g.displayDuration=m['duration_'+currentLang]||lang.duration(g.duration);const routeField='route_'+currentLang;const localRoutes=[...new Set(g.items.map(t=>t[routeField]).filter(Boolean))];g.displayRoutes=localRoutes.length?localRoutes:g.routes.map(r=>r.split(' · ').map(city=>lang.routes[city.trim()]||city.trim()).join(' · '));g.whatsappNumber=String(m.whatsappNumber||g.whatsappNumber||'905316402130').replace(/\D/g,'');return g}).sort((a,b)=>String(a.items[0].date).localeCompare(String(b.items[0].date)))}
 function renderTourMonths(){const wrap=document.getElementById('tourMonthButtons');if(!wrap)return;const lang=tourLang();const months=[...new Set(TOUR_ITEMS.filter(t=>tourIsActive(t.active)&&tourCategoryOf(t)===activeTourCategory&&String(t.date).slice(0,4)===String(activeTourYear)).map(t=>Number(String(t.date).slice(5,7))-1))].sort((a,b)=>a-b);if(activeTourMonth!=='all'&&!months.includes(Number(activeTourMonth)))activeTourMonth='all';wrap.innerHTML=`<button type="button" class="tour-month-button ${activeTourMonth==='all'?'active':''}" data-tour-month="all">${tourEscape(lang.ui.allMonths)}</button>`+months.map(m=>`<button type="button" class="tour-month-button ${activeTourMonth===String(m)?'active':''}" data-tour-month="${m}">${tourEscape(TOUR_MONTHS[currentLang==='ar'?'ar':currentLang==='en'?'en':'tr'][m])}</button>`).join('');wrap.querySelectorAll('[data-tour-month]').forEach(b=>b.addEventListener('click',()=>{activeTourMonth=b.dataset.tourMonth;renderTourMonths();renderTourList()}))}
-function renderTourList(){const list=document.getElementById('tourList');if(!list)return;const lang=tourLang();const groups=tourGroups().filter(g=>activeTourMonth==='all'||g.items.some(t=>Number(String(t.date).slice(5,7))-1===Number(activeTourMonth)));document.getElementById('tourResultsCount').textContent=`${groups.length} ${lang.ui.programCount}`;if(!groups.length){list.innerHTML=`<div class="tour-empty">${tourEscape(lang.ui.empty)}</div>`;return}list.innerHTML=groups.map(g=>{const dates=[...new Set(g.items.map(t=>tourDate(t.date)))];return `<button type="button" class="tour-card-new ${selectedTourKey===g.key?'selected':''}" data-tour-key="${tourEscape(encodeURIComponent(g.key))}" aria-pressed="${selectedTourKey===g.key}"><div class="tour-card-image"><img src="${tourEscape(g.image)}" alt="${tourEscape(g.displayName)}" loading="lazy"><span class="tour-card-days">${tourEscape(g.displayDuration)}</span></div><div class="tour-card-body"><h3>${tourEscape(g.displayName)}</h3><div class="tour-card-route">${g.displayRoutes.map(tourEscape).join(' / ')}</div><div class="tour-card-dates">${tourEscape(dates.join(' · '))}</div><div class="tour-card-foot"><div class="tour-card-price"><small>${tourEscape(lang.ui.starting)}</small>${tourEscape(g.price)}</div><span class="tour-card-open">${tourEscape(lang.ui.details)} ↗</span></div></div></button>`}).join('');list.querySelectorAll('[data-tour-key]').forEach(b=>b.addEventListener('click',()=>{selectedTourKey=decodeURIComponent(b.dataset.tourKey);renderTourList();renderTourDetail(selectedTourKey);const detail=document.getElementById('tourDetail');detail.hidden=false;setTimeout(()=>detail.scrollIntoView({behavior:'smooth',block:'start'}),50)}))}
-function getTourProgram(g){const rows=TOUR_SHEETS_DETAILS.filter(r=>String(r.detailKey)===String(g.kind)&&String(r.language)===String(currentLang)).sort((a,b)=>(Number(a.sortOrder)||0)-(Number(b.sortOrder)||0));if(rows.length){const section=name=>rows.filter(r=>String(r.section)===name);return{days:section('itinerary').map(r=>[r.heading||'',r.content||'']),included:section('included').map(r=>r.content||''),excluded:section('excluded').map(r=>r.content||''),extras:section('extras').map(r=>r.content||''),notes:section('notes').map(r=>r.content||'')}}const lang=tourLang();return(lang.programs&&lang.programs[g.kind])||TOUR_PROGRAMS[g.kind]||TOUR_PROGRAMS.express}
-function renderTourDetail(key){const detail=document.getElementById('tourDetail');const g=tourGroups().find(x=>x.key===key);if(!g||!detail)return;const lang=tourLang(),program=getTourProgram(g);const dateCards=g.items.map(t=>`<div class="tour-departure"><b>${tourEscape(tourDate(t.date))}</b>${tourEscape(t.price)} ${tourEscape(lang.ui.perPerson)}</div>`).join('');const list=arr=>`<ul>${(arr||[]).filter(x=>String(x||'').trim()).map(x=>`<li>${tourEscape(x)}</li>`).join('')}</ul>`;const noteRows=program.notes&&program.notes.length?program.notes:[lang.ui.note1,lang.ui.note2,lang.ui.note3,lang.ui.note4];const days=(program.days||[]).map(d=>`<div class="tour-day"><strong>${tourEscape(d[0])}</strong><p>${tourEscape(d[1])}</p></div>`).join('');const waText=lang.ui.waIntro+g.displayName+lang.ui.waMiddle+g.items.map(t=>tourDate(t.date)).join(', ');detail.innerHTML=`<div class="tour-detail-head"><img class="tour-detail-cover" src="${tourEscape(g.image)}" alt="${tourEscape(g.displayName)}"><div class="tour-detail-intro"><span class="kicker">${tourEscape(lang.ui.detailEyebrow)}</span><h3>${tourEscape(g.displayName)}</h3><p>${tourEscape(g.displayDesc)}</p><div class="tour-detail-meta"><span>${tourEscape(g.displayDuration)}</span><span>${g.displayRoutes.map(tourEscape).join(' / ')}</span><span>${g.items.length} ${tourEscape(lang.ui.departures)}</span></div><div class="tour-departures">${dateCards}</div></div></div><div class="tour-detail-content"><h4>${tourEscape(lang.ui.itinerary)}</h4><div class="tour-itinerary">${days}</div><div class="tour-detail-grid"><div><h4>${tourEscape(lang.ui.included)}</h4>${list(program.included)}</div><div><h4>${tourEscape(lang.ui.excluded)}</h4>${list(program.excluded)}</div><div><h4>${tourEscape(lang.ui.extras)}</h4>${list(program.extras)}</div><div><h4>${tourEscape(lang.ui.notes)}</h4>${list(noteRows)}</div></div><div class="tour-detail-actions"><a href="https://wa.me/${tourEscape(g.whatsappNumber)}?text=${encodeURIComponent(waText)}" target="_blank" rel="noopener">${tourEscape(lang.ui.whatsapp)}</a><button type="button" class="tour-detail-close" id="closeTourDetail">${tourEscape(lang.ui.close)}</button></div></div>`;document.getElementById('closeTourDetail').addEventListener('click',()=>{detail.hidden=true;selectedTourKey=null;renderTourList();document.getElementById('tours').scrollIntoView({behavior:'smooth',block:'start'})})}
+function renderTourList(){const list=document.getElementById('tourList');if(!list)return;const lang=tourLang();const groups=tourGroups().filter(g=>activeTourMonth==='all'||g.items.some(t=>Number(String(t.date).slice(5,7))-1===Number(activeTourMonth)));document.getElementById('tourResultsCount').textContent=`${groups.length} ${lang.ui.programCount}`;if(!groups.length){list.innerHTML=`<div class="tour-empty">${tourEscape(lang.ui.empty)}</div>`;return}list.innerHTML=groups.map(g=>{const dates=[...new Set(g.items.filter(t=>t.date).map(t=>tourDate(t.date)))];const dateLabel=dates.length?dates.join(' · '):(EGYPT_TOUR_TEXT[currentLang]||EGYPT_TOUR_TEXT.tr).onRequest;return `<button type="button" class="tour-card-new ${selectedTourKey===g.key?'selected':''}" data-tour-key="${tourEscape(encodeURIComponent(g.key))}" aria-pressed="${selectedTourKey===g.key}"><div class="tour-card-image"><img src="${tourEscape(g.image)}" alt="${tourEscape(g.displayName)}" loading="lazy"><span class="tour-card-days">${tourEscape(g.displayDuration)}</span></div><div class="tour-card-body"><h3>${tourEscape(g.displayName)}</h3><div class="tour-card-route">${g.displayRoutes.map(tourEscape).join(' / ')}</div><div class="tour-card-dates">${tourEscape(dateLabel)}</div><div class="tour-card-foot"><div class="tour-card-price"><small>${tourEscape(lang.ui.starting)}</small>${tourEscape(g.price)}</div><span class="tour-card-open">${tourEscape(lang.ui.details)} ↗</span></div></div></button>`}).join('');list.querySelectorAll('[data-tour-key]').forEach(b=>b.addEventListener('click',()=>{selectedTourKey=decodeURIComponent(b.dataset.tourKey);renderTourList();renderTourDetail(selectedTourKey);const detail=document.getElementById('tourDetail');detail.hidden=false;setTimeout(()=>detail.scrollIntoView({behavior:'smooth',block:'start'}),50)}))}
+function getTourProgram(g){const rows=TOUR_SHEETS_DETAILS.filter(r=>String(r.detailKey)===String(g.kind)&&String(r.language)===String(currentLang)).sort((a,b)=>(Number(a.sortOrder)||0)-(Number(b.sortOrder)||0));if(rows.length){const section=name=>rows.filter(r=>String(r.section)===name);return{days:section('itinerary').map(r=>[r.heading||'',r.content||'']),included:section('included').map(r=>r.content||''),excluded:section('excluded').map(r=>r.content||''),extras:section('extras').map(r=>r.content||''),notes:section('notes').map(r=>r.content||'')}}const lang=tourLang();return EGYPT_TOUR_PROGRAMS[g.kind]||((lang.programs&&lang.programs[g.kind])||TOUR_PROGRAMS[g.kind]||TOUR_PROGRAMS.express)}
+function renderTourDetail(key){const detail=document.getElementById('tourDetail');const g=tourGroups().find(x=>x.key===key);if(!g||!detail)return;const lang=tourLang(),program=getTourProgram(g);const dateCards=g.items.map(t=>`<div class="tour-departure"><b>${tourEscape(t.date?tourDate(t.date):(EGYPT_TOUR_TEXT[currentLang]||EGYPT_TOUR_TEXT.tr).onRequest)}</b>${tourEscape(t.price)} ${tourEscape(lang.ui.perPerson)}</div>`).join('');const list=arr=>`<ul>${(arr||[]).filter(x=>String(x||'').trim()).map(x=>`<li>${tourEscape(x)}</li>`).join('')}</ul>`;const noteRows=program.notes&&program.notes.length?program.notes:[lang.ui.note1,lang.ui.note2,lang.ui.note3,lang.ui.note4];const days=(program.days||[]).map(d=>`<div class="tour-day"><strong>${tourEscape(d[0])}</strong><p>${tourEscape(d[1])}</p></div>`).join('');const waDates=g.items.map(t=>t.date?tourDate(t.date):'').filter(Boolean).join(', ');const waText=lang.ui.waIntro+g.displayName+(waDates?lang.ui.waMiddle+waDates:'');detail.innerHTML=`<div class="tour-detail-head"><img class="tour-detail-cover" src="${tourEscape(g.image)}" alt="${tourEscape(g.displayName)}"><div class="tour-detail-intro"><span class="kicker">${tourEscape(lang.ui.detailEyebrow)}</span><h3>${tourEscape(g.displayName)}</h3><p>${tourEscape(g.displayDesc)}</p><div class="tour-detail-meta"><span>${tourEscape(g.displayDuration)}</span><span>${g.displayRoutes.map(tourEscape).join(' / ')}</span><span>${g.items.length} ${tourEscape(lang.ui.departures)}</span></div><div class="tour-departures">${dateCards}</div></div></div><div class="tour-detail-content"><h4>${tourEscape(lang.ui.itinerary)}</h4><div class="tour-itinerary">${days}</div><div class="tour-detail-grid"><div><h4>${tourEscape(lang.ui.included)}</h4>${list(program.included)}</div><div><h4>${tourEscape(lang.ui.excluded)}</h4>${list(program.excluded)}</div><div><h4>${tourEscape(lang.ui.extras)}</h4>${list(program.extras)}</div><div><h4>${tourEscape(lang.ui.notes)}</h4>${list(noteRows)}</div></div><div class="tour-detail-actions"><a href="https://wa.me/${tourEscape(g.whatsappNumber)}?text=${encodeURIComponent(waText)}" target="_blank" rel="noopener">${tourEscape(lang.ui.whatsapp)}</a><button type="button" class="tour-detail-close" id="closeTourDetail">${tourEscape(lang.ui.close)}</button></div></div>`;document.getElementById('closeTourDetail').addEventListener('click',()=>{detail.hidden=true;selectedTourKey=null;renderTourList();document.getElementById('tours').scrollIntoView({behavior:'smooth',block:'start'})})}
 function parseCsvRows(text){const rows=[];let row=[],field='',quoted=false;for(let i=0;i<text.length;i++){const c=text[i];if(quoted){if(c==='"'&&text[i+1]==='"'){field+='"';i++}else if(c==='"')quoted=false;else field+=c}else if(c==='"'){quoted=true}else if(c===','){row.push(field);field=''}else if(c==='\n'){row.push(field);if(row.some(v=>v!==''))rows.push(row);row=[];field=''}else if(c!=='\r'){field+=c}}if(field!==''||row.length){row.push(field);if(row.some(v=>v!==''))rows.push(row)}return rows}
 function csvToObjects(text){const rows=parseCsvRows(text);if(rows.length<2)throw new Error('CSV içinde kayıt bulunamadı');const headers=rows[0].map(h=>String(h||'').trim());if(headers[0]&&headers[0].toLowerCase().includes('<!doctype'))throw new Error('Google Sheets CSV yerine HTML döndürdü');return rows.slice(1).map(values=>{const obj={};headers.forEach((h,i)=>{if(h)obj[h]=String(values[i]??'').trim()});return obj}).filter(obj=>Object.values(obj).some(v=>v!==''))}
 async function fetchSheetCsv(sheetName){const url=`https://docs.google.com/spreadsheets/d/${GOOGLE_SHEETS_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(sheetName)}`;const response=await fetch(url,{method:'GET',cache:'no-store'});if(!response.ok)throw new Error(sheetName+' sayfası okunamadı (HTTP '+response.status+')');const text=await response.text();if(/<html|accounts\.google\.com/i.test(text.slice(0,500)))throw new Error(sheetName+' sayfası herkese açık görüntülenemiyor');return csvToObjects(text)}
@@ -1916,7 +2088,7 @@ async function loadGoogleSheetsTours(){try{const [tours,departures,details]=awai
 document.querySelectorAll('[data-tour-scroll]').forEach(btn=>btn.addEventListener('click',()=>{document.getElementById('tourList').scrollBy({left:Number(btn.dataset.tourScroll)*document.getElementById('tourList').clientWidth*.9,behavior:'smooth'});}));
 applyTourStaticLanguage();renderTourYears();renderTourMonths();renderTourList();
 
-async function boot(){await loadSiteContent();await loadGoogleSheetsTours();startVisaGallery("schengen");renderVisaCountry("schengen");openPopup()}
+async function boot(){await loadSiteContent();await loadGoogleSheetsTours();TOUR_ITEMS=TOUR_ITEMS.filter(t=>!EGYPT_TOUR_ITEMS.some(e=>e.tourId===t.tourId));TOUR_ITEMS.push(...EGYPT_TOUR_ITEMS);activeTourYear=String(new Date().getFullYear());activeTourMonth='all';renderTourYears();renderTourMonths();renderTourList();startVisaGallery("schengen");renderVisaCountry("schengen");openPopup()}
 boot();
 </script>
 </body>
