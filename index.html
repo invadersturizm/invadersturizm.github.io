@@ -1899,7 +1899,7 @@ ar:{ui:{eyebrow:'برامج موسم 2026–2027',title:'مسارات جديدة
 }
 };
 
-// Egypt tours added from turlar.pdf. Prices below are the requested website prices.
+// Egypt tour content.
 const EGYPT_TOUR_TEXT = {
   tr: {
     names: {
@@ -1943,12 +1943,12 @@ const EGYPT_TOUR_TEXT = {
       'Programda belirtilen VIP safari, tekne turu, White Island ziyareti ve Kahire gezisi.',
       'Tekne turunda açık büfe öğle yemeği ve alkolsüz içecekler.'
     ],
-    excludedDesert: ['PDF programında ayrıca belirtilmiş hariç hizmet listesi bulunmuyor. Kapsam ve olası ek ücretleri rezervasyon öncesinde teyit edin.'],
-    excludedSharm: ['Havalimanı giriş vizesi dahil değildir. PDF’de bunun dışında ayrıca belirtilmiş hariç hizmet listesi bulunmuyor; kapsamı rezervasyon öncesinde teyit edin.'],
-    extrasDesert: ['Çöl safarisinde katılımcı sayısı 6 kişiden az ise 4x4 araç paylaşımı uygulanır.'],
-    extrasSharm: ['PDF’de ayrıca fiyatlandırılmış ekstra tur listesi belirtilmemiştir.'],
-    notesDesert: ['Program 6 gün / 5 gece olarak düzenlenmiştir. PDF’de grup bazlı paket fiyatları yer alsa da web sitesi fiyatı talebiniz doğrultusunda kişi başı 825 USD olarak gösterilir.'],
-    notesSharm: ['PDF’deki program tarihleri 16–21 Kasım’dır. Web sitesi fiyatı talebiniz doğrultusunda kişi başı 795 USD olarak gösterilir. Giriş vizesi hariçtir.']
+    excludedDesert: ['Uçak bileti.', 'Havalimanı giriş vizesi.'],
+    excludedSharm: ['Uçak bileti.', 'Havalimanı giriş vizesi.'],
+    extrasDesert: [],
+    extrasSharm: [],
+    notesDesert: ['Program 6 gün / 5 gece olarak düzenlenmiştir. Kişi başı paket fiyatı 795 USD’dir.'],
+    notesSharm: ['Program tarihleri 16–21 Kasım’dır. Kişi başı paket fiyatı 795 USD’dir. Giriş vizesi hariçtir.']
   },
   en: {
     names: {
@@ -1992,12 +1992,12 @@ const EGYPT_TOUR_TEXT = {
       'VIP safari, boat trip, White Island visit and Cairo sightseeing as listed in the itinerary.',
       'Open-buffet lunch and non-alcoholic beverages during the boat trip.'
     ],
-    excludedDesert: ['The PDF does not provide a separate list of excluded services. Please confirm the package scope and any additional charges before booking.'],
-    excludedSharm: ['Airport entry visa is excluded. The PDF does not provide any other separate list of excluded services; please confirm the scope before booking.'],
-    extrasDesert: ['If fewer than six participants join the desert safari, the 4x4 vehicle is shared.'],
-    extrasSharm: ['No separately priced optional excursions are listed in the PDF.'],
-    notesDesert: ['The itinerary is 6 days / 5 nights. The PDF lists group-based package rates; the website price is shown as USD 825 per person as requested.'],
-    notesSharm: ['The PDF itinerary dates are 16–21 November. The website price is shown as USD 795 per person as requested. Entry visa is excluded.']
+    excludedDesert: ['Airfare.', 'Airport entry visa.'],
+    excludedSharm: ['Airfare.', 'Airport entry visa.'],
+    extrasDesert: [],
+    extrasSharm: [],
+    notesDesert: ['The itinerary is 6 days / 5 nights. Package price is USD 795 per person.'],
+    notesSharm: ['Tour dates are 16–21 November. Package price is USD 795 per person. Entry visa is excluded.']
   },
   ar: {
     names: {
@@ -2041,12 +2041,12 @@ const EGYPT_TOUR_TEXT = {
       'رحلة سفاري VIP ورحلة بحرية وزيارة الجزيرة البيضاء وجولة القاهرة حسب البرنامج.',
       'غداء مفتوح ومشروبات غير كحولية خلال الرحلة البحرية.'
     ],
-    excludedDesert: ['لا تتضمن وثيقة PDF قائمة منفصلة بالخدمات غير المشمولة. يرجى تأكيد تفاصيل الباقة وأي رسوم إضافية قبل الحجز.'],
-    excludedSharm: ['تأشيرة الدخول في المطار غير مشمولة. لا تتضمن وثيقة PDF قائمة أخرى منفصلة بالخدمات غير المشمولة؛ يرجى تأكيد التفاصيل قبل الحجز.'],
-    extrasDesert: ['إذا كان عدد المشاركين في سفاري الصحراء أقل من ستة أشخاص، تكون سيارة الدفع الرباعي مشتركة.'],
-    extrasSharm: ['لا توجد في ملف PDF قائمة برحلات اختيارية ذات أسعار منفصلة.'],
-    notesDesert: ['مدة البرنامج 6 أيام / 5 ليالٍ. يعرض الموقع السعر المطلوب وهو 825 دولاراً أمريكياً للشخص، رغم أن ملف PDF يورد أسعاراً للمجموعات.'],
-    notesSharm: ['تواريخ البرنامج في ملف PDF من 16 إلى 21 نوفمبر. يعرض الموقع السعر المطلوب وهو 795 دولاراً أمريكياً للشخص. تأشيرة الدخول غير مشمولة.']
+    excludedDesert: ['تذكرة الطيران.', 'تأشيرة الدخول في المطار.'],
+    excludedSharm: ['تذكرة الطيران.', 'تأشيرة الدخول في المطار.'],
+    extrasDesert: [],
+    extrasSharm: [],
+    notesDesert: ['مدة البرنامج 6 أيام / 5 ليالٍ. سعر الباقة 795 دولاراً أمريكياً للشخص.'],
+    notesSharm: ['تواريخ البرنامج من 16 إلى 21 نوفمبر. سعر الباقة 795 دولاراً أمريكياً للشخص. تأشيرة الدخول غير مشمولة.']
   }
 };
 const EGYPT_TOUR_PROGRAMS = {
@@ -2066,8 +2066,8 @@ const EGYPT_TOUR_PROGRAMS = {
   }
 };
 const EGYPT_TOUR_ITEMS = [
-  {date:'',tourId:'Cairo_and_Desert_Safari',name:'Cairo, Black & White Desert Safari',route:'Cairo · Bahariya Oasis · Black Desert · White Desert',duration:'6 days / 5 nights',price:'825 USD',desc:'',detailKey:'Cairo_and_Desert_Safari',kind:'Cairo_and_Desert_Safari',category:'international',active:true,whatsappNumber:'905316402130',imageUrl:'https://images.pexels.com/photos/38290618/pexels-photo-38290618.jpeg?auto=compress&cs=tinysrgb&w=1600'},
-  {date:'',tourId:'Cairo_Sharm_el-Sheikh',name:'Cairo & Sharm El-Sheikh',route:'Sharm El-Sheikh · Cairo',duration:'5 days / 4 nights',price:'795 USD',desc:'',detailKey:'Cairo_Sharm_el-Sheikh',kind:'Cairo_Sharm_el-Sheikh',category:'international',active:true,whatsappNumber:'905316402130',imageUrl:'https://images.pexels.com/photos/33754289/pexels-photo-33754289.jpeg?auto=compress&cs=tinysrgb&w=1600'}
+  {date:'',tourId:'Cairo_and_Desert_Safari',name:'Cairo, Black & White Desert Safari',route:'Cairo · Bahariya Oasis · Black Desert · White Desert',duration:'6 days / 5 nights',price:'795 USD',desc:'',detailKey:'Cairo_and_Desert_Safari',kind:'Cairo_and_Desert_Safari',category:'international',active:true,whatsappNumber:'905316402130',imageUrl:'https://images.pexels.com/photos/38290618/pexels-photo-38290618.jpeg?auto=compress&cs=tinysrgb&w=1600'},
+  {date:'2026-11-16',tourId:'Cairo_Sharm_el-Sheikh',name:'Cairo & Sharm El-Sheikh',route:'Sharm El-Sheikh · Cairo',duration:'5 days / 4 nights',price:'795 USD',desc:'',detailKey:'Cairo_Sharm_el-Sheikh',kind:'Cairo_Sharm_el-Sheikh',category:'international',active:true,whatsappNumber:'905316402130',imageUrl:'https://images.pexels.com/photos/33754289/pexels-photo-33754289.jpeg?auto=compress&cs=tinysrgb&w=1600'}
 ];
 
 let activeTourYear='2026',activeTourMonth='all',selectedTourKey=null,activeTourCategory='international';
