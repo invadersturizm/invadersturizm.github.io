@@ -2083,8 +2083,10 @@ function tourFamilyId(g){
  if(/güney italya|amalfi|puglia/.test(name))return 'southItaly';
  if(/ekspres|express/.test(name))return 'italyExpress';
  if(/plus|grand/.test(name))return 'italyPlus';
- if(/floransa.{0,4}roma/.test(name))return 'florenceRome';
- if(/roma.{0,4}floransa/.test(name))return 'romeFlorence';
+ // Karadeniz'e ait tum tur programlari tek ust kategori altinda kalir.
+ if(/^KD27_/.test(String(g.tourId||g.key)) || /karadeniz|black sea|artvin keşfi|trabzon.un saklı köyleri|zirveden kıyıya/i.test(name))return 'blackSea';
+ // Roma-Floransa ve Floransa-Roma ayni kategoridir; gunluk rotalar kendi tur kartinda ayri kalir.
+ if(/floransa.{0,4}roma|roma.{0,4}floransa/.test(name))return 'romeFlorence';
  if(/italya|milano|venedik|italy/.test(name))return 'italyOther';
  return 'other:'+String(g.tourId||g.key);
 }
@@ -2092,7 +2094,7 @@ const TOUR_FAMILY_META={
  italyExpress:{tr:'Büyük İtalya Ekspres Turları',en:'Grand Italy Express Tours',ar:'جولات إيطاليا السريعة'},
  italyPlus:{tr:'Büyük İtalya Plus Turları',en:'Grand Italy Plus Tours',ar:'جولات إيطاليا بلس'},
  romeFlorence:{tr:'Roma – Floransa Turları',en:'Rome – Florence Tours',ar:'جولات روما وفلورنسا'},
- florenceRome:{tr:'Floransa – Roma Turları',en:'Florence – Rome Tours',ar:'جولات فلورنسا وروما'},
+ blackSea:{tr:'Karadeniz Turları',en:'Black Sea Tours',ar:'جولات البحر الأسود'},
  southItaly:{tr:'Güney İtalya Turları',en:'Southern Italy Tours',ar:'جولات جنوب إيطاليا'},
  cairo:{tr:'Kahire ve Mısır Turları',en:'Cairo & Egypt Tours',ar:'جولات القاهرة ومصر'},
  italyOther:{tr:'Diğer İtalya Turları',en:'More Italy Tours',ar:'جولات إيطاليا الأخرى'}
